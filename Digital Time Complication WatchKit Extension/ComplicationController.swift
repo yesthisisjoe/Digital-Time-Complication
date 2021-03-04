@@ -13,12 +13,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
+        let complicationDigitalTimeIdentifier = "Time"
+        let digitalTimeDesriptor = CLKComplicationDescriptor(
+            identifier: complicationDigitalTimeIdentifier,
+            displayName: "Digital Time",
+            supportedFamilies: CLKComplicationFamily.allCases)
+        
         let descriptors = [
-            CLKComplicationDescriptor(identifier: "complication", displayName: "Digital Time Complication", supportedFamilies: CLKComplicationFamily.allCases)
-            // Multiple complication support can be added here with more descriptors
+            digitalTimeDesriptor
         ]
         
-        // Call the handler with the currently supported complication descriptors
         handler(descriptors)
     }
     
@@ -41,8 +45,43 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Timeline Population
     
     func getCurrentTimelineEntry(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimelineEntry?) -> Void) {
-        // Call the handler with the current timeline entry
-        handler(nil)
+        var template: CLKComplicationTemplate
+        let timeProvider = CLKTimeTextProvider(date: Date())
+        let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
+        
+        // TODO: Check the quality of each of these
+        switch complication.family {
+        case .circularSmall:
+            template = CLKComplicationTemplateCircularSmallSimpleText(textProvider: timeProvider)
+        case .extraLarge:
+            template = CLKComplicationTemplateExtraLargeSimpleText(textProvider: timeProvider)
+        case .graphicBezel:
+            template = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: circularTemplate, textProvider: timeProvider)
+        case .graphicCircular:
+            template = circularTemplate
+        case .graphicCorner:
+            template = CLKComplicationTemplateGraphicCornerStackText(innerTextProvider: timeProvider, outerTextProvider: timeProvider)
+        case .graphicExtraLarge:
+            template = CLKComplicationTemplateGraphicExtraLargeCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
+        case .graphicRectangular:
+            template = CLKComplicationTemplateGraphicRectangularStandardBody(headerTextProvider: timeProvider, body1TextProvider: timeProvider)
+        case .modularLarge:
+            template = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: timeProvider, body1TextProvider: timeProvider)
+        case .modularSmall:
+            template = CLKComplicationTemplateModularSmallSimpleText(textProvider: timeProvider)
+        case .utilitarianLarge:
+            template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: timeProvider)
+        case .utilitarianSmall:
+            // TODO: Is this valid?
+            template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
+        case .utilitarianSmallFlat:
+            template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
+        @unknown default:
+            fatalError("Unknown complication family found.")
+        }
+        
+        let timelineEntry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
+        handler(timelineEntry)
     }
     
     func getTimelineEntries(for complication: CLKComplication, after date: Date, limit: Int, withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
