@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CB1E3A0425F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB1E3A0A25F15AA800FDDEB7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */; };
+		CB1E3A0C25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */; };
+		CB1E3A1325F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */; };
+		CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */; };
+		CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */; };
+		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB1E3A0525F15AA800FDDEB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1E39F925F15AA800FDDEB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1E3A0225F15AA800FDDEB7;
+			remoteInfo = "Digital Time Complication WatchKit App";
+		};
+		CB1E3A1425F15AAA00FDDEB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CB1E39F925F15AA800FDDEB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB1E3A1125F15AAA00FDDEB7;
+			remoteInfo = "Digital Time Complication WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CB1E3A2525F15AAA00FDDEB7 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CB1E3A1325F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1E3A2925F15AAA00FDDEB7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CB1E3A0425F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Time Complication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Time Complication WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E3A0925F15AA800FDDEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Digital Time Complication WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB1E3A0F25F15AAA00FDDEB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CB1E39F825F15AA800FDDEB7 = {
+			isa = PBXGroup;
+			children = (
+				CB1E3A0725F15AA800FDDEB7 /* Digital Time Complication WatchKit App */,
+				CB1E3A1625F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */,
+				CB1E3A0025F15AA800FDDEB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CB1E3A0025F15AA800FDDEB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */,
+				CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */,
+				CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB1E3A0725F15AA800FDDEB7 /* Digital Time Complication WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */,
+				CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */,
+				CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */,
+			);
+			path = "Digital Time Complication WatchKit App";
+			sourceTree = "<group>";
+		};
+		CB1E3A1625F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */,
+				CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */,
+				CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */,
+				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
+				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
+			);
+			path = "Digital Time Complication WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CB1E39FE25F15AA800FDDEB7 /* Digital Time Complication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication" */;
+			buildPhases = (
+				CB1E39FD25F15AA800FDDEB7 /* Resources */,
+				CB1E3A2925F15AAA00FDDEB7 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB1E3A0625F15AA800FDDEB7 /* PBXTargetDependency */,
+			);
+			name = "Digital Time Complication";
+			productName = "Digital Time Complication";
+			productReference = CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit App" */;
+			buildPhases = (
+				CB1E3A0125F15AA800FDDEB7 /* Resources */,
+				CB1E3A2525F15AAA00FDDEB7 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CB1E3A1525F15AAA00FDDEB7 /* PBXTargetDependency */,
+			);
+			name = "Digital Time Complication WatchKit App";
+			productName = "Digital Time Complication WatchKit App";
+			productReference = CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit Extension" */;
+			buildPhases = (
+				CB1E3A0E25F15AAA00FDDEB7 /* Sources */,
+				CB1E3A0F25F15AAA00FDDEB7 /* Frameworks */,
+				CB1E3A1025F15AAA00FDDEB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Digital Time Complication WatchKit Extension";
+			productName = "Digital Time Complication WatchKit Extension";
+			productReference = CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB1E39F925F15AA800FDDEB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CB1E39FE25F15AA800FDDEB7 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CB1E3A0225F15AA800FDDEB7 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CB1E3A1125F15AAA00FDDEB7 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "Digital Time Complication" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB1E39F825F15AA800FDDEB7;
+			productRefGroup = CB1E3A0025F15AA800FDDEB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB1E39FE25F15AA800FDDEB7 /* Digital Time Complication */,
+				CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */,
+				CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB1E39FD25F15AA800FDDEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1E3A0125F15AA800FDDEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1E3A0C25F15AAA00FDDEB7 /* Assets.xcassets in Resources */,
+				CB1E3A0A25F15AA800FDDEB7 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB1E3A1025F15AAA00FDDEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB1E3A0E25F15AAA00FDDEB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */,
+				CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */,
+				CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CB1E3A0625F15AA800FDDEB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */;
+			targetProxy = CB1E3A0525F15AA800FDDEB7 /* PBXContainerItemProxy */;
+		};
+		CB1E3A1525F15AAA00FDDEB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */;
+			targetProxy = CB1E3A1425F15AAA00FDDEB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB1E3A0925F15AA800FDDEB7 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB1E3A2025F15AAA00FDDEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CB1E3A2125F15AAA00FDDEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CB1E3A2325F15AAA00FDDEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				INFOPLIST_FILE = "Digital Time Complication WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CB1E3A2425F15AAA00FDDEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				INFOPLIST_FILE = "Digital Time Complication WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		CB1E3A2725F15AAA00FDDEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				IBSC_MODULE = Digital_Time_Complication_WatchKit_Extension;
+				INFOPLIST_FILE = "Digital Time Complication WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		CB1E3A2825F15AAA00FDDEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				IBSC_MODULE = Digital_Time_Complication_WatchKit_Extension;
+				INFOPLIST_FILE = "Digital Time Complication WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		CB1E3A2B25F15AAA00FDDEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CB1E3A2C25F15AAA00FDDEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GMFR6JL5MS;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "Digital Time Complication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1E3A2025F15AAA00FDDEB7 /* Debug */,
+				CB1E3A2125F15AAA00FDDEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1E3A2325F15AAA00FDDEB7 /* Debug */,
+				CB1E3A2425F15AAA00FDDEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1E3A2725F15AAA00FDDEB7 /* Debug */,
+				CB1E3A2825F15AAA00FDDEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB1E3A2B25F15AAA00FDDEB7 /* Debug */,
+				CB1E3A2C25F15AAA00FDDEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB1E39F925F15AA800FDDEB7 /* Project object */;
+}
