@@ -42,7 +42,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     // MARK: - Timeline Population
     
-    private func createTimelineEntry(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTimelineEntry {
+    private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate {
         var template: CLKComplicationTemplate
         let timeProvider = CLKTimeTextProvider(date: date)
         let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
@@ -94,6 +94,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             fatalError("Unknown complication family found.")
         }
         
+        return template
+    }
+    
+    private func createTimelineEntry(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTimelineEntry {
+        let template = createTemplate(for: complication, onDate: date)
         let timelineEntry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         return timelineEntry
     }
@@ -122,7 +127,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Sample Templates
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        // This method will be called once per supported complication, and the results will be cached
-        handler(nil)
+        let template = createTemplate(for: complication, onDate: Date())
+        handler(template)
     }
 }
