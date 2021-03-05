@@ -19,7 +19,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             .graphicCircular,
             .graphicCorner,
             .utilitarianLarge,
-            .utilitarianSmall,
+            .utilitarianSmall
         ]
         let digitalTimeDesriptor = CLKComplicationDescriptor(
             identifier: complicationDigitalTimeIdentifier,
@@ -44,7 +44,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     // MARK: - Timeline Population
 
-    private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate {
+    private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate? {
         let timeProvider = CLKTimeTextProvider(date: date)
         let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(
             line1TextProvider: timeProvider,
@@ -68,15 +68,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .utilitarianSmall:
             return CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
         default:
-            fatalError("Unknown complication family found.")
+            return nil
         }
     }
 
     private func createTimelineEntry(
         for complication: CLKComplication,
         onDate date: Date
-    ) -> CLKComplicationTimelineEntry {
-        let template = createTemplate(for: complication, onDate: date)
+    ) -> CLKComplicationTimelineEntry? {
+        guard let template = createTemplate(for: complication, onDate: date) else {
+            return nil
+        }
         let timelineEntry = CLKComplicationTimelineEntry(date: date, complicationTemplate: template)
         return timelineEntry
     }
@@ -101,7 +103,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             timeIntervalSinceReferenceDate: (barelyAfterDate.timeIntervalSinceReferenceDate / 60.0).rounded(.up) * 60.0)
 
         while limit > timelineEntries.count {
-            let timelineEntry = createTimelineEntry(for: complication, onDate: nextMinute)
+            guard let timelineEntry = createTimelineEntry(for: complication, onDate: nextMinute) else {
+                handler(nil)
+                return
+            }
             timelineEntries.append(timelineEntry)
             nextMinute = Date(timeIntervalSinceReferenceDate: nextMinute.timeIntervalSinceReferenceDate + 60.0)
         }
@@ -114,7 +119,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func getLocalizableSampleTemplate(
         for complication: CLKComplication,
         withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
-        let template = createTemplate(for: complication, onDate: Date())
+        let calendar = Calendar.current
+        let dateComponents = DateComponents(year: 2020, month: 10, day: 9, hour: 10, minute: 9, second: 30)
+        let sampleDate = calendar.date(from: dateComponents)!
+        let template = createTemplate(for: complication, onDate: sampleDate)
         handler(template)
     }
 }
