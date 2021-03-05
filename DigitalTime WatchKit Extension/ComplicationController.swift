@@ -74,9 +74,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 headerTextProvider: timeProvider,
                 body1TextProvider: timeProvider)
         case .modularLarge:
-            return CLKComplicationTemplateModularLargeStandardBody(
+            return CLKComplicationTemplateModularLargeTallBody(
                 headerTextProvider: timeProvider,
-                body1TextProvider: timeProvider)
+                bodyTextProvider: timeProvider)
         case .modularSmall:
             return CLKComplicationTemplateModularSmallSimpleText(textProvider: timeProvider)
         case .utilitarianLarge:
