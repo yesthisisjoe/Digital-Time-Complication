@@ -12,21 +12,22 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
-        let complicationDigitalTimeIdentifier = "Time"
+        let complicationDigitalTimeIdentifier = "DigitalTime"
+        let supportedFamilies: [CLKComplicationFamily] = [
+            .circularSmall,
+            .graphicBezel,
+            .graphicCircular,
+            .graphicCorner,
+            .utilitarianLarge,
+            .utilitarianSmall,
+        ]
         let digitalTimeDesriptor = CLKComplicationDescriptor(
             identifier: complicationDigitalTimeIdentifier,
             displayName: "Digital Time",
-            supportedFamilies: CLKComplicationFamily.allCases)
-
-        let descriptors = [
-            digitalTimeDesriptor
-        ]
+            supportedFamilies: supportedFamilies)
+        let descriptors = [digitalTimeDesriptor]
 
         handler(descriptors)
-    }
-
-    func handleSharedComplicationDescriptors(_ complicationDescriptors: [CLKComplicationDescriptor]) {
-        // Do any necessary work to support these newly shared complication descriptors
     }
 
     // MARK: - Timeline Configuration
@@ -43,7 +44,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     // MARK: - Timeline Population
 
-    // swiftlint:disable:next cyclomatic_complexity
     private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate {
         let timeProvider = CLKTimeTextProvider(date: date)
         let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(
@@ -53,8 +53,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         switch complication.family {
         case .circularSmall:
             return CLKComplicationTemplateCircularSmallSimpleText(textProvider: timeProvider)
-        case .extraLarge:
-            return CLKComplicationTemplateExtraLargeSimpleText(textProvider: timeProvider)
         case .graphicBezel:
             return CLKComplicationTemplateGraphicBezelCircularText(
                 circularTemplate: circularTemplate,
@@ -65,27 +63,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             return CLKComplicationTemplateGraphicCornerStackText(
                 innerTextProvider: timeProvider,
                 outerTextProvider: timeProvider)
-        case .graphicExtraLarge:
-            return CLKComplicationTemplateGraphicExtraLargeCircularStackText(
-                line1TextProvider: timeProvider,
-                line2TextProvider: timeProvider)
-        case .graphicRectangular:
-            return CLKComplicationTemplateGraphicRectangularStandardBody(
-                headerTextProvider: timeProvider,
-                body1TextProvider: timeProvider)
-        case .modularLarge:
-            return CLKComplicationTemplateModularLargeTallBody(
-                headerTextProvider: timeProvider,
-                bodyTextProvider: timeProvider)
-        case .modularSmall:
-            return CLKComplicationTemplateModularSmallSimpleText(textProvider: timeProvider)
         case .utilitarianLarge:
             return CLKComplicationTemplateUtilitarianLargeFlat(textProvider: timeProvider)
         case .utilitarianSmall:
             return CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
-        case .utilitarianSmallFlat:
-            return CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
-        @unknown default:
+        default:
             fatalError("Unknown complication family found.")
         }
     }
