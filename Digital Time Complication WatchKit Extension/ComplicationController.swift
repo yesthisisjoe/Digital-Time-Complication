@@ -45,35 +45,52 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     private func createTimelineEntry(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTimelineEntry {
         var template: CLKComplicationTemplate
         let timeProvider = CLKTimeTextProvider(date: date)
-        let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
+        let nothing = CLKTextProvider(format: "", [])
+        let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: nothing)
         
         // TODO: Check the quality of each of these
         switch complication.family {
         case .circularSmall:
-            template = CLKComplicationTemplateCircularSmallSimpleText(textProvider: timeProvider)
+            template = CLKComplicationTemplateCircularSmallSimpleText(
+                textProvider: timeProvider)
         case .extraLarge:
-            template = CLKComplicationTemplateExtraLargeSimpleText(textProvider: timeProvider)
+            template = CLKComplicationTemplateExtraLargeSimpleText(
+                textProvider: timeProvider)
         case .graphicBezel:
-            template = CLKComplicationTemplateGraphicBezelCircularText(circularTemplate: circularTemplate, textProvider: timeProvider)
+            template = CLKComplicationTemplateGraphicBezelCircularText(
+                circularTemplate: circularTemplate,
+                textProvider: timeProvider)
         case .graphicCircular:
             template = circularTemplate
         case .graphicCorner:
-            template = CLKComplicationTemplateGraphicCornerStackText(innerTextProvider: timeProvider, outerTextProvider: timeProvider)
+            template = CLKComplicationTemplateGraphicCornerStackText(
+                innerTextProvider: timeProvider,
+                outerTextProvider: nothing)
         case .graphicExtraLarge:
-            template = CLKComplicationTemplateGraphicExtraLargeCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
+            template = CLKComplicationTemplateGraphicExtraLargeCircularStackText(
+                line1TextProvider: timeProvider,
+                line2TextProvider: nothing)
         case .graphicRectangular:
-            template = CLKComplicationTemplateGraphicRectangularStandardBody(headerTextProvider: timeProvider, body1TextProvider: timeProvider)
+            template = CLKComplicationTemplateGraphicRectangularStandardBody(
+                headerTextProvider: timeProvider,
+                body1TextProvider: nothing)
         case .modularLarge:
-            template = CLKComplicationTemplateModularLargeStandardBody(headerTextProvider: timeProvider, body1TextProvider: timeProvider)
+            template = CLKComplicationTemplateModularLargeStandardBody(
+                headerTextProvider: timeProvider,
+                body1TextProvider: nothing)
         case .modularSmall:
-            template = CLKComplicationTemplateModularSmallSimpleText(textProvider: timeProvider)
+            template = CLKComplicationTemplateModularSmallSimpleText(
+                textProvider: timeProvider)
         case .utilitarianLarge:
-            template = CLKComplicationTemplateUtilitarianLargeFlat(textProvider: timeProvider)
+            template = CLKComplicationTemplateUtilitarianLargeFlat(
+                textProvider: timeProvider)
         case .utilitarianSmall:
             // TODO: Is this valid?
-            template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
+            template = CLKComplicationTemplateUtilitarianSmallFlat(
+                textProvider: timeProvider)
         case .utilitarianSmallFlat:
-            template = CLKComplicationTemplateUtilitarianSmallFlat(textProvider: timeProvider)
+            template = CLKComplicationTemplateUtilitarianSmallFlat(
+                textProvider: timeProvider)
         @unknown default:
             fatalError("Unknown complication family found.")
         }
