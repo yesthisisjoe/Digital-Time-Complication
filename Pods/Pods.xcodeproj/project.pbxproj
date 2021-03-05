@@ -28,100 +28,100 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1A39987052D445FF95C57C83ACD68BF0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
-		30FC151E29193D11A49CCEAC5DEDC4F3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
-		3AC50ACB5E684C72D206138CA7C04C39 /* Pods-Digital Time Complication WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F0EB07BB12616D3060406F6C7D69AA18 /* Pods-Digital Time Complication WatchKit App-dummy.m */; };
-		91EB91FF6F078218F2CD9D6DC7CDA348 /* Pods-Digital Time Complication WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 089ED52A5BA803BC6B2F4EE1543340BE /* Pods-Digital Time Complication WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95535B73312FF9059A0593236ECBA1D9 /* Pods-Digital Time Complication-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 12CE6EE0542055637B0888C1F00F44F7 /* Pods-Digital Time Complication-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A56F12252D2E2701FA6A2E65609C7E0B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
-		BCEA58F82D866A7956C8AB0106A392F7 /* Pods-Digital Time Complication-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA65B5BC8F37223DC668825EE621C2B4 /* Pods-Digital Time Complication-dummy.m */; };
-		CED1BD05BD6E85AFAAF69C688A1C2361 /* Pods-Digital Time Complication WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B549CDB7D32DA42BC1D26F1467BFFE34 /* Pods-Digital Time Complication WatchKit Extension-dummy.m */; };
-		D3CDC6F742363C01489FC45A1CB46C9A /* Pods-Digital Time Complication WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0186330C33413DA5BAF29C874C65C27E /* Pods-Digital Time Complication WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		12BEFB654CD8764A71352C40C282715B /* Pods-DigitalTime-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2836BEDB603827131D740EA13EB6384F /* Pods-DigitalTime-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4CA36035C10006DEA8B0C7EF0464EDCB /* Pods-DigitalTime WatchKit Extension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D1C7568568C1DAA7A44966E83E7FD47 /* Pods-DigitalTime WatchKit Extension-dummy.m */; };
+		4CE4C9063C9BCA01B58E65440AE0323D /* Pods-DigitalTime WatchKit App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 693CAB6F6A4ED22D42926CE34AEC63DF /* Pods-DigitalTime WatchKit App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92903A0061CF9BCE30C2472E331B3417 /* Pods-DigitalTime WatchKit Extension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BFAE36807DA8108B840A08E93B339BF /* Pods-DigitalTime WatchKit Extension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C52EA1D5471CC07037600B6BB85A1828 /* Pods-DigitalTime WatchKit App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F72390619DB744BDBC0336408C2858 /* Pods-DigitalTime WatchKit App-dummy.m */; };
+		C70388CBA2E9A84285EBBA5075F2E0AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		E4B71A40E9F1B8C9B40B0EFBD9C2082E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */; };
+		E7C2AF05B15B2CD51AC35F66D00216C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */; };
+		ECF2D217D14C67EF27B664E085E3C070 /* Pods-DigitalTime-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3ED48BB6C064687884BD35341C241A /* Pods-DigitalTime-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C84A3F7D45A13AA03DE935E098C01FE /* PBXContainerItemProxy */ = {
+		481BF412998217BD63059D95DC3DA572 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0626378CBCA3137F03E6DCC306504C4B;
 			remoteInfo = "SwiftLint-watchOS";
 		};
-		373E10C2EC54D37B167A97A1D21CC60A /* PBXContainerItemProxy */ = {
+		A296C6635C7328B1C6853B3B2268212A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0626378CBCA3137F03E6DCC306504C4B;
+			remoteInfo = "SwiftLint-watchOS";
+		};
+		F6E0EEFA49A65BF14A0D8E84C7E4D36C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2B03D5FD26A26B7D62142EA4492AEB83;
 			remoteInfo = "SwiftLint-iOS";
 		};
-		C85EBBD916B894EDD63CCB961381E432 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0626378CBCA3137F03E6DCC306504C4B;
-			remoteInfo = "SwiftLint-watchOS";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0186330C33413DA5BAF29C874C65C27E /* Pods-Digital Time Complication WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Digital Time Complication WatchKit App-umbrella.h"; sourceTree = "<group>"; };
-		043BEDFB5A3A03BE9A7FBC7B3E2B1ECE /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		089ED52A5BA803BC6B2F4EE1543340BE /* Pods-Digital Time Complication WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Digital Time Complication WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
-		12CE6EE0542055637B0888C1F00F44F7 /* Pods-Digital Time Complication-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Digital Time Complication-umbrella.h"; sourceTree = "<group>"; };
-		1D23FA3FFDBA912F6BE624ED09DCC0BE /* Pods_Digital_Time_Complication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Digital_Time_Complication.framework; path = "Pods-Digital Time Complication.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2ED1EDDD8E6B63D5D107A67BB630E137 /* Pods-Digital Time Complication-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication-acknowledgements.plist"; sourceTree = "<group>"; };
-		370FF836CDB72A1561C47D8796E986AE /* Pods-Digital Time Complication WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
-		38E01DB4BCA6A12FAB6C2EA4A4A7F3EF /* Pods-Digital Time Complication WatchKit Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication WatchKit Extension-Info.plist"; sourceTree = "<group>"; };
-		41B0A6A7E7DF275B48B8C16289C4935E /* Pods-Digital Time Complication-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication-Info.plist"; sourceTree = "<group>"; };
-		45FA0712CFC7817615D18A2863D089DA /* Pods-Digital Time Complication WatchKit App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication WatchKit App-Info.plist"; sourceTree = "<group>"; };
+		0E761A77A6446DE6355F7AD0D2E99F95 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DigitalTime_WatchKit_App.framework; path = "Pods-DigitalTime WatchKit App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B279AD2F8CCA11930739F4E26AC7F4D /* Pods-DigitalTime WatchKit App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime WatchKit App-Info.plist"; sourceTree = "<group>"; };
+		2709F6037FF3F27F54AE1BD5970617B0 /* Pods-DigitalTime WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DigitalTime WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2836BEDB603827131D740EA13EB6384F /* Pods-DigitalTime-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DigitalTime-umbrella.h"; sourceTree = "<group>"; };
+		28C97E1E959AEFC72776916FD440AAAC /* Pods-DigitalTime-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime-acknowledgements.plist"; sourceTree = "<group>"; };
+		2C811E8C8608C717112911A913BBBBC2 /* Pods-DigitalTime WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DigitalTime WatchKit Extension.modulemap"; sourceTree = "<group>"; };
+		2D1C7568568C1DAA7A44966E83E7FD47 /* Pods-DigitalTime WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DigitalTime WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
+		2E00E19FC9C537304BFD5EB76DEF95A9 /* Pods-DigitalTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime.debug.xcconfig"; sourceTree = "<group>"; };
+		3411B6C284195D9FCD79D17B58E8EC56 /* Pods-DigitalTime WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		387E3DEC1EC5CBCBE213C184587F19EC /* Pods-DigitalTime WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		4105319F37E8135DEAE8050786739DD3 /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		4BFAE36807DA8108B840A08E93B339BF /* Pods-DigitalTime WatchKit Extension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DigitalTime WatchKit Extension-umbrella.h"; sourceTree = "<group>"; };
 		4CF9CF11FC17D8D6F3F6FD252D38FB6D /* SwiftLint-watchOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-watchOS.release.xcconfig"; path = "../SwiftLint-watchOS/SwiftLint-watchOS.release.xcconfig"; sourceTree = "<group>"; };
+		5579C16526D8A7F58EE9800777F8BD24 /* Pods-DigitalTime-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime-Info.plist"; sourceTree = "<group>"; };
 		5D0A982A9433AACEF8A61353293CF443 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		5DC519448B59E47063343D525BB159DF /* Pods-Digital Time Complication WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		62F9F0F310D17C103C21B6D0D02B6FF9 /* Pods-Digital Time Complication WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Digital Time Complication WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		693CAB6F6A4ED22D42926CE34AEC63DF /* Pods-DigitalTime WatchKit App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DigitalTime WatchKit App-umbrella.h"; sourceTree = "<group>"; };
 		78F3C45B5C145FF8728DBA28BE708724 /* SwiftLint-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		7C2CE41ED9823FFA9BBF2629527D1BDD /* Pods-Digital Time Complication WatchKit Extension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Digital Time Complication WatchKit Extension.modulemap"; sourceTree = "<group>"; };
-		83DA6AA211AB780943C490722BE94BA9 /* Pods-Digital Time Complication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication.debug.xcconfig"; sourceTree = "<group>"; };
-		8652845408F27BAC431184E18F9C7A01 /* Pods-Digital Time Complication WatchKit Extension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Digital Time Complication WatchKit Extension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		870C9D8764DCDF85F02850120711DF5F /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		9656E6DA484F34739F76A898435374F2 /* Pods-Digital Time Complication.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Digital Time Complication.modulemap"; sourceTree = "<group>"; };
+		824FAF2D9C7EFB08D84C8BF3A5B0EC0A /* Pods-DigitalTime-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DigitalTime-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8406A86113B95668FCA7F98E2D38C742 /* Pods_DigitalTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DigitalTime.framework; path = "Pods-DigitalTime.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		869AAC918809151BB15C0AF8C4D7ACC8 /* Pods_DigitalTime_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DigitalTime_WatchKit_Extension.framework; path = "Pods-DigitalTime WatchKit Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A666AFB987ECBD41EBF880E046499A /* Pods-DigitalTime WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DigitalTime WatchKit App.modulemap"; sourceTree = "<group>"; };
+		8F4A88036B360C0314995F90A5235B0F /* Pods-DigitalTime.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DigitalTime.modulemap"; sourceTree = "<group>"; };
+		90DB63A07E8651588F40252BBD3FD6F5 /* Pods-DigitalTime WatchKit Extension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime WatchKit Extension-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AB3A9326B4A2FD25F9FBD3CCB9B54E2E /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		ABE130707A8EB8E4812DF63BF822B419 /* Pods-Digital Time Complication WatchKit App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Digital Time Complication WatchKit App.modulemap"; sourceTree = "<group>"; };
-		B549CDB7D32DA42BC1D26F1467BFFE34 /* Pods-Digital Time Complication WatchKit Extension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Digital Time Complication WatchKit Extension-dummy.m"; sourceTree = "<group>"; };
-		BA65B5BC8F37223DC668825EE621C2B4 /* Pods-Digital Time Complication-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Digital Time Complication-dummy.m"; sourceTree = "<group>"; };
-		BD38721A4BB7C1678411BD4572A154AC /* Pods-Digital Time Complication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Digital Time Complication.release.xcconfig"; sourceTree = "<group>"; };
+		AA44C5F407B0F92722A8EE1AADF3A280 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		AF11E6D977E782DFF2E92091866BA67A /* Pods-DigitalTime WatchKit Extension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime WatchKit Extension-acknowledgements.plist"; sourceTree = "<group>"; };
+		BB3ED48BB6C064687884BD35341C241A /* Pods-DigitalTime-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DigitalTime-dummy.m"; sourceTree = "<group>"; };
 		C2260D7C693E40B242C727AC457C6F1D /* SwiftLint-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "SwiftLint-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		CA19270EB6BC6F1DD7B36A785D18A8E5 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Digital_Time_Complication_WatchKit_Extension.framework; path = "Pods-Digital Time Complication WatchKit Extension.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE75DCC0F8735B5DF0E32C48A3BB3C8C /* SwiftLint-watchOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "SwiftLint-watchOS.debug.xcconfig"; path = "../SwiftLint-watchOS/SwiftLint-watchOS.debug.xcconfig"; sourceTree = "<group>"; };
-		DA7E35A37D3EF269B99989AEE082AACE /* Pods_Digital_Time_Complication_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Digital_Time_Complication_WatchKit_App.framework; path = "Pods-Digital Time Complication WatchKit App.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E041720A2AF5046E0FB4831F7B14E2EB /* Pods-Digital Time Complication WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Digital Time Complication WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
-		EFE92BF867A01DA890B84CE9ED5AA16D /* Pods-Digital Time Complication-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Digital Time Complication-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F0EB07BB12616D3060406F6C7D69AA18 /* Pods-Digital Time Complication WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Digital Time Complication WatchKit App-dummy.m"; sourceTree = "<group>"; };
+		D8954E75D81051FCDF5BA655518EC891 /* Pods-DigitalTime WatchKit App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DigitalTime WatchKit App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D9F60F92525FDCF4DF0D38A77650E519 /* Pods-DigitalTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DigitalTime.release.xcconfig"; sourceTree = "<group>"; };
+		DFF8F2C3847E48DE90F4B35F8F919DCC /* Pods-DigitalTime WatchKit App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DigitalTime WatchKit App-acknowledgements.plist"; sourceTree = "<group>"; };
+		E0F72390619DB744BDBC0336408C2858 /* Pods-DigitalTime WatchKit App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DigitalTime WatchKit App-dummy.m"; sourceTree = "<group>"; };
 		FCE35B7430FD7C91E8CC808A3540CF2E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2406621EEAF88C012407B7079F29B72E /* Frameworks */ = {
+		7DB5A4D55091F9BA442CBC0DB116BD6D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30FC151E29193D11A49CCEAC5DEDC4F3 /* Foundation.framework in Frameworks */,
+				C70388CBA2E9A84285EBBA5075F2E0AC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B066777E74E1DD0694FE12FC55FCA56 /* Frameworks */ = {
+		BDE7992F884E3DE4F8DEEB73CA8C6A60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A39987052D445FF95C57C83ACD68BF0 /* Foundation.framework in Frameworks */,
+				E4B71A40E9F1B8C9B40B0EFBD9C2082E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6FD539635214FCB0A00E42FAD25767A /* Frameworks */ = {
+		C1B8E88CEF307CF0F6F93FC1B6DD2CD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56F12252D2E2701FA6A2E65609C7E0B /* Foundation.framework in Frameworks */,
+				E7C2AF05B15B2CD51AC35F66D00216C9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +136,32 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		433D8D3DC0902CF199F85E1DF1F96C7D /* Pods-DigitalTime WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				86A666AFB987ECBD41EBF880E046499A /* Pods-DigitalTime WatchKit App.modulemap */,
+				D8954E75D81051FCDF5BA655518EC891 /* Pods-DigitalTime WatchKit App-acknowledgements.markdown */,
+				DFF8F2C3847E48DE90F4B35F8F919DCC /* Pods-DigitalTime WatchKit App-acknowledgements.plist */,
+				E0F72390619DB744BDBC0336408C2858 /* Pods-DigitalTime WatchKit App-dummy.m */,
+				1B279AD2F8CCA11930739F4E26AC7F4D /* Pods-DigitalTime WatchKit App-Info.plist */,
+				693CAB6F6A4ED22D42926CE34AEC63DF /* Pods-DigitalTime WatchKit App-umbrella.h */,
+				387E3DEC1EC5CBCBE213C184587F19EC /* Pods-DigitalTime WatchKit App.debug.xcconfig */,
+				3411B6C284195D9FCD79D17B58E8EC56 /* Pods-DigitalTime WatchKit App.release.xcconfig */,
+			);
+			name = "Pods-DigitalTime WatchKit App";
+			path = "Target Support Files/Pods-DigitalTime WatchKit App";
+			sourceTree = "<group>";
+		};
+		4CEDA921F520F87AF7CE64D150079114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8406A86113B95668FCA7F98E2D38C742 /* Pods_DigitalTime.framework */,
+				0E761A77A6446DE6355F7AD0D2E99F95 /* Pods_DigitalTime_WatchKit_App.framework */,
+				869AAC918809151BB15C0AF8C4D7ACC8 /* Pods_DigitalTime_WatchKit_Extension.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,30 +171,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7C80E0CA0B43820A5898B6F964FD69C8 /* Pods-Digital Time Complication WatchKit App */ = {
+		6074E06C9F1BCF60E7F0390473C30261 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				ABE130707A8EB8E4812DF63BF822B419 /* Pods-Digital Time Complication WatchKit App.modulemap */,
-				62F9F0F310D17C103C21B6D0D02B6FF9 /* Pods-Digital Time Complication WatchKit App-acknowledgements.markdown */,
-				E041720A2AF5046E0FB4831F7B14E2EB /* Pods-Digital Time Complication WatchKit App-acknowledgements.plist */,
-				F0EB07BB12616D3060406F6C7D69AA18 /* Pods-Digital Time Complication WatchKit App-dummy.m */,
-				45FA0712CFC7817615D18A2863D089DA /* Pods-Digital Time Complication WatchKit App-Info.plist */,
-				0186330C33413DA5BAF29C874C65C27E /* Pods-Digital Time Complication WatchKit App-umbrella.h */,
-				043BEDFB5A3A03BE9A7FBC7B3E2B1ECE /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */,
-				5DC519448B59E47063343D525BB159DF /* Pods-Digital Time Complication WatchKit App.release.xcconfig */,
+				ADAF56A69ACD10C58C8EC43905F99E94 /* Pods-DigitalTime */,
+				433D8D3DC0902CF199F85E1DF1F96C7D /* Pods-DigitalTime WatchKit App */,
+				9CF4CCFA18ED48D3D4427FF1E8806860 /* Pods-DigitalTime WatchKit Extension */,
 			);
-			name = "Pods-Digital Time Complication WatchKit App";
-			path = "Target Support Files/Pods-Digital Time Complication WatchKit App";
-			sourceTree = "<group>";
-		};
-		7E999DFA243DA23BDB88E37DA09F8356 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1D23FA3FFDBA912F6BE624ED09DCC0BE /* Pods_Digital_Time_Complication.framework */,
-				DA7E35A37D3EF269B99989AEE082AACE /* Pods_Digital_Time_Complication_WatchKit_App.framework */,
-				CA19270EB6BC6F1DD7B36A785D18A8E5 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */,
-			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		8B063FB5829CC11F1F48DAAF9305FCB4 /* watchOS */ = {
@@ -179,28 +189,28 @@
 			name = watchOS;
 			sourceTree = "<group>";
 		};
-		900DFB73794F32EDBD54D52A93B60875 /* Pods-Digital Time Complication WatchKit Extension */ = {
-			isa = PBXGroup;
-			children = (
-				7C2CE41ED9823FFA9BBF2629527D1BDD /* Pods-Digital Time Complication WatchKit Extension.modulemap */,
-				8652845408F27BAC431184E18F9C7A01 /* Pods-Digital Time Complication WatchKit Extension-acknowledgements.markdown */,
-				370FF836CDB72A1561C47D8796E986AE /* Pods-Digital Time Complication WatchKit Extension-acknowledgements.plist */,
-				B549CDB7D32DA42BC1D26F1467BFFE34 /* Pods-Digital Time Complication WatchKit Extension-dummy.m */,
-				38E01DB4BCA6A12FAB6C2EA4A4A7F3EF /* Pods-Digital Time Complication WatchKit Extension-Info.plist */,
-				089ED52A5BA803BC6B2F4EE1543340BE /* Pods-Digital Time Complication WatchKit Extension-umbrella.h */,
-				AB3A9326B4A2FD25F9FBD3CCB9B54E2E /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */,
-				870C9D8764DCDF85F02850120711DF5F /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */,
-			);
-			name = "Pods-Digital Time Complication WatchKit Extension";
-			path = "Target Support Files/Pods-Digital Time Complication WatchKit Extension";
-			sourceTree = "<group>";
-		};
 		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				FB20D3EBFF8645FAA422628402EF8D36 /* SwiftLint */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9CF4CCFA18ED48D3D4427FF1E8806860 /* Pods-DigitalTime WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2C811E8C8608C717112911A913BBBBC2 /* Pods-DigitalTime WatchKit Extension.modulemap */,
+				2709F6037FF3F27F54AE1BD5970617B0 /* Pods-DigitalTime WatchKit Extension-acknowledgements.markdown */,
+				AF11E6D977E782DFF2E92091866BA67A /* Pods-DigitalTime WatchKit Extension-acknowledgements.plist */,
+				2D1C7568568C1DAA7A44966E83E7FD47 /* Pods-DigitalTime WatchKit Extension-dummy.m */,
+				90DB63A07E8651588F40252BBD3FD6F5 /* Pods-DigitalTime WatchKit Extension-Info.plist */,
+				4BFAE36807DA8108B840A08E93B339BF /* Pods-DigitalTime WatchKit Extension-umbrella.h */,
+				4105319F37E8135DEAE8050786739DD3 /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */,
+				AA44C5F407B0F92722A8EE1AADF3A280 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */,
+			);
+			name = "Pods-DigitalTime WatchKit Extension";
+			path = "Target Support Files/Pods-DigitalTime WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		A64B216DAE65638FA55A3F9251B863D9 /* Support Files */ = {
@@ -215,41 +225,31 @@
 			path = "../Target Support Files/SwiftLint-iOS";
 			sourceTree = "<group>";
 		};
+		ADAF56A69ACD10C58C8EC43905F99E94 /* Pods-DigitalTime */ = {
+			isa = PBXGroup;
+			children = (
+				8F4A88036B360C0314995F90A5235B0F /* Pods-DigitalTime.modulemap */,
+				824FAF2D9C7EFB08D84C8BF3A5B0EC0A /* Pods-DigitalTime-acknowledgements.markdown */,
+				28C97E1E959AEFC72776916FD440AAAC /* Pods-DigitalTime-acknowledgements.plist */,
+				BB3ED48BB6C064687884BD35341C241A /* Pods-DigitalTime-dummy.m */,
+				5579C16526D8A7F58EE9800777F8BD24 /* Pods-DigitalTime-Info.plist */,
+				2836BEDB603827131D740EA13EB6384F /* Pods-DigitalTime-umbrella.h */,
+				2E00E19FC9C537304BFD5EB76DEF95A9 /* Pods-DigitalTime.debug.xcconfig */,
+				D9F60F92525FDCF4DF0D38A77650E519 /* Pods-DigitalTime.release.xcconfig */,
+			);
+			name = "Pods-DigitalTime";
+			path = "Target Support Files/Pods-DigitalTime";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				54CCD06893F300F5B2C02DAFD57093E1 /* Frameworks */,
 				965877409E01FB3D85D85E90E6B30185 /* Pods */,
-				7E999DFA243DA23BDB88E37DA09F8356 /* Products */,
-				ED0A97E00AFE7E26C0EBCD084A1DCE46 /* Targets Support Files */,
+				4CEDA921F520F87AF7CE64D150079114 /* Products */,
+				6074E06C9F1BCF60E7F0390473C30261 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		ED0A97E00AFE7E26C0EBCD084A1DCE46 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EF30BF81BCBB3C72F4AC6E26C2A3530B /* Pods-Digital Time Complication */,
-				7C80E0CA0B43820A5898B6F964FD69C8 /* Pods-Digital Time Complication WatchKit App */,
-				900DFB73794F32EDBD54D52A93B60875 /* Pods-Digital Time Complication WatchKit Extension */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		EF30BF81BCBB3C72F4AC6E26C2A3530B /* Pods-Digital Time Complication */ = {
-			isa = PBXGroup;
-			children = (
-				9656E6DA484F34739F76A898435374F2 /* Pods-Digital Time Complication.modulemap */,
-				EFE92BF867A01DA890B84CE9ED5AA16D /* Pods-Digital Time Complication-acknowledgements.markdown */,
-				2ED1EDDD8E6B63D5D107A67BB630E137 /* Pods-Digital Time Complication-acknowledgements.plist */,
-				BA65B5BC8F37223DC668825EE621C2B4 /* Pods-Digital Time Complication-dummy.m */,
-				41B0A6A7E7DF275B48B8C16289C4935E /* Pods-Digital Time Complication-Info.plist */,
-				12CE6EE0542055637B0888C1F00F44F7 /* Pods-Digital Time Complication-umbrella.h */,
-				83DA6AA211AB780943C490722BE94BA9 /* Pods-Digital Time Complication.debug.xcconfig */,
-				BD38721A4BB7C1678411BD4572A154AC /* Pods-Digital Time Complication.release.xcconfig */,
-			);
-			name = "Pods-Digital Time Complication";
-			path = "Target Support Files/Pods-Digital Time Complication";
 			sourceTree = "<group>";
 		};
 		FB20D3EBFF8645FAA422628402EF8D36 /* SwiftLint */ = {
@@ -264,88 +264,88 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1C0CD99975AE1F6D41E48E0CF9949D9E /* Headers */ = {
+		957358B534D157ABFA966D6B9672BC28 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91EB91FF6F078218F2CD9D6DC7CDA348 /* Pods-Digital Time Complication WatchKit Extension-umbrella.h in Headers */,
+				92903A0061CF9BCE30C2472E331B3417 /* Pods-DigitalTime WatchKit Extension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		343EBAECC1FBA26FDC75E5A02E92B38E /* Headers */ = {
+		F54930B477CEC7DE9860AEF105520749 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3CDC6F742363C01489FC45A1CB46C9A /* Pods-Digital Time Complication WatchKit App-umbrella.h in Headers */,
+				12BEFB654CD8764A71352C40C282715B /* Pods-DigitalTime-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A97A18A5337F28D5BB9B9D92CA04BF8C /* Headers */ = {
+		F715703DFDCCE5E6B1AD7E769B858D9E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95535B73312FF9059A0593236ECBA1D9 /* Pods-Digital Time Complication-umbrella.h in Headers */,
+				4CE4C9063C9BCA01B58E65440AE0323D /* Pods-DigitalTime WatchKit App-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		50781461E52F311001F45B2ECB8D2022 /* Pods-Digital Time Complication WatchKit App */ = {
+		4AEB7C9271483D3096C39056E24AA87A /* Pods-DigitalTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 35BFDB4E6B0FBB53D34879F4F840A706 /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication WatchKit App" */;
+			buildConfigurationList = 1D19F32BF7D98CDABFEC3E3579EB75CB /* Build configuration list for PBXNativeTarget "Pods-DigitalTime" */;
 			buildPhases = (
-				343EBAECC1FBA26FDC75E5A02E92B38E /* Headers */,
-				2FD3FF2F72338A346F58A365CBDD97C4 /* Sources */,
-				2406621EEAF88C012407B7079F29B72E /* Frameworks */,
-				6B028815B63FBE7EFED2564077383DED /* Resources */,
+				F54930B477CEC7DE9860AEF105520749 /* Headers */,
+				7A84C2C5F69379111F0BA814250C0C8A /* Sources */,
+				C1B8E88CEF307CF0F6F93FC1B6DD2CD3 /* Frameworks */,
+				DFA2D578DB36EDA37CD0C864EC1BB086 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				834C5DC49C2C9DCA54F1A1842DBB6CC5 /* PBXTargetDependency */,
+				FCE4007C81B0701FD3033CDB3D427B8D /* PBXTargetDependency */,
 			);
-			name = "Pods-Digital Time Complication WatchKit App";
-			productName = "Pods-Digital Time Complication WatchKit App";
-			productReference = DA7E35A37D3EF269B99989AEE082AACE /* Pods_Digital_Time_Complication_WatchKit_App.framework */;
+			name = "Pods-DigitalTime";
+			productName = "Pods-DigitalTime";
+			productReference = 8406A86113B95668FCA7F98E2D38C742 /* Pods_DigitalTime.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		561536433E48E3C6EAB11F75C04345DF /* Pods-Digital Time Complication WatchKit Extension */ = {
+		4BDBF3FE84B10611501012748BE08A89 /* Pods-DigitalTime WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A1D5AF73D3531720171A679ECA7384A /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication WatchKit Extension" */;
+			buildConfigurationList = 3CDF59B2BC4C468BA2B9FEB94AF95192 /* Build configuration list for PBXNativeTarget "Pods-DigitalTime WatchKit App" */;
 			buildPhases = (
-				1C0CD99975AE1F6D41E48E0CF9949D9E /* Headers */,
-				C18197088454E22ABB6A8742F7E16D8C /* Sources */,
-				E6FD539635214FCB0A00E42FAD25767A /* Frameworks */,
-				B4AB1B2FFF2661567FE990A9DD2D32C3 /* Resources */,
+				F715703DFDCCE5E6B1AD7E769B858D9E /* Headers */,
+				D48300984F01B9F8FF6645AB40BC3547 /* Sources */,
+				BDE7992F884E3DE4F8DEEB73CA8C6A60 /* Frameworks */,
+				F583DC662516C9ACDE3F04B1B4CD9F2D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A68512E0ECFFACE4F347B0BAE359379D /* PBXTargetDependency */,
+				96E136F23C257EB44A2E824EBE981E25 /* PBXTargetDependency */,
 			);
-			name = "Pods-Digital Time Complication WatchKit Extension";
-			productName = "Pods-Digital Time Complication WatchKit Extension";
-			productReference = CA19270EB6BC6F1DD7B36A785D18A8E5 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */;
+			name = "Pods-DigitalTime WatchKit App";
+			productName = "Pods-DigitalTime WatchKit App";
+			productReference = 0E761A77A6446DE6355F7AD0D2E99F95 /* Pods_DigitalTime_WatchKit_App.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		58ED0AC88CC91C01C6A66CFF149A4E27 /* Pods-Digital Time Complication */ = {
+		57874733343D42A7E09E51F4DDA80314 /* Pods-DigitalTime WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C015333B7F0D930D8D987FBA9E63E8EA /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication" */;
+			buildConfigurationList = A035A883FB3239975A55E261F66F7C7E /* Build configuration list for PBXNativeTarget "Pods-DigitalTime WatchKit Extension" */;
 			buildPhases = (
-				A97A18A5337F28D5BB9B9D92CA04BF8C /* Headers */,
-				C3FE52A064C6D8EF4EFAFED5D87F5631 /* Sources */,
-				6B066777E74E1DD0694FE12FC55FCA56 /* Frameworks */,
-				29DB7E466EA79CF4C479692470E4A89F /* Resources */,
+				957358B534D157ABFA966D6B9672BC28 /* Headers */,
+				D05AFD4FC87AF884C11ECB176C4E318E /* Sources */,
+				7DB5A4D55091F9BA442CBC0DB116BD6D /* Frameworks */,
+				CECE918AF2728E6529D6312D1F09C071 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3238D1CD367B34368B54B667C1D352A6 /* PBXTargetDependency */,
+				20FBAA258311ED544F10A1E5EF4B85ED /* PBXTargetDependency */,
 			);
-			name = "Pods-Digital Time Complication";
-			productName = "Pods-Digital Time Complication";
-			productReference = 1D23FA3FFDBA912F6BE624ED09DCC0BE /* Pods_Digital_Time_Complication.framework */;
+			name = "Pods-DigitalTime WatchKit Extension";
+			productName = "Pods-DigitalTime WatchKit Extension";
+			productReference = 869AAC918809151BB15C0AF8C4D7ACC8 /* Pods_DigitalTime_WatchKit_Extension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -366,13 +366,13 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7E999DFA243DA23BDB88E37DA09F8356 /* Products */;
+			productRefGroup = 4CEDA921F520F87AF7CE64D150079114 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				58ED0AC88CC91C01C6A66CFF149A4E27 /* Pods-Digital Time Complication */,
-				50781461E52F311001F45B2ECB8D2022 /* Pods-Digital Time Complication WatchKit App */,
-				561536433E48E3C6EAB11F75C04345DF /* Pods-Digital Time Complication WatchKit Extension */,
+				4AEB7C9271483D3096C39056E24AA87A /* Pods-DigitalTime */,
+				4BDBF3FE84B10611501012748BE08A89 /* Pods-DigitalTime WatchKit App */,
+				57874733343D42A7E09E51F4DDA80314 /* Pods-DigitalTime WatchKit Extension */,
 				2B03D5FD26A26B7D62142EA4492AEB83 /* SwiftLint-iOS */,
 				0626378CBCA3137F03E6DCC306504C4B /* SwiftLint-watchOS */,
 			);
@@ -380,21 +380,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		29DB7E466EA79CF4C479692470E4A89F /* Resources */ = {
+		CECE918AF2728E6529D6312D1F09C071 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B028815B63FBE7EFED2564077383DED /* Resources */ = {
+		DFA2D578DB36EDA37CD0C864EC1BB086 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B4AB1B2FFF2661567FE990A9DD2D32C3 /* Resources */ = {
+		F583DC662516C9ACDE3F04B1B4CD9F2D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -404,60 +404,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2FD3FF2F72338A346F58A365CBDD97C4 /* Sources */ = {
+		7A84C2C5F69379111F0BA814250C0C8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC50ACB5E684C72D206138CA7C04C39 /* Pods-Digital Time Complication WatchKit App-dummy.m in Sources */,
+				ECF2D217D14C67EF27B664E085E3C070 /* Pods-DigitalTime-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C18197088454E22ABB6A8742F7E16D8C /* Sources */ = {
+		D05AFD4FC87AF884C11ECB176C4E318E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED1BD05BD6E85AFAAF69C688A1C2361 /* Pods-Digital Time Complication WatchKit Extension-dummy.m in Sources */,
+				4CA36035C10006DEA8B0C7EF0464EDCB /* Pods-DigitalTime WatchKit Extension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3FE52A064C6D8EF4EFAFED5D87F5631 /* Sources */ = {
+		D48300984F01B9F8FF6645AB40BC3547 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCEA58F82D866A7956C8AB0106A392F7 /* Pods-Digital Time Complication-dummy.m in Sources */,
+				C52EA1D5471CC07037600B6BB85A1828 /* Pods-DigitalTime WatchKit App-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3238D1CD367B34368B54B667C1D352A6 /* PBXTargetDependency */ = {
+		20FBAA258311ED544F10A1E5EF4B85ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftLint-watchOS";
+			target = 0626378CBCA3137F03E6DCC306504C4B /* SwiftLint-watchOS */;
+			targetProxy = 481BF412998217BD63059D95DC3DA572 /* PBXContainerItemProxy */;
+		};
+		96E136F23C257EB44A2E824EBE981E25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftLint-watchOS";
+			target = 0626378CBCA3137F03E6DCC306504C4B /* SwiftLint-watchOS */;
+			targetProxy = A296C6635C7328B1C6853B3B2268212A /* PBXContainerItemProxy */;
+		};
+		FCE4007C81B0701FD3033CDB3D427B8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "SwiftLint-iOS";
 			target = 2B03D5FD26A26B7D62142EA4492AEB83 /* SwiftLint-iOS */;
-			targetProxy = 373E10C2EC54D37B167A97A1D21CC60A /* PBXContainerItemProxy */;
-		};
-		834C5DC49C2C9DCA54F1A1842DBB6CC5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftLint-watchOS";
-			target = 0626378CBCA3137F03E6DCC306504C4B /* SwiftLint-watchOS */;
-			targetProxy = 0C84A3F7D45A13AA03DE935E098C01FE /* PBXContainerItemProxy */;
-		};
-		A68512E0ECFFACE4F347B0BAE359379D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SwiftLint-watchOS";
-			target = 0626378CBCA3137F03E6DCC306504C4B /* SwiftLint-watchOS */;
-			targetProxy = C85EBBD916B894EDD63CCB961381E432 /* PBXContainerItemProxy */;
+			targetProxy = F6E0EEFA49A65BF14A0D8E84C7E4D36C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		100FB04A2C33DE0DA5375B8BC01F6302 /* Release */ = {
+		28042D858E94F69D8FC3F597504A8924 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD38721A4BB7C1678411BD4572A154AC /* Pods-Digital Time Complication.release.xcconfig */;
+			baseConfigurationReference = AA44C5F407B0F92722A8EE1AADF3A280 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -466,33 +466,33 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 4;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
-		37B26C9FCB7EF529DD07BC56E6D26B38 /* Debug */ = {
+		387A56B6FB52E18EA22A41F155FCE8D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83DA6AA211AB780943C490722BE94BA9 /* Pods-Digital Time Complication.debug.xcconfig */;
+			baseConfigurationReference = 2E00E19FC9C537304BFD5EB76DEF95A9 /* Pods-DigitalTime.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -504,7 +504,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,7 +513,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -540,9 +540,9 @@
 			};
 			name = Debug;
 		};
-		4CFEB39ABD61907F5FC71D2E53CC434C /* Release */ = {
+		582A68D82626ACCC06B2F6884D2CF67F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DC519448B59E47063343D525BB159DF /* Pods-Digital Time Complication WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 4105319F37E8135DEAE8050786739DD3 /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -554,7 +554,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -562,7 +562,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -571,12 +571,11 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
-			name = Release;
+			name = Debug;
 		};
 		588E222DA9AB8FD9EA18789D083946DD /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -625,9 +624,9 @@
 			};
 			name = Release;
 		};
-		780AF916FE64883D5AB7EE48395F71F4 /* Release */ = {
+		7AD4C81D322CC5D53BE269D0F9E2E47F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 870C9D8764DCDF85F02850120711DF5F /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = 387E3DEC1EC5CBCBE213C184587F19EC /* Pods-DigitalTime WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				APPLICATION_EXTENSION_API_ONLY = YES;
@@ -639,7 +638,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,7 +646,44 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		AE0D2A8153439A23108B1F1EA2642CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3411B6C284195D9FCD79D17B58E8EC56 /* Pods-DigitalTime WatchKit App.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -662,43 +698,6 @@
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
-		};
-		9EFCC0310B500AC4004EE310ECC02965 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 043BEDFB5A3A03BE9A7FBC7B3E2B1ECE /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
 		};
 		B5BA58F22043C6FEB7B98B7E422A59D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -767,6 +766,44 @@
 			};
 			name = Debug;
 		};
+		B816CCD8870DC7402C0D210E25AF7856 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9F60F92525FDCF4DF0D38A77650E519 /* Pods-DigitalTime.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C468FF9184A98789DC0A25E52C13860E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -830,43 +867,6 @@
 			};
 			name = Release;
 		};
-		E9F53497DC267D4E4F2479F4BAB8932E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB3A9326B4A2FD25F9FBD3CCB9B54E2E /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-				WATCHOS_DEPLOYMENT_TARGET = 2.0;
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -879,20 +879,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		35BFDB4E6B0FBB53D34879F4F840A706 /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication WatchKit App" */ = {
+		1D19F32BF7D98CDABFEC3E3579EB75CB /* Build configuration list for PBXNativeTarget "Pods-DigitalTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9EFCC0310B500AC4004EE310ECC02965 /* Debug */,
-				4CFEB39ABD61907F5FC71D2E53CC434C /* Release */,
+				387A56B6FB52E18EA22A41F155FCE8D0 /* Debug */,
+				B816CCD8870DC7402C0D210E25AF7856 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A1D5AF73D3531720171A679ECA7384A /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication WatchKit Extension" */ = {
+		3CDF59B2BC4C468BA2B9FEB94AF95192 /* Build configuration list for PBXNativeTarget "Pods-DigitalTime WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E9F53497DC267D4E4F2479F4BAB8932E /* Debug */,
-				780AF916FE64883D5AB7EE48395F71F4 /* Release */,
+				7AD4C81D322CC5D53BE269D0F9E2E47F /* Debug */,
+				AE0D2A8153439A23108B1F1EA2642CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -906,11 +906,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C015333B7F0D930D8D987FBA9E63E8EA /* Build configuration list for PBXNativeTarget "Pods-Digital Time Complication" */ = {
+		A035A883FB3239975A55E261F66F7C7E /* Build configuration list for PBXNativeTarget "Pods-DigitalTime WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				37B26C9FCB7EF529DD07BC56E6D26B38 /* Debug */,
-				100FB04A2C33DE0DA5375B8BC01F6302 /* Release */,
+				582A68D82626ACCC06B2F6884D2CF67F /* Debug */,
+				28042D858E94F69D8FC3F597504A8924 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Digital_Time_ComplicationVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Digital_Time_ComplicationVersionString[];
+FOUNDATION_EXPORT double Pods_DigitalTimeVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_DigitalTimeVersionString[];
 

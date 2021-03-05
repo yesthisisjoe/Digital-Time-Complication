@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Digital_Time_Complication_WatchKit_ExtensionVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Digital_Time_Complication_WatchKit_ExtensionVersionString[];
+FOUNDATION_EXPORT double Pods_DigitalTime_WatchKit_ExtensionVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_DigitalTime_WatchKit_ExtensionVersionString[];
 

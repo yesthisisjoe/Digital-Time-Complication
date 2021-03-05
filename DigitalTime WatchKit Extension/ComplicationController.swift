@@ -1,6 +1,6 @@
 //
 //  ComplicationController.swift
-//  Digital Time Complication WatchKit Extension
+//  DigitalTime WatchKit Extension
 //
 //  Created by Joe Peplowski on 2021-03-04.
 //

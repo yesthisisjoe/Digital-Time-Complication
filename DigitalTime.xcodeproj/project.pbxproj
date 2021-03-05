@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3EC60B6EC68F513E9964DDDA /* Pods_Digital_Time_Complication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EED0F6C8B0D8237DF49BFE1 /* Pods_Digital_Time_Complication.framework */; };
-		74EB61D417068BF2717622D7 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A616D9250E00CC568864FA7 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */; };
-		CB1E3A0425F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8D91C377969F2D5EB942FF37 /* Pods_DigitalTime_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 164A2014ADA2EBD578F71C54 /* Pods_DigitalTime_WatchKit_Extension.framework */; };
+		A1FDA7B5451CB2E3A83925FB /* Pods_DigitalTime_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */; };
+		C455621E75C95FC20C476E68 /* Pods_DigitalTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82780A9B64BE4C09D9C362CE /* Pods_DigitalTime.framework */; };
+		CB1E3A0425F15AA800FDDEB7 /* DigitalTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB1E3A0A25F15AA800FDDEB7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */; };
 		CB1E3A0C25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */; };
-		CB1E3A1325F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CB1E3A1325F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */; };
 		CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */; };
 		CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */; };
 		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
-		DC2CE5C7822AA1EA2A958050 /* Pods_Digital_Time_Complication_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 484CD1046C380972E09A02CF /* Pods_Digital_Time_Complication_WatchKit_App.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CB1E3A1325F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex in Embed App Extensions */,
+				CB1E3A1325F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,7 +55,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				CB1E3A0425F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app in Embed Watch Content */,
+				CB1E3A0425F15AA800FDDEB7 /* DigitalTime WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,25 +64,31 @@
 
 /* Begin PBXFileReference section */
 		08947ABD09E735C657AF72A8 /* Pods-Digital Time Complication WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		0EED0F6C8B0D8237DF49BFE1 /* Pods_Digital_Time_Complication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Time_Complication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		118ED744483E75D09F4B85CA /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		164A2014ADA2EBD578F71C54 /* Pods_DigitalTime_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B1A94516B07940D3FAB30B /* Pods-Digital Time Complication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication.release.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication.release.xcconfig"; sourceTree = "<group>"; };
+		27F85E9BAACBCF87903C6CB0 /* Pods-DigitalTime WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
 		2E786190865BC924FD22A8C9 /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication WatchKit Extension/Pods-Digital Time Complication WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		484CD1046C380972E09A02CF /* Pods_Digital_Time_Complication_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Time_Complication_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A616D9250E00CC568864FA7 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Digital_Time_Complication_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F085002A3356A936E1EF2C1 /* Pods-DigitalTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime.release.xcconfig"; path = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime.release.xcconfig"; sourceTree = "<group>"; };
+		310CFE0B1C6F3DC5003E88BC /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		402610CB5FE69E632F7FC491 /* Pods-DigitalTime WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-DigitalTime WatchKit App/Pods-DigitalTime WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		50A6C33C8D388B858A68D480 /* Pods-DigitalTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime.debug.xcconfig"; path = "Target Support Files/Pods-DigitalTime/Pods-DigitalTime.debug.xcconfig"; sourceTree = "<group>"; };
 		5E00F8198F308B4D969CEC71 /* Pods-Digital Time Complication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication.debug.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication/Pods-Digital Time Complication.debug.xcconfig"; sourceTree = "<group>"; };
+		6FE6FD8E5BAF43921A35EFE6 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DigitalTime WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-DigitalTime WatchKit Extension/Pods-DigitalTime WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		82780A9B64BE4C09D9C362CE /* Pods_DigitalTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE562549B37E9C6779FCC911 /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Time Complication.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Digital Time Complication WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E39FF25F15AA800FDDEB7 /* DigitalTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigitalTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1E3A0925F15AA800FDDEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Digital Time Complication WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DigitalTime WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EC60B6EC68F513E9964DDDA /* Pods_Digital_Time_Complication.framework in Frameworks */,
+				C455621E75C95FC20C476E68 /* Pods_DigitalTime.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC2CE5C7822AA1EA2A958050 /* Pods_Digital_Time_Complication_WatchKit_App.framework in Frameworks */,
+				A1FDA7B5451CB2E3A83925FB /* Pods_DigitalTime_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74EB61D417068BF2717622D7 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework in Frameworks */,
+				8D91C377969F2D5EB942FF37 /* Pods_DigitalTime_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +122,9 @@
 		B96580CC2093864983D03D4C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0EED0F6C8B0D8237DF49BFE1 /* Pods_Digital_Time_Complication.framework */,
-				484CD1046C380972E09A02CF /* Pods_Digital_Time_Complication_WatchKit_App.framework */,
-				5A616D9250E00CC568864FA7 /* Pods_Digital_Time_Complication_WatchKit_Extension.framework */,
+				82780A9B64BE4C09D9C362CE /* Pods_DigitalTime.framework */,
+				E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */,
+				164A2014ADA2EBD578F71C54 /* Pods_DigitalTime_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,8 +132,8 @@
 		CB1E39F825F15AA800FDDEB7 = {
 			isa = PBXGroup;
 			children = (
-				CB1E3A0725F15AA800FDDEB7 /* Digital Time Complication WatchKit App */,
-				CB1E3A1625F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */,
+				CB1E3A0725F15AA800FDDEB7 /* DigitalTime WatchKit App */,
+				CB1E3A1625F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */,
 				CB1E3A0025F15AA800FDDEB7 /* Products */,
 				E0C135416661D6B8532D45D5 /* Pods */,
 				B96580CC2093864983D03D4C /* Frameworks */,
@@ -137,24 +143,24 @@
 		CB1E3A0025F15AA800FDDEB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */,
-				CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */,
-				CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */,
+				CB1E39FF25F15AA800FDDEB7 /* DigitalTime.app */,
+				CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */,
+				CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CB1E3A0725F15AA800FDDEB7 /* Digital Time Complication WatchKit App */ = {
+		CB1E3A0725F15AA800FDDEB7 /* DigitalTime WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */,
 				CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */,
 			);
-			path = "Digital Time Complication WatchKit App";
+			path = "DigitalTime WatchKit App";
 			sourceTree = "<group>";
 		};
-		CB1E3A1625F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */ = {
+		CB1E3A1625F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
 				CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */,
@@ -163,7 +169,7 @@
 				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
 			);
-			path = "Digital Time Complication WatchKit Extension";
+			path = "DigitalTime WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		E0C135416661D6B8532D45D5 /* Pods */ = {
@@ -175,6 +181,12 @@
 				08947ABD09E735C657AF72A8 /* Pods-Digital Time Complication WatchKit App.release.xcconfig */,
 				118ED744483E75D09F4B85CA /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */,
 				2E786190865BC924FD22A8C9 /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */,
+				50A6C33C8D388B858A68D480 /* Pods-DigitalTime.debug.xcconfig */,
+				2F085002A3356A936E1EF2C1 /* Pods-DigitalTime.release.xcconfig */,
+				402610CB5FE69E632F7FC491 /* Pods-DigitalTime WatchKit App.debug.xcconfig */,
+				27F85E9BAACBCF87903C6CB0 /* Pods-DigitalTime WatchKit App.release.xcconfig */,
+				310CFE0B1C6F3DC5003E88BC /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */,
+				6FE6FD8E5BAF43921A35EFE6 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -182,9 +194,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CB1E39FE25F15AA800FDDEB7 /* Digital Time Complication */ = {
+		CB1E39FE25F15AA800FDDEB7 /* DigitalTime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication" */;
+			buildConfigurationList = CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime" */;
 			buildPhases = (
 				074723024120894FB9ECE59F /* [CP] Check Pods Manifest.lock */,
 				CB1E39FD25F15AA800FDDEB7 /* Resources */,
@@ -196,14 +208,14 @@
 			dependencies = (
 				CB1E3A0625F15AA800FDDEB7 /* PBXTargetDependency */,
 			);
-			name = "Digital Time Complication";
+			name = DigitalTime;
 			productName = "Digital Time Complication";
-			productReference = CB1E39FF25F15AA800FDDEB7 /* Digital Time Complication.app */;
+			productReference = CB1E39FF25F15AA800FDDEB7 /* DigitalTime.app */;
 			productType = "com.apple.product-type.application.watchapp2-container";
 		};
-		CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */ = {
+		CB1E3A0225F15AA800FDDEB7 /* DigitalTime WatchKit App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit App" */;
+			buildConfigurationList = CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime WatchKit App" */;
 			buildPhases = (
 				0321D513B76087143A4C6B2B /* [CP] Check Pods Manifest.lock */,
 				CB1E3A0125F15AA800FDDEB7 /* Resources */,
@@ -215,14 +227,14 @@
 			dependencies = (
 				CB1E3A1525F15AAA00FDDEB7 /* PBXTargetDependency */,
 			);
-			name = "Digital Time Complication WatchKit App";
+			name = "DigitalTime WatchKit App";
 			productName = "Digital Time Complication WatchKit App";
-			productReference = CB1E3A0325F15AA800FDDEB7 /* Digital Time Complication WatchKit App.app */;
+			productReference = CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */ = {
+		CB1E3A1125F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit Extension" */;
+			buildConfigurationList = CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime WatchKit Extension" */;
 			buildPhases = (
 				0A4414CF6816D9B3442F4D44 /* [CP] Check Pods Manifest.lock */,
 				CB1E3A0E25F15AAA00FDDEB7 /* Sources */,
@@ -233,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = "Digital Time Complication WatchKit Extension";
+			name = "DigitalTime WatchKit Extension";
 			productName = "Digital Time Complication WatchKit Extension";
-			productReference = CB1E3A1225F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension.appex */;
+			productReference = CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -258,7 +270,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "Digital Time Complication" */;
+			buildConfigurationList = CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "DigitalTime" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -271,9 +283,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CB1E39FE25F15AA800FDDEB7 /* Digital Time Complication */,
-				CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */,
-				CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */,
+				CB1E39FE25F15AA800FDDEB7 /* DigitalTime */,
+				CB1E3A0225F15AA800FDDEB7 /* DigitalTime WatchKit App */,
+				CB1E3A1125F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -321,7 +333,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Digital Time Complication WatchKit App-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DigitalTime WatchKit App-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,7 +355,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Digital Time Complication-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DigitalTime-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -365,7 +377,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Digital Time Complication WatchKit Extension-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-DigitalTime WatchKit Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -390,12 +402,12 @@
 /* Begin PBXTargetDependency section */
 		CB1E3A0625F15AA800FDDEB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB1E3A0225F15AA800FDDEB7 /* Digital Time Complication WatchKit App */;
+			target = CB1E3A0225F15AA800FDDEB7 /* DigitalTime WatchKit App */;
 			targetProxy = CB1E3A0525F15AA800FDDEB7 /* PBXContainerItemProxy */;
 		};
 		CB1E3A1525F15AAA00FDDEB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CB1E3A1125F15AAA00FDDEB7 /* Digital Time Complication WatchKit Extension */;
+			target = CB1E3A1125F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */;
 			targetProxy = CB1E3A1425F15AAA00FDDEB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -528,18 +540,18 @@
 		};
 		CB1E3A2325F15AAA00FDDEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 118ED744483E75D09F4B85CA /* Pods-Digital Time Complication WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = 310CFE0B1C6F3DC5003E88BC /* Pods-DigitalTime WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
-				INFOPLIST_FILE = "Digital Time Complication WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "DigitalTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -551,18 +563,18 @@
 		};
 		CB1E3A2425F15AAA00FDDEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E786190865BC924FD22A8C9 /* Pods-Digital Time Complication WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = 6FE6FD8E5BAF43921A35EFE6 /* Pods-DigitalTime WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
-				INFOPLIST_FILE = "Digital Time Complication WatchKit Extension/Info.plist";
+				INFOPLIST_FILE = "DigitalTime WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -574,16 +586,16 @@
 		};
 		CB1E3A2725F15AAA00FDDEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BE562549B37E9C6779FCC911 /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = 402610CB5FE69E632F7FC491 /* Pods-DigitalTime WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
-				IBSC_MODULE = Digital_Time_Complication_WatchKit_Extension;
-				INFOPLIST_FILE = "Digital Time Complication WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp";
+				IBSC_MODULE = DigitalTime_WatchKit_Extension;
+				INFOPLIST_FILE = "DigitalTime WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -595,16 +607,16 @@
 		};
 		CB1E3A2825F15AAA00FDDEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 08947ABD09E735C657AF72A8 /* Pods-Digital Time Complication WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 27F85E9BAACBCF87903C6CB0 /* Pods-DigitalTime WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
-				IBSC_MODULE = Digital_Time_Complication_WatchKit_Extension;
-				INFOPLIST_FILE = "Digital Time Complication WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication.watchkitapp";
+				IBSC_MODULE = DigitalTime_WatchKit_Extension;
+				INFOPLIST_FILE = "DigitalTime WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -616,13 +628,13 @@
 		};
 		CB1E3A2B25F15AAA00FDDEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E00F8198F308B4D969CEC71 /* Pods-Digital Time Complication.debug.xcconfig */;
+			baseConfigurationReference = 50A6C33C8D388B858A68D480 /* Pods-DigitalTime.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -630,13 +642,13 @@
 		};
 		CB1E3A2C25F15AAA00FDDEB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 24B1A94516B07940D3FAB30B /* Pods-Digital Time Complication.release.xcconfig */;
+			baseConfigurationReference = 2F085002A3356A936E1EF2C1 /* Pods-DigitalTime.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GMFR6JL5MS;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yesthisisjoe.Digital-Time-Complication";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yesthisisjoe.DigitalTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -645,7 +657,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "Digital Time Complication" */ = {
+		CB1E39FC25F15AA800FDDEB7 /* Build configuration list for PBXProject "DigitalTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E3A2025F15AAA00FDDEB7 /* Debug */,
@@ -654,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit Extension" */ = {
+		CB1E3A2225F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime WatchKit Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E3A2325F15AAA00FDDEB7 /* Debug */,
@@ -663,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication WatchKit App" */ = {
+		CB1E3A2625F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime WatchKit App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E3A2725F15AAA00FDDEB7 /* Debug */,
@@ -672,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "Digital Time Complication" */ = {
+		CB1E3A2A25F15AAA00FDDEB7 /* Build configuration list for PBXNativeTarget "DigitalTime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CB1E3A2B25F15AAA00FDDEB7 /* Debug */,

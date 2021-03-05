@@ -4,21 +4,21 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Digital Time Complication WatchKit App.xcscheme</key>
+		<key>Pods-DigitalTime WatchKit App.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-Digital Time Complication WatchKit Extension.xcscheme</key>
+		<key>Pods-DigitalTime WatchKit Extension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>Pods-Digital Time Complication.xcscheme</key>
+		<key>Pods-DigitalTime.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
