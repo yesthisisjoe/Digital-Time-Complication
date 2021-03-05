@@ -18,6 +18,7 @@
 		CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */; };
 		CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */; };
 		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
+		CB1E3A7E25F1C31300FDDEB7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 		CB1E39F825F15AA800FDDEB7 = {
 			isa = PBXGroup;
 			children = (
+				CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */,
 				CB1E3A0725F15AA800FDDEB7 /* DigitalTime WatchKit App */,
 				CB1E3A1625F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */,
 				CB1E3A0025F15AA800FDDEB7 /* Products */,
@@ -202,6 +205,7 @@
 				CB1E39FD25F15AA800FDDEB7 /* Resources */,
 				CB1E3A2925F15AAA00FDDEB7 /* Embed Watch Content */,
 				12CB29CF07CD695EB873443C /* Frameworks */,
+				CB1E3A7125F1BE3600FDDEB7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -295,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1E3A7E25F1C31300FDDEB7 /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +388,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CB1E3A7125F1BE3600FDDEB7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
