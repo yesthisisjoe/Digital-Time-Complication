@@ -45,8 +45,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     private func createTimelineEntry(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTimelineEntry {
         var template: CLKComplicationTemplate
         let timeProvider = CLKTimeTextProvider(date: date)
-        let nothing = CLKTextProvider(format: "", [])
-        let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: nothing)
+        let circularTemplate = CLKComplicationTemplateGraphicCircularStackText(line1TextProvider: timeProvider, line2TextProvider: timeProvider)
         
         // TODO: Check the quality of each of these
         switch complication.family {
@@ -65,19 +64,19 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .graphicCorner:
             template = CLKComplicationTemplateGraphicCornerStackText(
                 innerTextProvider: timeProvider,
-                outerTextProvider: nothing)
+                outerTextProvider: timeProvider)
         case .graphicExtraLarge:
             template = CLKComplicationTemplateGraphicExtraLargeCircularStackText(
                 line1TextProvider: timeProvider,
-                line2TextProvider: nothing)
+                line2TextProvider: timeProvider)
         case .graphicRectangular:
             template = CLKComplicationTemplateGraphicRectangularStandardBody(
                 headerTextProvider: timeProvider,
-                body1TextProvider: nothing)
+                body1TextProvider: timeProvider)
         case .modularLarge:
             template = CLKComplicationTemplateModularLargeStandardBody(
                 headerTextProvider: timeProvider,
-                body1TextProvider: nothing)
+                body1TextProvider: timeProvider)
         case .modularSmall:
             template = CLKComplicationTemplateModularSmallSimpleText(
                 textProvider: timeProvider)
