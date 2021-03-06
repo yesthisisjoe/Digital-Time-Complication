@@ -12,8 +12,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Complication Configuration
 
     func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
-        let complicationDigitalTimeIdentifier = "DigitalTime"
-        let supportedFamilies: [CLKComplicationFamily] = [
+        let timeSupportedFamilies: [CLKComplicationFamily] = [
             .circularSmall,
             .graphicBezel,
             .graphicCircular,
@@ -21,11 +20,57 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             .utilitarianLarge,
             .utilitarianSmall
         ]
-        let digitalTimeDesriptor = CLKComplicationDescriptor(
-            identifier: complicationDigitalTimeIdentifier,
-            displayName: "Digital Time",
-            supportedFamilies: supportedFamilies)
-        let descriptors = [digitalTimeDesriptor]
+        let timeAndDateSupportedFamilies: [CLKComplicationFamily] = [
+            .graphicBezel,
+            .graphicCorner
+        ]
+        let dateAndTimeSupportedFamilies: [CLKComplicationFamily] = [
+            .graphicBezel,
+            .graphicCorner
+        ]
+        let innerTimeSupportedFamilies: [CLKComplicationFamily] = [.graphicCorner]
+        let outerTimeSupportedFamilies: [CLKComplicationFamily] = [.graphicCorner]
+        let largeTimeSupportedFamilies: [CLKComplicationFamily] = [.graphicCorner]
+
+        let timeDescriptor = CLKComplicationDescriptor(
+            identifier: "Time",
+            displayName: "Time",
+            supportedFamilies: timeSupportedFamilies
+        )
+        let timeAndDateDescriptor = CLKComplicationDescriptor(
+            identifier: "TimeAndDate",
+            displayName: "Time & Date",
+            supportedFamilies: timeAndDateSupportedFamilies
+        )
+        let dateAndTimeDescriptor = CLKComplicationDescriptor(
+            identifier: "DateAndTime",
+            displayName: "Date & Time",
+            supportedFamilies: dateAndTimeSupportedFamilies
+        )
+        let innerTimeDescriptor = CLKComplicationDescriptor(
+            identifier: "InnerTime",
+            displayName: "Inner Time",
+            supportedFamilies: innerTimeSupportedFamilies
+        )
+        let outerTimeDescriptor = CLKComplicationDescriptor(
+            identifier: "OuterTime",
+            displayName: "Outer Time",
+            supportedFamilies: outerTimeSupportedFamilies
+        )
+        let largeTimeDescriptor = CLKComplicationDescriptor(
+            identifier: "LargeTime",
+            displayName: "Large Time",
+            supportedFamilies: largeTimeSupportedFamilies
+        )
+
+        let descriptors = [
+            timeDescriptor,
+            innerTimeDescriptor,
+            outerTimeDescriptor,
+            largeTimeDescriptor,
+            timeAndDateDescriptor,
+            dateAndTimeDescriptor
+        ]
 
         handler(descriptors)
     }
