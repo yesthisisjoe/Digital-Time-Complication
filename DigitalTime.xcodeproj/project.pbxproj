@@ -20,6 +20,7 @@
 		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
 		CB1E3A7E25F1C31300FDDEB7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */; };
 		CB54ECD625F2C3C0007F65C3 /* ComplicationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */; };
+		CB54ECEE25F48E33007F65C3 /* DateAndTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViews.swift; sourceTree = "<group>"; };
+		CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeFormat.swift; sourceTree = "<group>"; };
 		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */,
 				CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */,
 				CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */,
+				CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */,
 				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
 			);
@@ -416,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB54ECEE25F48E33007F65C3 /* DateAndTimeFormat.swift in Sources */,
 				CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */,
 				CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */,
 				CB54ECD625F2C3C0007F65C3 /* ComplicationViews.swift in Sources */,
