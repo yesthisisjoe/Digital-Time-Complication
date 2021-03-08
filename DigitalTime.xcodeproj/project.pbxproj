@@ -174,14 +174,30 @@
 				CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */,
 				CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */,
 				CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */,
-				CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */,
-				CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */,
-				CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */,
-				CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */,
+				CB54ED6925F5ED29007F65C3 /* Date & Time Format */,
+				CB54ED6A25F5ED39007F65C3 /* Preferences List */,
 				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
 			);
 			path = "DigitalTime WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CB54ED6925F5ED29007F65C3 /* Date & Time Format */ = {
+			isa = PBXGroup;
+			children = (
+				CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */,
+				CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */,
+			);
+			path = "Date & Time Format";
+			sourceTree = "<group>";
+		};
+		CB54ED6A25F5ED39007F65C3 /* Preferences List */ = {
+			isa = PBXGroup;
+			children = (
+				CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */,
+				CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */,
+			);
+			path = "Preferences List";
 			sourceTree = "<group>";
 		};
 		E0C135416661D6B8532D45D5 /* Pods */ = {
