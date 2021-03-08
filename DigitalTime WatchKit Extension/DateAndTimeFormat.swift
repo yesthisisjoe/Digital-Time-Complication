@@ -9,10 +9,10 @@ import Foundation
 
 struct DateAndTimeFormat {
     var name: String
-    var format: String
-    init(name: String, format: String) {
+    var dateFormat: String
+    fileprivate init(name: String, format: String) {
         self.name = name
-        self.format = format
+        self.dateFormat = format
     }
 }
 
