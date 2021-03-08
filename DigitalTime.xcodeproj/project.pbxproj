@@ -11,11 +11,8 @@
 		A1FDA7B5451CB2E3A83925FB /* Pods_DigitalTime_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */; };
 		C455621E75C95FC20C476E68 /* Pods_DigitalTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82780A9B64BE4C09D9C362CE /* Pods_DigitalTime.framework */; };
 		CB1E3A0425F15AA800FDDEB7 /* DigitalTime WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB1E3A0A25F15AA800FDDEB7 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */; };
 		CB1E3A0C25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */; };
 		CB1E3A1325F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */; };
-		CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */; };
 		CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */; };
 		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
 		CB1E3A7E25F1C31300FDDEB7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */; };
@@ -24,6 +21,7 @@
 		CB54ECFC25F5D7D1007F65C3 /* PreferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */; };
 		CB54ED0A25F5D898007F65C3 /* PreferenceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */; };
 		CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */; };
+		CB54ED6225F5EB52007F65C3 /* DigitalTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,12 +83,9 @@
 		BE562549B37E9C6779FCC911 /* Pods-Digital Time Complication WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Digital Time Complication WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-Digital Time Complication WatchKit App/Pods-Digital Time Complication WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		CB1E39FF25F15AA800FDDEB7 /* DigitalTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DigitalTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1E3A0325F15AA800FDDEB7 /* DigitalTime WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DigitalTime WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB1E3A0925F15AA800FDDEB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1E3A1225F15AAA00FDDEB7 /* DigitalTime WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DigitalTime WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +95,7 @@
 		CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceList.swift; sourceTree = "<group>"; };
 		CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRow.swift; sourceTree = "<group>"; };
 		CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeFormatter.swift; sourceTree = "<group>"; };
+		CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalTimeApp.swift; sourceTree = "<group>"; };
 		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -166,7 +162,6 @@
 		CB1E3A0725F15AA800FDDEB7 /* DigitalTime WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
-				CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */,
 				CB1E3A0B25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A0D25F15AAA00FDDEB7 /* Info.plist */,
 			);
@@ -176,8 +171,7 @@
 		CB1E3A1625F15AAA00FDDEB7 /* DigitalTime WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				CB1E3A1725F15AAA00FDDEB7 /* InterfaceController.swift */,
-				CB1E3A1925F15AAA00FDDEB7 /* ExtensionDelegate.swift */,
+				CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */,
 				CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */,
 				CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */,
 				CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */,
@@ -323,7 +317,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB1E3A0C25F15AAA00FDDEB7 /* Assets.xcassets in Resources */,
-				CB1E3A0A25F15AA800FDDEB7 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,11 +422,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB54ECEE25F48E33007F65C3 /* DateAndTimeFormat.swift in Sources */,
+				CB54ED6225F5EB52007F65C3 /* DigitalTimeApp.swift in Sources */,
 				CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */,
 				CB54ECFC25F5D7D1007F65C3 /* PreferenceList.swift in Sources */,
-				CB1E3A1A25F15AAA00FDDEB7 /* ExtensionDelegate.swift in Sources */,
 				CB54ED0A25F5D898007F65C3 /* PreferenceRow.swift in Sources */,
-				CB1E3A1825F15AAA00FDDEB7 /* InterfaceController.swift in Sources */,
 				CB54ECD625F2C3C0007F65C3 /* ComplicationViews.swift in Sources */,
 				CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */,
 			);
@@ -453,17 +445,6 @@
 			targetProxy = CB1E3A1425F15AAA00FDDEB7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CB1E3A0825F15AA800FDDEB7 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CB1E3A0925F15AA800FDDEB7 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		CB1E3A2025F15AAA00FDDEB7 /* Debug */ = {

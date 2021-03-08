@@ -15,7 +15,7 @@ struct PreferenceRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
-                .font(.headline)
+                .font(.body)
             Text(DateAndTimeFormatter.formattedDateOrTime(fromDate: exampleDate, withDateFormat: format))
                 .font(.footnote)
                 .foregroundColor(.secondary)
