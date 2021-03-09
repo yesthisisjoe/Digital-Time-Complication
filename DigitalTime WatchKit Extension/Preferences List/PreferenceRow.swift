@@ -7,24 +7,32 @@
 
 import SwiftUI
 
-struct PreferenceRow: View {
+struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
     var title: String
-    var formats: [DateAndTimeFormat]
     var exampleDate: Date
+    var formats: [T]
+    @State private var selectedFormat = T.allCases.first!
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(title)
-                .font(.body)
-            Text(DateAndTimeFormatter.formattedDateOrTime(fromDate: exampleDate, withDateFormat: formats.first!))
-                .font(.footnote)
-                .foregroundColor(.secondary)
+        Picker(title, selection: $selectedFormat) {
+            ForEach(formats, id: \.self) {
+                let format = DateAndTimeFormat.anyFormat(identifier: $0)!
+                Text(format.name) +
+                    Text("\n") +
+                    Text(DateAndTimeFormatter.formattedDateOrTime(
+                            fromDate: exampleDate,
+                            withDateFormat: format))
+                    .italic()
+            }
         }
     }
 }
 
 struct PreferenceRow_Previews: PreviewProvider {
     static var previews: some View {
-        PreferenceRow(title: "Time Style", formats: DateAndTimeFormat.shortDateFormats, exampleDate: Date())
+        PreferenceRow(
+            title: "Time Style",
+            exampleDate: Date(),
+            formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases)
     }
 }

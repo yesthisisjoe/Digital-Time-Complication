@@ -12,16 +12,16 @@ struct PreferenceList: View {
         List {
             PreferenceRow(
                 title: "Time Format",
-                formats: DateAndTimeFormat.timeFormats,
-                exampleDate: Date())
+                exampleDate: Date(),
+                formats: DateAndTimeFormat.TimeFormatIdentifier.allCases)
             PreferenceRow(
                 title: "Date Format (Short)",
-                formats: DateAndTimeFormat.shortDateFormats,
-                exampleDate: Date())
+                exampleDate: Date(),
+                formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases)
             PreferenceRow(
                 title: "Date Format (Long)",
-                formats: DateAndTimeFormat.longDateFormats,
-                exampleDate: Date())
+                exampleDate: Date(),
+                formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases)
         }
     }
 }

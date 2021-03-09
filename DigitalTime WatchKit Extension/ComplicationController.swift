@@ -155,12 +155,12 @@ extension ComplicationController {
     private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate? {
         // swiftlint:enable function_body_length
         // swiftlint:enable cyclomatic_complexity
-        let shortTimeString = "10:09"
-        let longTimeString = "10:09 AM"
+        let shortTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: .twelveHour)
+        let longTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: .twelveHour)
 //        let firstHalfLongTimeString = "10:09"
 //        let secondHalfLongTimeString = "AM"
-        let shortDateString = "FRI MAR 25"
-        let longDateString = "Friday, March 5 2021"
+        let shortDateString = DateAndTimeFormatter.formattedShortDate(fromDate: date, withIdentifier: .weekdayDay)
+        let longDateString = DateAndTimeFormatter.formattedLongDate(fromDate: date, withIdentifier: .weekdayMonthDay)
 
         let shortTimeProvider = CLKSimpleTextProvider(text: shortTimeString)
         let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
@@ -169,7 +169,10 @@ extension ComplicationController {
         let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
         let longDateProvider = CLKSimpleTextProvider(text: longDateString)
         let emptyTextProvider = CLKSimpleTextProvider(text: "")
-        let emptyGaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: .clear, fillFraction: .zero)
+        let emptyGaugeProvider = CLKSimpleGaugeProvider(
+            style: .fill,
+            gaugeColor: .clear,
+            fillFraction: 0.0)
 
         switch (complication.family, complication.identifier) {
         case (.circularSmall, ComplicationIdentifiers.time):
