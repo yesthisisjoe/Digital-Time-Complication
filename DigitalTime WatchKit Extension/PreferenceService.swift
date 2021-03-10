@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ClockKit
 
 enum PreferenceType: String {
   case timeFormat
@@ -71,7 +72,12 @@ class PreferenceService {
       userDefaults.setValue(newLongDateFormat.rawValue, forKey: preferenceType.rawValue)
       longDateFormat = newLongDateFormat
     }
-    // Update complications
+    reloadComplications()
   }
 
+  func reloadComplications() {
+    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
+      CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+    }
+  }
 }
