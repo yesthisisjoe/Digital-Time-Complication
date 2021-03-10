@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum PreferenceType {
+  case time
+  case shortDate
+  case longDate
+}
+
 class PreferenceService {
   static let shared = PreferenceService()
   var timeFormat: DateAndTimeFormat.TimeFormatIdentifier

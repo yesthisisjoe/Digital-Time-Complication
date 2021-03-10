@@ -13,20 +13,20 @@ struct PreferenceList: View {
     NavigationView {
       List {
         PreferenceRow(
-          title: "Time Format",
+          preferenceType: .time,
+          formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          formats: DateAndTimeFormat.TimeFormatIdentifier.allCases)
+          preferenceService: preferenceService)
         PreferenceRow(
-          title: "Date Format (Short)",
+          preferenceType: .shortDate,
+          formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases)
+          preferenceService: preferenceService)
         PreferenceRow(
-          title: "Date Format (Long)",
+          preferenceType: .longDate,
+          formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases)
+          preferenceService: preferenceService)
       }.navigationTitle("Digital Time")
     }
   }
