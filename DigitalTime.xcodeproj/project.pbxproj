@@ -22,6 +22,7 @@
 		CB54ED0A25F5D898007F65C3 /* PreferenceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */; };
 		CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */; };
 		CB54ED6225F5EB52007F65C3 /* DigitalTimeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */; };
+		CBCD8DBE25F91CE1007195A9 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRow.swift; sourceTree = "<group>"; };
 		CB54ED0E25F5DD4C007F65C3 /* DateAndTimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeFormatter.swift; sourceTree = "<group>"; };
 		CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DigitalTimeApp.swift; sourceTree = "<group>"; };
+		CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
 		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -178,6 +180,7 @@
 				CB54ED6A25F5ED39007F65C3 /* Preferences List */,
 				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
+				CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */,
 			);
 			path = "DigitalTime WatchKit Extension";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			files = (
 				CB54ECEE25F48E33007F65C3 /* DateAndTimeFormat.swift in Sources */,
 				CB54ED6225F5EB52007F65C3 /* DigitalTimeApp.swift in Sources */,
+				CBCD8DBE25F91CE1007195A9 /* PreferenceService.swift in Sources */,
 				CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */,
 				CB54ECFC25F5D7D1007F65C3 /* PreferenceList.swift in Sources */,
 				CB54ED0A25F5D898007F65C3 /* PreferenceRow.swift in Sources */,

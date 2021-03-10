@@ -10,6 +10,7 @@ import SwiftUI
 struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var title: String
   var exampleDate: Date
+  var preferenceService: PreferenceService
   var formats: [T]
   @State private var selectedFormat = T.allCases.first!
 
@@ -33,6 +34,7 @@ struct PreferenceRow_Previews: PreviewProvider {
     PreferenceRow(
       title: "Time Style",
       exampleDate: Date(),
+      preferenceService: PreferenceService.shared,
       formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases)
   }
 }

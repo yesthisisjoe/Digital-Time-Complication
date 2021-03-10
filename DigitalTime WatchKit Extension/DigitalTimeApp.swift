@@ -12,7 +12,7 @@ struct DigitalTimeApp: App {
   var body: some Scene {
     WindowGroup {
       NavigationView {
-        PreferenceList()
+        PreferenceList(preferenceService: PreferenceService.shared)
       }
     }
   }
