@@ -12,7 +12,15 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var formats: [T]
   var exampleDate: Date
   var preferenceService: PreferenceService
-  @State private var selectedFormat = T.allCases.first!
+  @State private var selectedFormat: T
+
+  init(preferenceType: PreferenceType, formats: [T], exampleDate: Date, preferenceService: PreferenceService) {
+    self.preferenceType = preferenceType
+    self.formats = formats
+    self.exampleDate = exampleDate
+    self.preferenceService = preferenceService
+    _selectedFormat = State<T>(initialValue: preferenceService.getValue(for: preferenceType))
+  }
 
   private func title(for preferenceType: PreferenceType) -> String {
     switch preferenceType {
@@ -32,6 +40,8 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
                 fromDate: exampleDate,
                 withDateFormat: format))
           .italic()
+      }.onChange(of: selectedFormat) { _ in
+        preferenceService.set(preferenceType, to: selectedFormat)
       }
     }
   }
