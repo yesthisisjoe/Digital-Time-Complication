@@ -8,30 +8,30 @@
 import Foundation
 
 struct DateAndTimeFormatter {
-    static func formattedTime(
-        fromDate date: Date,
-        withIdentifier identifier: DateAndTimeFormat.TimeFormatIdentifier) -> String {
-        let timeFormat = DateAndTimeFormat.timeFormat(identifier: identifier)
-        return formattedDateOrTime(fromDate: date, withDateFormat: timeFormat)
-    }
+  static func formattedTime(
+    fromDate date: Date,
+    withIdentifier identifier: DateAndTimeFormat.TimeFormatIdentifier) -> String {
+    let timeFormat = DateAndTimeFormat.timeFormat(identifier: identifier)
+    return formattedDateOrTime(fromDate: date, withDateFormat: timeFormat)
+  }
 
-    static func formattedShortDate(
-        fromDate date: Date,
-        withIdentifier identifier: DateAndTimeFormat.ShortDateFormatIdentifier) -> String {
-        let shortDateFormat = DateAndTimeFormat.shortDateFormat(identifier: identifier)
-        return formattedDateOrTime(fromDate: date, withDateFormat: shortDateFormat)
-    }
+  static func formattedShortDate(
+    fromDate date: Date,
+    withIdentifier identifier: DateAndTimeFormat.ShortDateFormatIdentifier) -> String {
+    let shortDateFormat = DateAndTimeFormat.shortDateFormat(identifier: identifier)
+    return formattedDateOrTime(fromDate: date, withDateFormat: shortDateFormat)
+  }
 
-    static func formattedLongDate(
-        fromDate date: Date,
-        withIdentifier identifier: DateAndTimeFormat.LongDateFormatIdentifier) -> String {
-        let longDateFormat = DateAndTimeFormat.longDateFormat(identifier: identifier)
-        return formattedDateOrTime(fromDate: date, withDateFormat: longDateFormat)
-    }
+  static func formattedLongDate(
+    fromDate date: Date,
+    withIdentifier identifier: DateAndTimeFormat.LongDateFormatIdentifier) -> String {
+    let longDateFormat = DateAndTimeFormat.longDateFormat(identifier: identifier)
+    return formattedDateOrTime(fromDate: date, withDateFormat: longDateFormat)
+  }
 
-    static func formattedDateOrTime(fromDate date: Date, withDateFormat dateFormat: DateAndTimeFormat) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = dateFormat.dateFormat
-        return dateFormatter.string(from: date)
-    }
+  static func formattedDateOrTime(fromDate date: Date, withDateFormat dateFormat: DateAndTimeFormat) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = dateFormat.dateFormat
+    return dateFormatter.string(from: date)
+  }
 }
