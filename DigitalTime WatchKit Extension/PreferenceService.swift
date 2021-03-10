@@ -15,9 +15,9 @@ enum PreferenceType {
 
 class PreferenceService {
   static let shared = PreferenceService()
-  private var timeFormat: DateAndTimeFormat.TimeFormatIdentifier
-  private var shortDateFormat: DateAndTimeFormat.ShortDateFormatIdentifier
-  private var longDateFormat: DateAndTimeFormat.LongDateFormatIdentifier
+  var timeFormat: DateAndTimeFormat.TimeFormatIdentifier
+  var shortDateFormat: DateAndTimeFormat.ShortDateFormatIdentifier
+  var longDateFormat: DateAndTimeFormat.LongDateFormatIdentifier
 
   private init() {
     timeFormat = .twelveHour

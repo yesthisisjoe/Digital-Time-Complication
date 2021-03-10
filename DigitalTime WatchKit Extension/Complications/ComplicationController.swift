@@ -9,6 +9,7 @@ import ClockKit
 import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
+  let preferenceService = PreferenceService.shared
 
   enum ComplicationIdentifiers {
     static let time = "Time"
@@ -155,12 +156,12 @@ extension ComplicationController {
   private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate? {
     // swiftlint:enable function_body_length
     // swiftlint:enable cyclomatic_complexity
-    let shortTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: .twelveHour)
-    let longTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: .twelveHour)
+    let shortTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: preferenceService.timeFormat)
+    let longTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: preferenceService.timeFormat)
     //        let firstHalfLongTimeString = "10:09"
     //        let secondHalfLongTimeString = "AM"
-    let shortDateString = DateAndTimeFormatter.formattedShortDate(fromDate: date, withIdentifier: .weekdayDay)
-    let longDateString = DateAndTimeFormatter.formattedLongDate(fromDate: date, withIdentifier: .weekdayMonthDay)
+    let shortDateString = DateAndTimeFormatter.formattedShortDate(fromDate: date, withIdentifier: preferenceService.shortDateFormat)
+    let longDateString = DateAndTimeFormatter.formattedLongDate(fromDate: date, withIdentifier: preferenceService.longDateFormat)
 
     let shortTimeProvider = CLKSimpleTextProvider(text: shortTimeString)
     let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
