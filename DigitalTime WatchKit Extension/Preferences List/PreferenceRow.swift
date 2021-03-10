@@ -24,9 +24,9 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
 
   private func title(for preferenceType: PreferenceType) -> String {
     switch preferenceType {
-    case .time: return "Time Format"
-    case .shortDate: return "Date Format (Short)"
-    case .longDate: return "Date Format (Long)"
+    case .timeFormat: return "Time Format"
+    case .shortDateFormat: return "Date Format (Short)"
+    case .longDateFormat: return "Date Format (Long)"
     }
   }
 
@@ -50,7 +50,7 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
 struct PreferenceRow_Previews: PreviewProvider {
   static var previews: some View {
     PreferenceRow(
-      preferenceType: .time,
+      preferenceType: .timeFormat,
       formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
       exampleDate: Date(),
       preferenceService: PreferenceService.shared)

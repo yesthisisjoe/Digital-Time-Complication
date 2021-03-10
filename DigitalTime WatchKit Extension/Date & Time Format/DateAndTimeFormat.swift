@@ -10,21 +10,21 @@ import Foundation
 protocol DateAndTimeFormatIdentifier: CaseIterable, Hashable {}
 
 struct DateAndTimeFormat {
-  enum TimeFormatIdentifier: DateAndTimeFormatIdentifier {
-    case twelveHour
-    case twelveHourAmPm
-    case twentyFourHour
+  enum TimeFormatIdentifier: Int, DateAndTimeFormatIdentifier {
+    case twelveHour = 0
+    case twelveHourAmPm = 1
+    case twentyFourHour = 2
   }
 
-  enum ShortDateFormatIdentifier: DateAndTimeFormatIdentifier {
-    case weekdayDay
-    case monthDay
+  enum ShortDateFormatIdentifier: Int, DateAndTimeFormatIdentifier {
+    case weekdayDay = 0
+    case monthDay = 1
   }
 
-  enum LongDateFormatIdentifier: DateAndTimeFormatIdentifier {
-    case weekdayMonthDay
-    case weekdayDay
-    case monthDay
+  enum LongDateFormatIdentifier: Int, DateAndTimeFormatIdentifier {
+    case weekdayMonthDay = 0
+    case weekdayDay = 1
+    case monthDay = 2
   }
 
   var name: String
