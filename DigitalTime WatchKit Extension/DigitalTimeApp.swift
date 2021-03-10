@@ -9,11 +9,11 @@ import SwiftUI
 
 @main
 struct DigitalTimeApp: App {
-    var body: some Scene {
-        WindowGroup {
-            NavigationView {
-                PreferenceList()
-            }
-        }
+  var body: some Scene {
+    WindowGroup {
+      NavigationView {
+        PreferenceList()
+      }
     }
+  }
 }
