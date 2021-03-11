@@ -15,6 +15,26 @@ struct DateAndTimeFormatter {
     return formattedDateOrTime(fromDate: date, withDateFormat: timeFormat)
   }
 
+  static func shortenedFormattedTime(
+    fromDate date: Date,
+    withIdentifier identifier: DateAndTimeFormat.TimeFormatIdentifier) -> String {
+    if identifier == .twelveHourAmPm {
+      return formattedTime(fromDate: date, withIdentifier: .twelveHour)
+    } else {
+      return formattedTime(fromDate: date, withIdentifier: identifier)
+    }
+  }
+
+  static func multilineFormattedTime(
+    fromDate date: Date,
+    withIdentifier identifier: DateAndTimeFormat.TimeFormatIdentifier) -> [String] {
+    if identifier == .twelveHourAmPm {
+      return formattedTime(fromDate: date, withIdentifier: identifier).components(separatedBy: .whitespaces)
+    } else {
+      return [formattedTime(fromDate: date, withIdentifier: identifier)]
+    }
+  }
+
   static func formattedShortDate(
     fromDate date: Date,
     withIdentifier identifier: DateAndTimeFormat.ShortDateFormatIdentifier) -> String {

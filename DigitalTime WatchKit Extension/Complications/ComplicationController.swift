@@ -150,25 +150,43 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 }
 
 extension ComplicationController {
-
   // swiftlint:disable function_body_length
   // swiftlint:disable cyclomatic_complexity
   private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate? {
     // swiftlint:enable function_body_length
     // swiftlint:enable cyclomatic_complexity
-    let shortTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: preferenceService.timeFormat)
-    let longTimeString = DateAndTimeFormatter.formattedTime(fromDate: date, withIdentifier: preferenceService.timeFormat)
-    //        let firstHalfLongTimeString = "10:09"
-    //        let secondHalfLongTimeString = "AM"
-    let shortDateString = DateAndTimeFormatter.formattedShortDate(fromDate: date, withIdentifier: preferenceService.shortDateFormat)
-    let longDateString = DateAndTimeFormatter.formattedLongDate(fromDate: date, withIdentifier: preferenceService.longDateFormat)
-
+    let shortTimeString = DateAndTimeFormatter.shortenedFormattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+    let longTimeString = DateAndTimeFormatter.formattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
     let shortTimeProvider = CLKSimpleTextProvider(text: shortTimeString)
     let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
-    //        let firstHalfLongTimeProvider = CLKSimpleTextProvider(text: firstHalfLongTimeString)
-    //        let secondHalfLongTimeProvider = CLKSimpleTextProvider(text: secondHalfLongTimeString)
+
+    let multilineTimeStringLines = DateAndTimeFormatter.multilineFormattedTime(
+      fromDate: date,
+      withIdentifier: .twelveHourAmPm)
+    var line1LongTimeString: String?
+    var line2LongTimeString: String?
+    var line1LongTimeStringProvider: CLKSimpleTextProvider?
+    var line2LongTimeStringProvider: CLKSimpleTextProvider?
+    if multilineTimeStringLines.count > 1 {
+      line1LongTimeString = multilineTimeStringLines[0]
+      line2LongTimeString = multilineTimeStringLines[1]
+      line1LongTimeStringProvider = CLKSimpleTextProvider(text: line1LongTimeString!)
+      line2LongTimeStringProvider = CLKSimpleTextProvider(text: line2LongTimeString!)
+    }
+
+    let shortDateString = DateAndTimeFormatter.formattedShortDate(
+      fromDate: date,
+      withIdentifier: preferenceService.shortDateFormat)
+    let longDateString = DateAndTimeFormatter.formattedLongDate(
+      fromDate: date,
+      withIdentifier: preferenceService.longDateFormat)
     let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
     let longDateProvider = CLKSimpleTextProvider(text: longDateString)
+
     let emptyTextProvider = CLKSimpleTextProvider(text: "")
     let emptyGaugeProvider = CLKSimpleGaugeProvider(
       style: .fill,
@@ -177,8 +195,14 @@ extension ComplicationController {
 
     switch (complication.family, complication.identifier) {
     case (.circularSmall, ComplicationIdentifiers.time):
-      return CLKComplicationTemplateCircularSmallSimpleText(textProvider: shortTimeProvider)
-    // Add 2-line time provider
+      if let line1LongTimeStringProvider = line1LongTimeStringProvider,
+         let line2LongTimeStringProvider = line2LongTimeStringProvider {
+        return CLKComplicationTemplateCircularSmallStackText(
+          line1TextProvider: line1LongTimeStringProvider,
+          line2TextProvider: line2LongTimeStringProvider)
+      } else {
+        return CLKComplicationTemplateCircularSmallSimpleText(textProvider: shortTimeProvider)
+      }
     case (.graphicBezel, ComplicationIdentifiers.time):
       return CLKComplicationTemplateGraphicBezelCircularText(
         circularTemplate: CLKComplicationTemplateGraphicCircularView(
