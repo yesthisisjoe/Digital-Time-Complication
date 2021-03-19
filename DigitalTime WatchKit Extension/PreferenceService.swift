@@ -79,5 +79,23 @@ class PreferenceService {
     CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
       CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
     }
+    NSLog("Number of slow complications: \(numberOfSlowComplications())")
+  }
+
+  func numberOfSlowComplications() -> Int {
+    var numberOfSlowComplications = 0
+    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
+      switch (complication.family, complication.identifier) {
+      case (.graphicBezel, ComplicationIdentifier.dateAndTime),
+           (.graphicBezel, ComplicationIdentifier.time),
+           (.graphicBezel, ComplicationIdentifier.timeAndDate),
+           (.graphicCircular, ComplicationIdentifier.time),
+           (.graphicCorner, ComplicationIdentifier.time):
+        numberOfSlowComplications += 1
+      default:
+        break
+      }
+    }
+    return numberOfSlowComplications
   }
 }
