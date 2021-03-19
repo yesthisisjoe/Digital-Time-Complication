@@ -13,6 +13,7 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var exampleDate: Date
   var preferenceService: PreferenceService
   @State private var selectedFormat: T
+  @State private var showingAlert = false
 
   init(preferenceType: PreferenceType, formats: [T], exampleDate: Date, preferenceService: PreferenceService) {
     self.preferenceType = preferenceType
@@ -41,7 +42,13 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
                 withDateFormat: format))
           .italic()
       }.onChange(of: selectedFormat) { _ in
+        showingAlert = preferenceService.numberOfSlowComplications() > 0
         preferenceService.set(preferenceType, to: selectedFormat)
+      }.alert(isPresented: $showingAlert) {
+        Alert(
+          title: Text("Updating Complication"),
+          message: Text("Please wait a few seconds while your complication is updating"),
+          dismissButton: .default(Text("OK")))
       }
     }
   }

@@ -107,6 +107,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     for complication: CLKComplication,
     after date: Date, limit: Int,
     withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+    NSLog("Requesting \(limit) timeline entries for complication \(complication.family.rawValue) & \(complication.identifier) after date \(date)")
     var timelineEntries: [CLKComplicationTimelineEntry] = []
     var nextMinute: Date
 
@@ -124,6 +125,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       nextMinute = Date(timeIntervalSinceReferenceDate: nextMinute.timeIntervalSinceReferenceDate + 60.0)
     }
 
+    NSLog("Returning \(timelineEntries.count) timeline entries")
     handler(timelineEntries)
   }
 
