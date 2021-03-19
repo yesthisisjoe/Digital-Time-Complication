@@ -11,15 +11,6 @@ import SwiftUI
 class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
 
-  enum ComplicationIdentifiers {
-    static let time = "Time"
-    static let timeAndDate = "TimeAndDate"
-    static let dateAndTime = "DateAndTime"
-    static let innerTime = "InnerTime"
-    static let outerTime = "OuterTime"
-    static let largeTime = "LargeTime"
-  }
-
   // MARK: - Complication Configuration
 
   func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
@@ -44,27 +35,27 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     let largeTimeSupportedFamilies: [CLKComplicationFamily] = [.graphicCorner]
 
     let timeDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.time,
+      identifier: ComplicationIdentifier.time,
       displayName: "Time",
       supportedFamilies: timeSupportedFamilies)
     let timeAndDateDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.timeAndDate,
+      identifier: ComplicationIdentifier.timeAndDate,
       displayName: "Time & Date",
       supportedFamilies: timeAndDateSupportedFamilies)
     let dateAndTimeDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.dateAndTime,
+      identifier: ComplicationIdentifier.dateAndTime,
       displayName: "Date & Time",
       supportedFamilies: dateAndTimeSupportedFamilies)
     let innerTimeDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.innerTime,
+      identifier: ComplicationIdentifier.innerTime,
       displayName: "Inner Time",
       supportedFamilies: innerTimeSupportedFamilies)
     let outerTimeDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.outerTime,
+      identifier: ComplicationIdentifier.outerTime,
       displayName: "Outer Time",
       supportedFamilies: outerTimeSupportedFamilies)
     let largeTimeDescriptor = CLKComplicationDescriptor(
-      identifier: ComplicationIdentifiers.largeTime,
+      identifier: ComplicationIdentifier.largeTime,
       displayName: "Large Time",
       supportedFamilies: largeTimeSupportedFamilies)
 
@@ -211,14 +202,14 @@ extension ComplicationController {
     let longDateProvider = CLKSimpleTextProvider(text: longDateString)
 
     switch identifier {
-    case ComplicationIdentifiers.time:
+    case ComplicationIdentifier.time:
       return CLKComplicationTemplateGraphicBezelCircularText(
         circularTemplate: createGraphicCircularTemplate(forDate: date))
-    case ComplicationIdentifiers.timeAndDate:
+    case ComplicationIdentifier.timeAndDate:
       return CLKComplicationTemplateGraphicBezelCircularText(
         circularTemplate: createGraphicCircularTemplate(forDate: date),
         textProvider: longDateProvider)
-    case ComplicationIdentifiers.dateAndTime:
+    case ComplicationIdentifier.dateAndTime:
       return CLKComplicationTemplateGraphicBezelCircularText(
         circularTemplate: createGraphicCircularTemplate(forDate: date),
         textProvider: longTimeProvider)
@@ -258,26 +249,26 @@ extension ComplicationController {
       fillFraction: 0.0)
 
     switch identifier {
-    case ComplicationIdentifiers.time:
+    case ComplicationIdentifier.time:
       return CLKComplicationTemplateGraphicCornerCircularView(
         ComplicationView(text: longTimeString))
-    case ComplicationIdentifiers.timeAndDate:
+    case ComplicationIdentifier.timeAndDate:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: longTimeProvider,
         outerTextProvider: shortDateProvider)
-    case ComplicationIdentifiers.dateAndTime:
+    case ComplicationIdentifier.dateAndTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: shortDateProvider,
         outerTextProvider: longTimeProvider)
-    case ComplicationIdentifiers.outerTime:
+    case ComplicationIdentifier.outerTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: emptyTextProvider,
         outerTextProvider: longTimeProvider)
-    case ComplicationIdentifiers.innerTime:
+    case ComplicationIdentifier.innerTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: longTimeProvider,
         outerTextProvider: emptyTextProvider)
-    case ComplicationIdentifiers.largeTime:
+    case ComplicationIdentifier.largeTime:
       return CLKComplicationTemplateGraphicCornerGaugeText(
         gaugeProvider: emptyGaugeProvider,
         outerTextProvider: shortTimeProvider)
