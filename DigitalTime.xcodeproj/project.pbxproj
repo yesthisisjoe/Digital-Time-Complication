@@ -181,7 +181,7 @@
 				CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */,
 				CB79A66D25F94B9E0033C6BB /* Complications */,
 				CB54ED6925F5ED29007F65C3 /* Date & Time Format */,
-				CB54ED6A25F5ED39007F65C3 /* Preferences List */,
+				CB54ED6A25F5ED39007F65C3 /* App UI */,
 				CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */,
 				CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */,
 			);
@@ -197,14 +197,14 @@
 			path = "Date & Time Format";
 			sourceTree = "<group>";
 		};
-		CB54ED6A25F5ED39007F65C3 /* Preferences List */ = {
+		CB54ED6A25F5ED39007F65C3 /* App UI */ = {
 			isa = PBXGroup;
 			children = (
 				CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */,
 				CB54ED0925F5D898007F65C3 /* PreferenceRow.swift */,
 				CB1D4D6026044A0500D1FD53 /* ComplicationUpdateView.swift */,
 			);
-			path = "Preferences List";
+			path = "App UI";
 			sourceTree = "<group>";
 		};
 		CB79A66D25F94B9E0033C6BB /* Complications */ = {

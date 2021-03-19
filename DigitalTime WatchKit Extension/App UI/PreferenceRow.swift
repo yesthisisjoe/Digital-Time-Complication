@@ -13,14 +13,15 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var exampleDate: Date
   var preferenceService: PreferenceService
   @State private var selectedFormat: T
-  @State private var showingAlert = false
+  @Binding var showingSheet: Bool
 
-  init(preferenceType: PreferenceType, formats: [T], exampleDate: Date, preferenceService: PreferenceService) {
+  init(preferenceType: PreferenceType, formats: [T], exampleDate: Date, preferenceService: PreferenceService, showingSheet: Binding<Bool>) {
     self.preferenceType = preferenceType
     self.formats = formats
     self.exampleDate = exampleDate
     self.preferenceService = preferenceService
     _selectedFormat = State<T>(initialValue: preferenceService.getValue(for: preferenceType))
+    _showingSheet = showingSheet
   }
 
   private func title(for preferenceType: PreferenceType) -> String {
@@ -41,15 +42,10 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
                 fromDate: exampleDate,
                 withDateFormat: format))
           .italic()
-      }.onChange(of: selectedFormat) { _ in
-        showingAlert = preferenceService.numberOfSlowComplications() > 0
-        preferenceService.set(preferenceType, to: selectedFormat)
-      }.alert(isPresented: $showingAlert) {
-        Alert(
-          title: Text("Updating Complication"),
-          message: Text("Please wait a few seconds while your complication is updating"),
-          dismissButton: .default(Text("OK")))
       }
+    }.onChange(of: selectedFormat) { _ in
+      showingSheet = preferenceService.numberOfSlowComplications() > 0
+      preferenceService.set(preferenceType, to: selectedFormat)
     }
   }
 }
@@ -60,6 +56,7 @@ struct PreferenceRow_Previews: PreviewProvider {
       preferenceType: .timeFormat,
       formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
       exampleDate: Date(),
-      preferenceService: PreferenceService.shared)
+      preferenceService: PreferenceService.shared,
+      showingSheet: .constant(false))
   }
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ComplicationUpdateView: View {
+  @Environment(\.presentationMode) var presentationMode
+
   var body: some View {
     ScrollView {
       VStack {
@@ -21,8 +23,10 @@ struct ComplicationUpdateView: View {
           .font(.body)
           .multilineTextAlignment(.center)
           .fixedSize(horizontal: false, vertical: true)
-        Button("OK") { }
-          .padding()
+        Button("OK") {
+          presentationMode.wrappedValue.dismiss()
+        }
+        .padding([.top, .leading, .trailing])
       }
       .progressViewStyle(CircularProgressViewStyle())
     }

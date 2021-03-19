@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PreferenceList: View {
+  @State var showingSheet: Bool = false
   var preferenceService: PreferenceService
   var body: some View {
     NavigationView {
@@ -16,18 +17,25 @@ struct PreferenceList: View {
           preferenceType: .timeFormat,
           formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService)
+          preferenceService: preferenceService,
+          showingSheet: $showingSheet)
         PreferenceRow(
           preferenceType: .shortDateFormat,
           formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService)
+          preferenceService: preferenceService,
+          showingSheet: $showingSheet)
         PreferenceRow(
           preferenceType: .longDateFormat,
           formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService)
-      }.navigationTitle("Digital Time")
+          preferenceService: preferenceService,
+          showingSheet: $showingSheet)
+      }
+      .navigationTitle("Digital Time")
+      .background(
+        NavigationLink(destination: ComplicationUpdateView(), isActive: $showingSheet) {}
+      )
     }
   }
 }
