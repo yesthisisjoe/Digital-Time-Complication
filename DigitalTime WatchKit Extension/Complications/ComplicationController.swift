@@ -10,6 +10,7 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
+  let complicationUpdateService = ComplicationUpdateService()
 
   // MARK: - Complication Configuration
 
@@ -110,6 +111,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
     NSLog("Getting \(limit) entries for complication family: \(family) identifier: \(identifier) after: \(date)")
+    complicationUpdateService.complicationUpdateStarted()
 
     var timelineEntries: [CLKComplicationTimelineEntry] = []
     var nextMinute: Date
