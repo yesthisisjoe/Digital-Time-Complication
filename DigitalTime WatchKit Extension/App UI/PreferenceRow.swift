@@ -15,7 +15,12 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   @State private var selectedFormat: T
   @Binding var showingSheet: Bool
 
-  init(preferenceType: PreferenceType, formats: [T], exampleDate: Date, preferenceService: PreferenceService, showingSheet: Binding<Bool>) {
+  init(
+    preferenceType: PreferenceType,
+    formats: [T],
+    exampleDate: Date,
+    preferenceService: PreferenceService,
+    showingSheet: Binding<Bool>) {
     self.preferenceType = preferenceType
     self.formats = formats
     self.exampleDate = exampleDate
