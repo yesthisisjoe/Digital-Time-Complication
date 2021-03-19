@@ -33,9 +33,10 @@ struct PreferenceList: View {
           showingSheet: $showingSheet)
       }
       .navigationTitle("Digital Time")
-      .background(
-        NavigationLink(destination: ComplicationUpdateView(), isActive: $showingSheet) {}
-      )
+      .sheet(isPresented: $showingSheet) {
+        ComplicationUpdateView()
+        .navigationBarHidden(true)
+      }
     }
   }
 }
