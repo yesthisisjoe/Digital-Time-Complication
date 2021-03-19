@@ -16,20 +16,20 @@ struct ComplicationView: View {
   }
 }
 
-let longTimeString = "10:09 AM"
-let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
-let shortTimeProvider = CLKSimpleTextProvider(text: "10:09")
-let firstHalfLongTimeProvider = CLKSimpleTextProvider(text: "10:09")
-let secondHalfLongTimeProvider = CLKSimpleTextProvider(text: "AM")
-let shortDateString = "FRI 25"
-let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
-let longDateString = "Friday, March 5 2021"
-let longDateProvider = CLKSimpleTextProvider(text: longDateString)
-let emptyTextProvider = CLKSimpleTextProvider(text: "")
-let emptyGaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: .clear, fillFraction: .zero)
-
 struct ComplicationViews_Previews: PreviewProvider {
   static var previews: some View {
+    let longTimeString = "10:09 AM"
+    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
+    let shortTimeProvider = CLKSimpleTextProvider(text: "10:09")
+    let firstHalfLongTimeProvider = CLKSimpleTextProvider(text: "10:09")
+    let secondHalfLongTimeProvider = CLKSimpleTextProvider(text: "AM")
+    let shortDateString = "FRI 25"
+    let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
+    let longDateString = "Friday, March 5 2021"
+    let longDateProvider = CLKSimpleTextProvider(text: longDateString)
+    let emptyTextProvider = CLKSimpleTextProvider(text: "")
+    let emptyGaugeProvider = CLKSimpleGaugeProvider(style: .fill, gaugeColor: .clear, fillFraction: .zero)
+
     Group {
       // MARK: Circular Small
       // Short time

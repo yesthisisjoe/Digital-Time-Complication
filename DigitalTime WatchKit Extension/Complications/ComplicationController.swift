@@ -150,19 +150,30 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 }
 
 extension ComplicationController {
-  // swiftlint:disable function_body_length
-  // swiftlint:disable cyclomatic_complexity
   private func createTemplate(for complication: CLKComplication, onDate date: Date) -> CLKComplicationTemplate? {
-    // swiftlint:enable function_body_length
-    // swiftlint:enable cyclomatic_complexity
+    switch complication.family {
+    case .circularSmall:
+      return createCircularSmallTemplate(forDate: date)
+    case .graphicBezel:
+      return createGraphicBezelTemplate(forDate: date, identifier: complication.identifier)
+    case .graphicCircular:
+      return createGraphicCircularTemplate(forDate: date)
+    case .graphicCorner:
+      return createGraphicCornerTemplate(forDate: date, identifier: complication.identifier)
+    case .utilitarianLarge:
+      return createUtilitarianLargeTemplate(forDate: date)
+    case .utilitarianSmall:
+      return createUtilitarianSmallTemplate(forDate: date)
+    default:
+      return nil
+    }
+  }
+
+  func createCircularSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
     let shortTimeString = DateAndTimeFormatter.shortenedFormattedTime(
       fromDate: date,
       withIdentifier: preferenceService.timeFormat)
-    let longTimeString = DateAndTimeFormatter.formattedTime(
-      fromDate: date,
-      withIdentifier: preferenceService.timeFormat)
     let shortTimeProvider = CLKSimpleTextProvider(text: shortTimeString)
-    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
 
     let multilineTimeStringLines = DateAndTimeFormatter.multilineFormattedTime(
       fromDate: date,
@@ -178,14 +189,67 @@ extension ComplicationController {
       line2LongTimeStringProvider = CLKSimpleTextProvider(text: line2LongTimeString!)
     }
 
-    let shortDateString = DateAndTimeFormatter.formattedShortDate(
+    if let line1LongTimeStringProvider = line1LongTimeStringProvider,
+       let line2LongTimeStringProvider = line2LongTimeStringProvider {
+      return CLKComplicationTemplateCircularSmallStackText(
+        line1TextProvider: line1LongTimeStringProvider,
+        line2TextProvider: line2LongTimeStringProvider)
+    } else {
+      return CLKComplicationTemplateCircularSmallSimpleText(textProvider: shortTimeProvider)
+    }
+  }
+
+  func createGraphicBezelTemplate(forDate date: Date, identifier: String) -> CLKComplicationTemplate? {
+    let longTimeString = DateAndTimeFormatter.formattedTime(
       fromDate: date,
-      withIdentifier: preferenceService.shortDateFormat)
+      withIdentifier: preferenceService.timeFormat)
     let longDateString = DateAndTimeFormatter.formattedLongDate(
       fromDate: date,
       withIdentifier: preferenceService.longDateFormat)
-    let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
+
+    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
     let longDateProvider = CLKSimpleTextProvider(text: longDateString)
+
+    switch identifier {
+    case ComplicationIdentifiers.time:
+      return CLKComplicationTemplateGraphicBezelCircularText(
+        circularTemplate: createGraphicCircularTemplate(forDate: date))
+    case ComplicationIdentifiers.timeAndDate:
+      return CLKComplicationTemplateGraphicBezelCircularText(
+        circularTemplate: createGraphicCircularTemplate(forDate: date),
+        textProvider: longDateProvider)
+    case ComplicationIdentifiers.dateAndTime:
+      return CLKComplicationTemplateGraphicBezelCircularText(
+        circularTemplate: createGraphicCircularTemplate(forDate: date),
+        textProvider: longTimeProvider)
+    default:
+      return nil
+    }
+  }
+
+  func createGraphicCircularTemplate(forDate date: Date) -> CLKComplicationTemplateGraphicCircular {
+    let longTimeString = DateAndTimeFormatter.formattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+
+    return CLKComplicationTemplateGraphicCircularView(
+      ComplicationView(text: longTimeString))
+  }
+
+  func createGraphicCornerTemplate(forDate date: Date, identifier: String) -> CLKComplicationTemplate? {
+    let shortTimeString = DateAndTimeFormatter.shortenedFormattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+    let longTimeString = DateAndTimeFormatter.formattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+    let shortDateString = DateAndTimeFormatter.formattedShortDate(
+      fromDate: date,
+      withIdentifier: preferenceService.shortDateFormat)
+
+    let shortTimeProvider = CLKSimpleTextProvider(text: shortTimeString)
+    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
+    let shortDateProvider = CLKSimpleTextProvider(text: shortDateString)
 
     let emptyTextProvider = CLKSimpleTextProvider(text: "")
     let emptyGaugeProvider = CLKSimpleGaugeProvider(
@@ -193,64 +257,50 @@ extension ComplicationController {
       gaugeColor: .clear,
       fillFraction: 0.0)
 
-    switch (complication.family, complication.identifier) {
-    case (.circularSmall, ComplicationIdentifiers.time):
-      if let line1LongTimeStringProvider = line1LongTimeStringProvider,
-         let line2LongTimeStringProvider = line2LongTimeStringProvider {
-        return CLKComplicationTemplateCircularSmallStackText(
-          line1TextProvider: line1LongTimeStringProvider,
-          line2TextProvider: line2LongTimeStringProvider)
-      } else {
-        return CLKComplicationTemplateCircularSmallSimpleText(textProvider: shortTimeProvider)
-      }
-    case (.graphicBezel, ComplicationIdentifiers.time):
-      return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: CLKComplicationTemplateGraphicCircularView(
-          ComplicationView(text: longTimeString)))
-    case (.graphicBezel, ComplicationIdentifiers.timeAndDate):
-      return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: CLKComplicationTemplateGraphicCircularView(
-          ComplicationView(text: longTimeString)),
-        textProvider: longDateProvider)
-    case (.graphicBezel, ComplicationIdentifiers.dateAndTime):
-      return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: CLKComplicationTemplateGraphicCircularView(
-          ComplicationView(text: shortDateString)),
-        textProvider: longTimeProvider)
-    case (.graphicCircular, ComplicationIdentifiers.time):
-      return CLKComplicationTemplateGraphicCircularView(
-        ComplicationView(text: longTimeString))
-    case (.graphicCorner, ComplicationIdentifiers.time):
+    switch identifier {
+    case ComplicationIdentifiers.time:
       return CLKComplicationTemplateGraphicCornerCircularView(
         ComplicationView(text: longTimeString))
-    case (.graphicCorner, ComplicationIdentifiers.timeAndDate):
+    case ComplicationIdentifiers.timeAndDate:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: longTimeProvider,
         outerTextProvider: shortDateProvider)
-    case (.graphicCorner, ComplicationIdentifiers.dateAndTime):
+    case ComplicationIdentifiers.dateAndTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: shortDateProvider,
         outerTextProvider: longTimeProvider)
-    case (.graphicCorner, ComplicationIdentifiers.outerTime):
+    case ComplicationIdentifiers.outerTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: emptyTextProvider,
         outerTextProvider: longTimeProvider)
-    case (.graphicCorner, ComplicationIdentifiers.innerTime):
+    case ComplicationIdentifiers.innerTime:
       return CLKComplicationTemplateGraphicCornerStackText(
         innerTextProvider: longTimeProvider,
         outerTextProvider: emptyTextProvider)
-    case (.graphicCorner, ComplicationIdentifiers.largeTime):
+    case ComplicationIdentifiers.largeTime:
       return CLKComplicationTemplateGraphicCornerGaugeText(
         gaugeProvider: emptyGaugeProvider,
         outerTextProvider: shortTimeProvider)
-    case (.utilitarianLarge, ComplicationIdentifiers.time):
-      return CLKComplicationTemplateUtilitarianLargeFlat(
-        textProvider: longTimeProvider)
-    case (.utilitarianSmall, ComplicationIdentifiers.time):
-      return CLKComplicationTemplateUtilitarianSmallFlat(
-        textProvider: longTimeProvider)
     default:
       return nil
     }
+  }
+
+  func createUtilitarianLargeTemplate(forDate date: Date) -> CLKComplicationTemplate {
+    let longTimeString = DateAndTimeFormatter.formattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
+    return CLKComplicationTemplateUtilitarianLargeFlat(
+      textProvider: longTimeProvider)
+  }
+
+  func createUtilitarianSmallTemplate(forDate date: Date) -> CLKComplicationTemplate {
+    let longTimeString = DateAndTimeFormatter.formattedTime(
+      fromDate: date,
+      withIdentifier: preferenceService.timeFormat)
+    let longTimeProvider = CLKSimpleTextProvider(text: longTimeString)
+    return CLKComplicationTemplateUtilitarianSmallFlat(
+      textProvider: longTimeProvider)
   }
 }
