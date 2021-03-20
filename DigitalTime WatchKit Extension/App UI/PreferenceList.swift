@@ -17,17 +17,14 @@ struct PreferenceList: View {
         PreferenceRow(
           preferenceType: .timeFormat,
           formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
-          exampleDate: Date(),
           preferenceService: preferenceService)
         PreferenceRow(
           preferenceType: .shortDateFormat,
           formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
-          exampleDate: Date(),
           preferenceService: preferenceService)
         PreferenceRow(
           preferenceType: .longDateFormat,
           formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
-          exampleDate: Date(),
           preferenceService: preferenceService)
       }
       .navigationTitle("Digital Time")

@@ -10,19 +10,18 @@ import SwiftUI
 struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var preferenceType: PreferenceType
   var formats: [T]
-  var exampleDate: Date
   var preferenceService: PreferenceService
+  @State private var date: Date
   @State private var selectedFormat: T
 
   init(
     preferenceType: PreferenceType,
     formats: [T],
-    exampleDate: Date,
     preferenceService: PreferenceService) {
     self.preferenceType = preferenceType
     self.formats = formats
-    self.exampleDate = exampleDate
     self.preferenceService = preferenceService
+    _date = State(initialValue: Date())
     _selectedFormat = State<T>(initialValue: preferenceService.getValue(for: preferenceType))
   }
 
@@ -41,12 +40,16 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
         Text(format.name) +
           Text("\n") +
           Text(DateAndTimeFormatter.formattedDateOrTime(
-                fromDate: exampleDate,
+                fromDate: date,
                 withDateFormat: format))
           .italic()
       }
-    }.onChange(of: selectedFormat) { _ in
+    }
+    .onChange(of: selectedFormat) { _ in
       preferenceService.set(preferenceType, to: selectedFormat)
+    }
+    .onAppear {
+      date = Date()
     }
   }
 }
@@ -56,7 +59,6 @@ struct PreferenceRow_Previews: PreviewProvider {
     PreferenceRow(
       preferenceType: .timeFormat,
       formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
-      exampleDate: Date(),
       preferenceService: PreferenceService.shared)
   }
 }
