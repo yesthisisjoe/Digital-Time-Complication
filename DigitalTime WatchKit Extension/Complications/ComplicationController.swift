@@ -155,7 +155,7 @@ extension ComplicationController {
     case .graphicBezel:
       return createGraphicBezelTemplate(forDate: date, identifier: complication.identifier)
     case .graphicCircular:
-      return createGraphicCircularTemplate(forDate: date)
+      return createGraphicCircularTemplate(forDate: date, identifier: complication.identifier)
     case .graphicCorner:
       return createGraphicCornerTemplate(forDate: date, identifier: complication.identifier)
     case .utilitarianLarge:
@@ -211,27 +211,43 @@ extension ComplicationController {
     switch identifier {
     case ComplicationIdentifier.time:
       return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: createGraphicCircularTemplate(forDate: date))
+        circularTemplate: createGraphicCircularTemplate(forDate: date, identifier: identifier)!)
     case ComplicationIdentifier.timeAndDate:
       return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: createGraphicCircularTemplate(forDate: date),
+        circularTemplate: createGraphicCircularTemplate(forDate: date, identifier: identifier)!,
         textProvider: longDateProvider)
     case ComplicationIdentifier.dateAndTime:
       return CLKComplicationTemplateGraphicBezelCircularText(
-        circularTemplate: createGraphicCircularTemplate(forDate: date),
+        circularTemplate: createGraphicCircularTemplate(forDate: date, identifier: identifier)!,
         textProvider: longTimeProvider)
     default:
       return nil
     }
   }
 
-  func createGraphicCircularTemplate(forDate date: Date) -> CLKComplicationTemplateGraphicCircular {
+  func createGraphicCircularTemplate(
+    forDate date: Date,
+    identifier: String
+  ) -> CLKComplicationTemplateGraphicCircular? {
     let longTimeString = DateAndTimeFormatter.formattedTime(
       fromDate: date,
       withIdentifier: preferenceService.timeFormat)
+    let shortDateString = DateAndTimeFormatter.formattedShortDate(
+      fromDate: date,
+      withIdentifier: preferenceService.shortDateFormat)
 
-    return CLKComplicationTemplateGraphicCircularView(
-      ComplicationView(text: longTimeString))
+    switch identifier {
+    case ComplicationIdentifier.timeAndDate,
+         ComplicationIdentifier.time:
+      return CLKComplicationTemplateGraphicCircularView(
+        ComplicationView(text: longTimeString))
+    case ComplicationIdentifier.dateAndTime:
+      return CLKComplicationTemplateGraphicCircularView(
+        ComplicationView(text: shortDateString))
+    default:
+      return nil
+    }
+
   }
 
   func createGraphicCornerTemplate(forDate date: Date, identifier: String) -> CLKComplicationTemplate? {
