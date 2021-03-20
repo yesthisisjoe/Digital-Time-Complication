@@ -14,29 +14,36 @@ class ComplicationUpdateService {
 
   var lastUpdateStart: Date?
   var lastUpdateLength: TimeInterval?
-  var estimatedUpdateFinish: Date?
+
+  var hideUpdateViewWorkItem: DispatchWorkItem?
 
   func complicationUpdateStarted() {
+    var estimatedTimeUntilUpdateFinish: TimeInterval
     if let lastUpdateStart = lastUpdateStart {
       let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
       if timeSinceLastUpdate < updateTimeEstimateTimeout {
         NSLog("Found previous update \(timeSinceLastUpdate) ago")
         lastUpdateLength = timeSinceLastUpdate
-        let estimatedTimeUntilUpdateFinish = timeSinceLastUpdate * updateTimeEstimateMultiplier
-        NSLog("Estimated update finish in \(estimatedTimeUntilUpdateFinish)")
-        estimatedUpdateFinish = Date(timeIntervalSinceNow: estimatedTimeUntilUpdateFinish)
+        estimatedTimeUntilUpdateFinish = timeSinceLastUpdate * updateTimeEstimateMultiplier
       } else {
         NSLog("Previous update length too long: \(timeSinceLastUpdate)")
-        let minimumOrLastUpdateLength = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
-        NSLog("Estimating update finish in \(minimumOrLastUpdateLength)")
-        estimatedUpdateFinish = Date(timeIntervalSinceNow: minimumOrLastUpdateLength)
+        estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
       }
     } else {
       NSLog("No previous update found")
-      let minimumOrLastUpdateLength = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
-      NSLog("Estimating update finish in \(minimumOrLastUpdateLength)")
-      estimatedUpdateFinish = Date(timeIntervalSinceNow: minimumOrLastUpdateLength)
+      estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
     }
+    NSLog("Estimated time until update finish: \(estimatedTimeUntilUpdateFinish)")
     lastUpdateStart = Date()
+    scheduleUpdateViewDismissal(after: estimatedTimeUntilUpdateFinish)
+  }
+
+  func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
+    hideUpdateViewWorkItem?.cancel()
+    hideUpdateViewWorkItem = DispatchWorkItem { /*[weak self] in*/
+      NSLog("----- HIDING UPDATE VIEW -----")
+    }
+    NSLog("Hiding update view in: \(timeInterval)")
+    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
 }
