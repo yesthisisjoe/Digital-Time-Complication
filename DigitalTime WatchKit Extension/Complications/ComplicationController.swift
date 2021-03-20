@@ -10,7 +10,7 @@ import SwiftUI
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
-  let complicationUpdateService = ComplicationUpdateService()
+  let complicationUpdateService = ComplicationUpdateService.shared
 
   // MARK: - Complication Configuration
 

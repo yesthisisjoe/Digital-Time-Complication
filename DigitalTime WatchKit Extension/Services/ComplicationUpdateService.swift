@@ -7,17 +7,22 @@
 
 import Foundation
 
-class ComplicationUpdateService {
+class ComplicationUpdateService: ObservableObject {
+  static let shared = ComplicationUpdateService()
+  private init() {}
+
   let minimumUpdateViewDisplayTime: TimeInterval = 5.0
   let updateTimeEstimateTimeout: TimeInterval = 15.0
   let updateTimeEstimateMultiplier: Double = 1.2
 
   var lastUpdateStart: Date?
   var lastUpdateLength: TimeInterval?
-
   var hideUpdateViewWorkItem: DispatchWorkItem?
 
+  @Published var showUpdateView: Bool = false
+
   func complicationUpdateStarted() {
+    showUpdateView = true
     var estimatedTimeUntilUpdateFinish: TimeInterval
     if let lastUpdateStart = lastUpdateStart {
       let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
@@ -40,8 +45,11 @@ class ComplicationUpdateService {
 
   func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
     hideUpdateViewWorkItem?.cancel()
-    hideUpdateViewWorkItem = DispatchWorkItem { /*[weak self] in*/
+    hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
       NSLog("----- HIDING UPDATE VIEW -----")
+      self?.lastUpdateStart = nil
+      self?.lastUpdateLength = nil
+      self?.showUpdateView = false
     }
     NSLog("Hiding update view in: \(timeInterval)")
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)

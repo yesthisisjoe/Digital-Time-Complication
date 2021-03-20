@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PreferenceList: View {
+  @ObservedObject var complicationUpdateService = ComplicationUpdateService.shared
   @State var showingSheet: Bool = false
   var preferenceService: PreferenceService
   var body: some View {
@@ -17,23 +18,20 @@ struct PreferenceList: View {
           preferenceType: .timeFormat,
           formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          showingSheet: $showingSheet)
+          preferenceService: preferenceService)
         PreferenceRow(
           preferenceType: .shortDateFormat,
           formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          showingSheet: $showingSheet)
+          preferenceService: preferenceService)
         PreferenceRow(
           preferenceType: .longDateFormat,
           formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
           exampleDate: Date(),
-          preferenceService: preferenceService,
-          showingSheet: $showingSheet)
+          preferenceService: preferenceService)
       }
       .navigationTitle("Digital Time")
-      .sheet(isPresented: $showingSheet) {
+      .sheet(isPresented: $complicationUpdateService.showUpdateView) {
         ComplicationUpdateView()
         .navigationBarHidden(true)
       }

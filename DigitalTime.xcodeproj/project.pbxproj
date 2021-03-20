@@ -180,7 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */,
-				CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */,
+				CB77E3052605934400D56C55 /* Services */,
 				CB79A66D25F94B9E0033C6BB /* Complications */,
 				CB54ED6925F5ED29007F65C3 /* Date & Time Format */,
 				CB54ED6A25F5ED39007F65C3 /* App UI */,
@@ -209,13 +209,21 @@
 			path = "App UI";
 			sourceTree = "<group>";
 		};
+		CB77E3052605934400D56C55 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */,
+				CB77E2F926055F3E00D56C55 /* ComplicationUpdateService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		CB79A66D25F94B9E0033C6BB /* Complications */ = {
 			isa = PBXGroup;
 			children = (
 				CB1E3A1B25F15AAA00FDDEB7 /* ComplicationController.swift */,
 				CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */,
 				CBEA5B0B260429F80016BBE2 /* ComplicationIdentifier.swift */,
-				CB77E2F926055F3E00D56C55 /* ComplicationUpdateService.swift */,
 			);
 			path = Complications;
 			sourceTree = "<group>";

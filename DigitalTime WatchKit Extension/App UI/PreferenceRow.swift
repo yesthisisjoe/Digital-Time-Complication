@@ -13,20 +13,17 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
   var exampleDate: Date
   var preferenceService: PreferenceService
   @State private var selectedFormat: T
-  @Binding var showingSheet: Bool
 
   init(
     preferenceType: PreferenceType,
     formats: [T],
     exampleDate: Date,
-    preferenceService: PreferenceService,
-    showingSheet: Binding<Bool>) {
+    preferenceService: PreferenceService) {
     self.preferenceType = preferenceType
     self.formats = formats
     self.exampleDate = exampleDate
     self.preferenceService = preferenceService
     _selectedFormat = State<T>(initialValue: preferenceService.getValue(for: preferenceType))
-    _showingSheet = showingSheet
   }
 
   private func title(for preferenceType: PreferenceType) -> String {
@@ -49,7 +46,6 @@ struct PreferenceRow<T: DateAndTimeFormatIdentifier>: View {
           .italic()
       }
     }.onChange(of: selectedFormat) { _ in
-      showingSheet = preferenceService.numberOfSlowComplications() > 0
       preferenceService.set(preferenceType, to: selectedFormat)
     }
   }
@@ -61,7 +57,6 @@ struct PreferenceRow_Previews: PreviewProvider {
       preferenceType: .timeFormat,
       formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
       exampleDate: Date(),
-      preferenceService: PreferenceService.shared,
-      showingSheet: .constant(false))
+      preferenceService: PreferenceService.shared)
   }
 }
