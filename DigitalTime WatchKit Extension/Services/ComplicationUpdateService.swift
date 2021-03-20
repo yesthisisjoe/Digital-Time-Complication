@@ -51,7 +51,6 @@ class ComplicationUpdateService: ObservableObject {
       self?.lastUpdateLength = nil
       self?.showUpdateView = false
     }
-    NSLog("Hiding update view in: \(timeInterval)")
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
 }

@@ -19,14 +19,10 @@ struct ComplicationUpdateView: View {
           .fixedSize(horizontal: false, vertical: true)
         ProgressView()
           .padding()
-        Text("Please wait until the spinner animates smoothly")
+        Text("Please wait while your complication is being updated.")
           .font(.body)
           .multilineTextAlignment(.center)
           .fixedSize(horizontal: false, vertical: true)
-        Button("OK") {
-          presentationMode.wrappedValue.dismiss()
-        }
-        .padding([.top, .leading, .trailing])
       }
       .progressViewStyle(CircularProgressViewStyle())
     }
