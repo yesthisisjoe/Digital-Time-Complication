@@ -175,7 +175,7 @@ extension ComplicationController {
 
     let multilineTimeStringLines = DateAndTimeFormatter.multilineFormattedTime(
       fromDate: date,
-      withIdentifier: .twelveHourAmPm)
+      withIdentifier: preferenceService.timeFormat)
     var line1LongTimeString: String?
     var line2LongTimeString: String?
     var line1LongTimeStringProvider: CLKSimpleTextProvider?
