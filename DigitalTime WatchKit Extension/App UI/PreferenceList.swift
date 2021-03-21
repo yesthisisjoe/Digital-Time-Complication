@@ -12,26 +12,24 @@ struct PreferenceList: View {
   @State var showingSheet: Bool = false
   var preferenceService: PreferenceService
   var body: some View {
-    NavigationView {
-      List {
-        PreferenceRow(
-          preferenceType: .timeFormat,
-          formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
-          preferenceService: preferenceService)
-        PreferenceRow(
-          preferenceType: .shortDateFormat,
-          formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
-          preferenceService: preferenceService)
-        PreferenceRow(
-          preferenceType: .longDateFormat,
-          formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
-          preferenceService: preferenceService)
-      }
-      .navigationTitle("Digital Time")
-      .sheet(isPresented: $complicationUpdateService.showUpdateView) {
-        ComplicationUpdateView()
+    List {
+      PreferenceRow(
+        preferenceType: .timeFormat,
+        formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
+        preferenceService: preferenceService)
+      PreferenceRow(
+        preferenceType: .shortDateFormat,
+        formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
+        preferenceService: preferenceService)
+      PreferenceRow(
+        preferenceType: .longDateFormat,
+        formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
+        preferenceService: preferenceService)
+    }
+    .navigationTitle("Digital Time")
+    .sheet(isPresented: $complicationUpdateService.showUpdateView) {
+      ComplicationUpdateView()
         .navigationBarHidden(true)
-      }
     }
   }
 }
