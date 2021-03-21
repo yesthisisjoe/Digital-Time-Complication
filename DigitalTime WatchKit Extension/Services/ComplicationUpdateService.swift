@@ -7,12 +7,13 @@
 
 import ClockKit
 import Foundation
+import WatchKit
 
 class ComplicationUpdateService: ObservableObject {
   static let shared = ComplicationUpdateService()
   private init() {}
 
-  private let minimumUpdateViewDisplayTime: TimeInterval = 5.0
+  private let initialUpdateTimeEstimate: TimeInterval = 10.0
   private let updateTimeEstimateTimeout: TimeInterval = 15.0
   private let updateTimeEstimateMultiplier: Double = 1.2
 
@@ -59,11 +60,11 @@ class ComplicationUpdateService: ObservableObject {
         estimatedTimeUntilUpdateFinish = timeSinceLastUpdate * updateTimeEstimateMultiplier
       } else {
         NSLog("Previous update length too long: \(timeSinceLastUpdate)")
-        estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
+        estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
       }
     } else {
       NSLog("No previous update found")
-      estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, minimumUpdateViewDisplayTime)
+      estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
     }
     NSLog("Estimated time until update finish: \(estimatedTimeUntilUpdateFinish)")
     lastUpdateStart = Date()
@@ -73,10 +74,11 @@ class ComplicationUpdateService: ObservableObject {
   func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
     hideUpdateViewWorkItem?.cancel()
     hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
-      NSLog("----- HIDING UPDATE VIEW -----")
+      NSLog("Hiding update view")
       self?.lastUpdateStart = nil
       self?.lastUpdateLength = nil
       self?.showUpdateView = false
+      WKInterfaceDevice.current().play(.click)
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
