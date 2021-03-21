@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import ClockKit
 
 enum PreferenceType: String {
   case timeFormat
@@ -15,14 +14,20 @@ enum PreferenceType: String {
 }
 
 class PreferenceService {
-  static let shared = PreferenceService()
-  private let userDefaults = UserDefaults.standard
+  static let shared = PreferenceService(
+    userDefaults: UserDefaults.standard,
+    complicationUpdateService: ComplicationUpdateService.shared)
 
+  var userDefaults: UserDefaults
+  var complicationUpdateService: ComplicationUpdateService
   var timeFormat: DateAndTimeFormat.TimeFormatIdentifier
   var shortDateFormat: DateAndTimeFormat.ShortDateFormatIdentifier
   var longDateFormat: DateAndTimeFormat.LongDateFormatIdentifier
 
-  private init() {
+  private init(userDefaults: UserDefaults, complicationUpdateService: ComplicationUpdateService) {
+    self.userDefaults = userDefaults
+    self.complicationUpdateService = complicationUpdateService
+
     if let timeFormatInt = userDefaults.value(forKey: PreferenceType.timeFormat.rawValue) as? Int,
        let loadedTimeFormat = DateAndTimeFormat.TimeFormatIdentifier(rawValue: timeFormatInt) {
         timeFormat = loadedTimeFormat
@@ -72,30 +77,6 @@ class PreferenceService {
       userDefaults.setValue(newLongDateFormat.rawValue, forKey: preferenceType.rawValue)
       longDateFormat = newLongDateFormat
     }
-    reloadComplications()
-  }
-
-  func reloadComplications() {
-    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
-      CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
-    }
-    NSLog("Number of slow complications: \(numberOfSlowComplications())")
-  }
-
-  func numberOfSlowComplications() -> Int {
-    var numberOfSlowComplications = 0
-    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
-      switch (complication.family, complication.identifier) {
-      case (.graphicBezel, ComplicationIdentifier.dateAndTime),
-           (.graphicBezel, ComplicationIdentifier.time),
-           (.graphicBezel, ComplicationIdentifier.timeAndDate),
-           (.graphicCircular, ComplicationIdentifier.time),
-           (.graphicCorner, ComplicationIdentifier.time):
-        numberOfSlowComplications += 1
-      default:
-        break
-      }
-    }
-    return numberOfSlowComplications
+    complicationUpdateService.reloadComplications()
   }
 }

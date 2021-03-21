@@ -5,23 +5,50 @@
 //  Created by Joe Peplowski on 2021-03-19.
 //
 
+import ClockKit
 import Foundation
 
 class ComplicationUpdateService: ObservableObject {
   static let shared = ComplicationUpdateService()
   private init() {}
 
-  let minimumUpdateViewDisplayTime: TimeInterval = 5.0
-  let updateTimeEstimateTimeout: TimeInterval = 15.0
-  let updateTimeEstimateMultiplier: Double = 1.2
+  private let minimumUpdateViewDisplayTime: TimeInterval = 5.0
+  private let updateTimeEstimateTimeout: TimeInterval = 15.0
+  private let updateTimeEstimateMultiplier: Double = 1.2
 
-  var lastUpdateStart: Date?
-  var lastUpdateLength: TimeInterval?
-  var hideUpdateViewWorkItem: DispatchWorkItem?
+  private var lastUpdateStart: Date?
+  private var lastUpdateLength: TimeInterval?
+  private var hideUpdateViewWorkItem: DispatchWorkItem?
 
   @Published var showUpdateView: Bool = false
 
+  func reloadComplications() {
+    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
+      CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+    }
+    NSLog("Number of slow complications: \(numberOfSlowComplications())")
+  }
+
+  func numberOfSlowComplications() -> Int {
+    var numberOfSlowComplications = 0
+    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
+      switch (complication.family, complication.identifier) {
+      case (.graphicBezel, ComplicationIdentifier.dateAndTime),
+           (.graphicBezel, ComplicationIdentifier.time),
+           (.graphicBezel, ComplicationIdentifier.timeAndDate),
+           (.graphicCircular, ComplicationIdentifier.time),
+           (.graphicCorner, ComplicationIdentifier.time):
+        numberOfSlowComplications += 1
+      default:
+        break
+      }
+    }
+    return numberOfSlowComplications
+  }
+
   func complicationUpdateStarted() {
+    if numberOfSlowComplications() < 1 { return }
+
     showUpdateView = true
     var estimatedTimeUntilUpdateFinish: TimeInterval
     if let lastUpdateStart = lastUpdateStart {
