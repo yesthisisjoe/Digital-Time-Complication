@@ -25,6 +25,15 @@ struct PreferenceList: View {
         preferenceType: .longDateFormat,
         formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
         preferenceService: preferenceService)
+      NavigationLink(destination:
+                      Text("Tip Jar")
+                      .onAppear {
+                        DigitalTimeProducts.store.requestProducts { _,_ in
+                        }
+                      }
+      ) {
+        Text("Tip Jar")
+      }
     }
     .navigationTitle("Digital Time")
     .sheet(isPresented: $complicationUpdateService.showUpdateView) {
