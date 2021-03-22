@@ -5,7 +5,7 @@
 //  Created by Joe Peplowski on 2021-03-21.
 //
 
-import Foundation
+import StoreKit
 
 public struct DigitalTimeProducts {
   public static let TipJar1 = "com.yesthisisjoe.DigitalTime.tipJar1"
