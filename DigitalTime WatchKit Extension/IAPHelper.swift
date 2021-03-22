@@ -45,17 +45,9 @@ extension IAPHelper {
     SKPaymentQueue.default().add(payment)
   }
 
-  // Necessary?
-  public func isProductPurchased(_ productIdentifier: ProductIdentifier) -> Bool {
-    return false
-  }
-
   public class func canMakePayments() -> Bool {
-    return true
-  }
-
-  // Necessary?
-  public func restorePurchases() {
+    return SKPaymentQueue.canMakePayments()
+    // TODO: check for this in tip jar list
   }
 }
 
