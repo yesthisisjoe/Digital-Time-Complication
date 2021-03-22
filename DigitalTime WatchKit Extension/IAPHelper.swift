@@ -17,13 +17,13 @@ extension Notification.Name {
 open class IAPHelper: NSObject {
   private let productIdentifiers: Set<ProductIdentifier>
 
-  private var purchasedProductIdentifiers: Set<ProductIdentifier> = []
   private var productsRequest: SKProductsRequest?
   private var productsRequestCompletionHandler: ProductsRequestCompletionHandler?
 
   public init(productIds: Set<ProductIdentifier>) {
     productIdentifiers = productIds
     super.init()
+    SKPaymentQueue.default().add(self)
   }
 }
 
@@ -40,6 +40,9 @@ extension IAPHelper {
   }
 
   public func buyProduct(_ product: SKProduct) {
+    print("Buying \(product.productIdentifier)...")
+    let payment = SKPayment(product: product)
+    SKPaymentQueue.default().add(payment)
   }
 
   // Necessary?
@@ -81,5 +84,49 @@ extension IAPHelper: SKProductsRequestDelegate {
   private func clearRequestAndHandler() {
     productsRequest = nil
     productsRequestCompletionHandler = nil
+  }
+}
+
+// MARK: - SKPaymentTransactionObserver
+
+extension IAPHelper: SKPaymentTransactionObserver {
+
+  public func paymentQueue(_ queue: SKPaymentQueue,
+                           updatedTransactions transactions: [SKPaymentTransaction]) {
+    for transaction in transactions {
+      switch transaction.transactionState {
+      case .purchased:
+        complete(transaction: transaction)
+      case .failed:
+        fail(transaction: transaction)
+      case .restored, .deferred, .purchasing:
+        break
+      @unknown default:
+        fatalError()
+      }
+    }
+  }
+
+  private func complete(transaction: SKPaymentTransaction) {
+    print("complete...")
+
+    deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
+    SKPaymentQueue.default().finishTransaction(transaction)
+  }
+
+  private func fail(transaction: SKPaymentTransaction) {
+    print("fail...")
+
+    if let transactionError = transaction.error as NSError?,
+       let localizedDescription = transaction.error?.localizedDescription,
+       transactionError.code != SKError.paymentCancelled.rawValue {
+      print("Transaction Error: \(localizedDescription)")
+    }
+    SKPaymentQueue.default().finishTransaction(transaction)
+  }
+
+  private func deliverPurchaseNotificationFor(identifier: String?) {
+    guard let identifier = identifier else { return }
+    NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
   }
 }

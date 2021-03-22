@@ -28,7 +28,10 @@ struct PreferenceList: View {
       NavigationLink(destination:
                       Text("Tip Jar")
                       .onAppear {
-                        DigitalTimeProducts.store.requestProducts { _,_ in
+                        DigitalTimeProducts.store.requestProducts { success, products in
+                          if success {
+                            DigitalTimeProducts.store.buyProduct(products!.first!)
+                          }
                         }
                       }
       ) {
