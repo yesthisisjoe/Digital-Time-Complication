@@ -108,14 +108,14 @@ extension IAPHelper: SKPaymentTransactionObserver {
   }
 
   private func complete(transaction: SKPaymentTransaction) {
-    print("complete...")
+    // TODO: show thank you popup
 
     deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
     SKPaymentQueue.default().finishTransaction(transaction)
   }
 
   private func fail(transaction: SKPaymentTransaction) {
-    print("fail...")
+    // TODO: show failure popup
 
     if let transactionError = transaction.error as NSError?,
        let localizedDescription = transaction.error?.localizedDescription,

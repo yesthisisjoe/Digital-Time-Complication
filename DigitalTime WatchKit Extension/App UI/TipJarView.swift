@@ -22,15 +22,15 @@ struct TipJarView: View {
           }
         }
     } else {
-      VStack {
-        List {
-          Section(
-            header:
-              Text("Select a tip amount to show your appreciation for Digital Time")
-              .textCase(.none)
-          ) {
-            ForEach(products, id: \.productIdentifier) { product in
-              Text(DigitalTimeProducts.store.formattedPriceForProduct(product))
+      List {
+        Section(
+          header:
+            Text("Select a tip amount to show your appreciation for Digital Time")
+            .textCase(.none)
+        ) {
+          ForEach(products, id: \.productIdentifier) { product in
+            Button(DigitalTimeProducts.store.formattedPriceForProduct(product)) {
+              DigitalTimeProducts.store.buyProduct(product)
             }
           }
         }
