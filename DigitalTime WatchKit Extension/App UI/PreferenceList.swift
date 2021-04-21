@@ -13,18 +13,23 @@ struct PreferenceList: View {
   var preferenceService: PreferenceService
   var body: some View {
     List {
-      PreferenceRow(
-        preferenceType: .timeFormat,
-        formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
-        preferenceService: preferenceService)
-      PreferenceRow(
-        preferenceType: .shortDateFormat,
-        formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
-        preferenceService: preferenceService)
-      PreferenceRow(
-        preferenceType: .longDateFormat,
-        formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
-        preferenceService: preferenceService)
+      Section {
+        PreferenceRow(
+          preferenceType: .timeFormat,
+          formats: DateAndTimeFormat.TimeFormatIdentifier.allCases,
+          preferenceService: preferenceService)
+        PreferenceRow(
+          preferenceType: .shortDateFormat,
+          formats: DateAndTimeFormat.ShortDateFormatIdentifier.allCases,
+          preferenceService: preferenceService)
+        PreferenceRow(
+          preferenceType: .longDateFormat,
+          formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
+          preferenceService: preferenceService)
+        NavigationLink(destination: TipJarView()) {
+          Text("Tip Jar")
+        }
+      }
     }
     .navigationTitle("Digital Time")
     .sheet(isPresented: $complicationUpdateService.showUpdateView) {
@@ -34,8 +39,8 @@ struct PreferenceList: View {
   }
 }
 
-struct PreferencesView_Previews: PreviewProvider {
-  static var previews: some View {
-    PreferenceList(preferenceService: PreferenceService.shared)
+  struct PreferencesView_Previews: PreviewProvider {
+    static var previews: some View {
+      PreferenceList(preferenceService: PreferenceService.shared)
+    }
   }
-}
