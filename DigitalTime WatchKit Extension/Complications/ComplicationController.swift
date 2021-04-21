@@ -124,6 +124,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     for complication: CLKComplication,
     after date: Date, limit: Int,
     withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+    let family = String(describing: complication.family.rawValue)
+    let identifier = String(describing: complication.identifier)
+    NSLog("Getting \(limit) entries for complication family: \(family) identifier: \(identifier) after: \(date)")
+    complicationUpdateService.complicationUpdateStarted()
+
     let maximumEntryDate = Date(timeIntervalSinceNow: complicationTimelineLength)
     if date.addingTimeInterval(60) > maximumEntryDate {
       handler(nil)
@@ -131,11 +136,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       return
     }
     scheduleBackgroundTaskForNextComplicationUpdate()
-
-    let family = String(describing: complication.family.rawValue)
-    let identifier = String(describing: complication.identifier)
-    NSLog("Getting \(limit) entries for complication family: \(family) identifier: \(identifier) after: \(date)")
-    complicationUpdateService.complicationUpdateStarted()
 
     var timelineEntries: [CLKComplicationTimelineEntry] = []
     var nextMinute: Date
