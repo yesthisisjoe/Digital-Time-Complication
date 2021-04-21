@@ -12,6 +12,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
   let complicationUpdateService = ComplicationUpdateService.shared
 
+  let complicationTimelineLength: TimeInterval = 100 * 60
+  let timeUntilBackgroundTask: TimeInterval = 60 * 60
+
   // MARK: - Complication Configuration
 
   func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
@@ -75,7 +78,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   // MARK: - Timeline Configuration
 
   func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-    handler(.distantFuture)
+    handler(Date(timeIntervalSinceNow: complicationTimelineLength))
   }
 
   func getPrivacyBehavior(
@@ -104,9 +107,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     handler(timelineEntry)
   }
 
-  func scheduleBackgroundTaskForNextComplicationUpdate(currentUpdateDate: Date) {
-    let minimumDate = Date(timeIntervalSinceNow: 60 * 60)
-    let preferredDate = max(minimumDate, currentUpdateDate)
+  func scheduleBackgroundTaskForNextComplicationUpdate() {
+    let preferredDate = Date(timeIntervalSinceNow: timeUntilBackgroundTask)
     WKExtension.shared().scheduleBackgroundRefresh(
       withPreferredDate: preferredDate,
       userInfo: nil) { error in
@@ -122,8 +124,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     for complication: CLKComplication,
     after date: Date, limit: Int,
     withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
-
-    scheduleBackgroundTaskForNextComplicationUpdate(currentUpdateDate: date)
+    let maximumEntryDate = Date(timeIntervalSinceNow: complicationTimelineLength)
+    if date.addingTimeInterval(60) > maximumEntryDate {
+      handler(nil)
+      NSLog("Returning 0 entries because next entry will be past the maximum entry date.")
+      return
+    }
+    scheduleBackgroundTaskForNextComplicationUpdate()
 
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
@@ -133,12 +140,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     var timelineEntries: [CLKComplicationTimelineEntry] = []
     var nextMinute: Date
 
+    let smallestTimeInterval = 0.0000001
     let barelyAfterDate = Date(
-      timeIntervalSinceReferenceDate: date.timeIntervalSinceReferenceDate + Double.leastNormalMagnitude)
+      timeIntervalSinceReferenceDate: date.timeIntervalSinceReferenceDate + smallestTimeInterval)
     nextMinute = Date(
       timeIntervalSinceReferenceDate: (barelyAfterDate.timeIntervalSinceReferenceDate / 60.0).rounded(.up) * 60.0)
 
-    while limit > timelineEntries.count {
+    while limit > timelineEntries.count && nextMinute < maximumEntryDate {
       guard let timelineEntry = createTimelineEntry(for: complication, onDate: nextMinute) else {
         handler(nil)
         return
