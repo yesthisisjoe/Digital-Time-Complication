@@ -49,6 +49,14 @@ extension IAPHelper {
     return SKPaymentQueue.canMakePayments()
     // TODO: check for this in tip jar list
   }
+
+  public func formattedPriceForProduct(_ product: SKProduct) -> String {
+    let formatter = NumberFormatter()
+    formatter.locale = product.priceLocale
+    formatter.numberStyle = .currency
+    let formattedTipAmount = formatter.string(from: product.price as NSNumber)!
+    return formattedTipAmount
+  }
 }
 
 // MARK: - SKProductsRequestDelegate

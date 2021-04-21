@@ -26,14 +26,10 @@ struct PreferenceList: View {
           preferenceType: .longDateFormat,
           formats: DateAndTimeFormat.LongDateFormatIdentifier.allCases,
           preferenceService: preferenceService)
-      }
-      Section(footer:
-        NavigationLink(destination: TipJarList()) {
+        NavigationLink(destination: TipJarView()) {
           Text("Tip Jar")
         }
-        .buttonStyle(PlainButtonStyle())
-        .multilineTextAlignment(.center)
-      ) {}
+      }
     }
     .navigationTitle("Digital Time")
     .sheet(isPresented: $complicationUpdateService.showUpdateView) {
