@@ -104,19 +104,26 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     handler(timelineEntry)
   }
 
-  func getTimelineEntries(
-    for complication: CLKComplication,
-    after date: Date, limit: Int,
-    withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+  func scheduleBackgroundTaskForNextComplicationUpdate(currentUpdateDate: Date) {
+    let minimumDate = Date(timeIntervalSinceNow: 60 * 60)
+    let preferredDate = max(minimumDate, currentUpdateDate)
     WKExtension.shared().scheduleBackgroundRefresh(
-      withPreferredDate: date,
+      withPreferredDate: preferredDate,
       userInfo: nil) { error in
       if let error = error {
         NSLog("Couldn't schedule background refresh. Error: \(error)")
       } else {
-        NSLog("Successfully scheduled background refresh for \(date)")
+        NSLog("Successfully scheduled background refresh for \(preferredDate)")
       }
     }
+  }
+
+  func getTimelineEntries(
+    for complication: CLKComplication,
+    after date: Date, limit: Int,
+    withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+
+    scheduleBackgroundTaskForNextComplicationUpdate(currentUpdateDate: date)
 
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
