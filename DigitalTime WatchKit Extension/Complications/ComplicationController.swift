@@ -108,6 +108,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     for complication: CLKComplication,
     after date: Date, limit: Int,
     withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
+    WKExtension.shared().scheduleBackgroundRefresh(
+      withPreferredDate: date,
+      userInfo: nil) { error in
+      if let error = error {
+        NSLog("Couldn't schedule background refresh. Error: \(error)")
+      } else {
+        NSLog("Successfully scheduled background refresh for \(date)")
+      }
+    }
+
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
     NSLog("Getting \(limit) entries for complication family: \(family) identifier: \(identifier) after: \(date)")

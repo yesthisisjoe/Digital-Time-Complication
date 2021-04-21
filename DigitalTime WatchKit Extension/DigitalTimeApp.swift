@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct DigitalTimeApp: App {
+  @WKExtensionDelegateAdaptor(ExtensionDelegate.self) var delegate
   var body: some Scene {
     WindowGroup {
       NavigationView {

@@ -20,10 +20,12 @@ class ComplicationUpdateService: ObservableObject {
   private var lastUpdateStart: Date?
   private var lastUpdateLength: TimeInterval?
   private var hideUpdateViewWorkItem: DispatchWorkItem?
+  private var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
 
   @Published var showUpdateView: Bool = false
 
-  func reloadComplications() {
+  func reloadComplications(_ backgroundTask: WKApplicationRefreshBackgroundTask? = nil) {
+    self.currentBackgroundTask = backgroundTask
     CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
       CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
     }
@@ -78,6 +80,8 @@ class ComplicationUpdateService: ObservableObject {
       self?.lastUpdateStart = nil
       self?.lastUpdateLength = nil
       self?.showUpdateView = false
+      self?.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
+      self?.currentBackgroundTask = nil
       WKInterfaceDevice.current().play(.click)
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)

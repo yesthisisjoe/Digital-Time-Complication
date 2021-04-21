@@ -28,6 +28,7 @@
 		CB6F69552608268D0093663C /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6F69542608268D0093663C /* IAPHelper.swift */; };
 		CB77E2FA26055F3E00D56C55 /* ComplicationUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB77E2F926055F3E00D56C55 /* ComplicationUpdateService.swift */; };
 		CBCD8DBE25F91CE1007195A9 /* PreferenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */; };
+		CBE7EF17262FD0D700BC55FA /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE7EF16262FD0D700BC55FA /* ExtensionDelegate.swift */; };
 		CBEA5B0C260429F80016BBE2 /* ComplicationIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBEA5B0B260429F80016BBE2 /* ComplicationIdentifier.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		CB6F69542608268D0093663C /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		CB77E2F926055F3E00D56C55 /* ComplicationUpdateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationUpdateService.swift; sourceTree = "<group>"; };
 		CBCD8DBD25F91CE1007195A9 /* PreferenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceService.swift; sourceTree = "<group>"; };
+		CBE7EF16262FD0D700BC55FA /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CBEA5B0B260429F80016BBE2 /* ComplicationIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationIdentifier.swift; sourceTree = "<group>"; };
 		E30D7C4D8DBD8BFC24953448 /* Pods_DigitalTime_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DigitalTime_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 				CB54ED6125F5EB52007F65C3 /* DigitalTimeApp.swift */,
 				CB6F6947260825DF0093663C /* DigitalTimeProducts.swift */,
 				CB6F69542608268D0093663C /* IAPHelper.swift */,
+				CBE7EF16262FD0D700BC55FA /* ExtensionDelegate.swift */,
 				CB77E3052605934400D56C55 /* Services */,
 				CB79A66D25F94B9E0033C6BB /* Complications */,
 				CB54ED6925F5ED29007F65C3 /* Date & Time Format */,
@@ -479,6 +482,7 @@
 				CB6F6948260825DF0093663C /* DigitalTimeProducts.swift in Sources */,
 				CB54ED6225F5EB52007F65C3 /* DigitalTimeApp.swift in Sources */,
 				CBCD8DBE25F91CE1007195A9 /* PreferenceService.swift in Sources */,
+				CBE7EF17262FD0D700BC55FA /* ExtensionDelegate.swift in Sources */,
 				CBEA5B0C260429F80016BBE2 /* ComplicationIdentifier.swift in Sources */,
 				CB1D4D6126044A0500D1FD53 /* ComplicationUpdateView.swift in Sources */,
 				CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */,
