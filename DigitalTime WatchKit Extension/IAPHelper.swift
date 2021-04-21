@@ -45,11 +45,6 @@ extension IAPHelper {
     SKPaymentQueue.default().add(payment)
   }
 
-  public class func canMakePayments() -> Bool {
-    return SKPaymentQueue.canMakePayments()
-    // TODO: check for this in tip jar list
-  }
-
   public func formattedPriceForProduct(_ product: SKProduct) -> String {
     let formatter = NumberFormatter()
     formatter.locale = product.priceLocale
@@ -108,15 +103,12 @@ extension IAPHelper: SKPaymentTransactionObserver {
   }
 
   private func complete(transaction: SKPaymentTransaction) {
-    // TODO: show thank you popup
-
-    deliverPurchaseNotificationFor(identifier: transaction.payment.productIdentifier)
+    deliverPurchaseNotification(success: true)
     SKPaymentQueue.default().finishTransaction(transaction)
   }
 
   private func fail(transaction: SKPaymentTransaction) {
-    // TODO: show failure popup
-
+    deliverPurchaseNotification(success: false)
     if let transactionError = transaction.error as NSError?,
        let localizedDescription = transaction.error?.localizedDescription,
        transactionError.code != SKError.paymentCancelled.rawValue {
@@ -125,8 +117,9 @@ extension IAPHelper: SKPaymentTransactionObserver {
     SKPaymentQueue.default().finishTransaction(transaction)
   }
 
-  private func deliverPurchaseNotificationFor(identifier: String?) {
-    guard let identifier = identifier else { return }
-    NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
+  private func deliverPurchaseNotification(success: Bool) {
+    DispatchQueue.main.async {
+      NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: success)
+    }
   }
 }
