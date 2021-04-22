@@ -43,7 +43,7 @@ struct DateAndTimeFormat {
       format: "h:mm a"),
     .twentyFourHour: DateAndTimeFormat(
       name: "24-Hour",
-      format: "k:mm")
+      format: "H:mm")
   ]
 
   static let shortDateDict: [ShortDateFormatIdentifier: DateAndTimeFormat] = [
