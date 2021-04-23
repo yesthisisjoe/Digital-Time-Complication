@@ -28,7 +28,7 @@ struct TipJarView: View {
       List {
         Section(
           header:
-            Text("Select a tip amount to show your appreciation for Digital Time")
+            Text("Enjoying the app? Select an amount below to send a tip to the developer!")
             .textCase(.none)
         ) {
           ForEach(products, id: \.productIdentifier) { product in
@@ -50,7 +50,7 @@ struct TipJarView: View {
       .alert(isPresented: $showingSuccessAlert) {
         Alert(
           title: Text("Tip Received"),
-          message: Text("Thank you for your generous support!"),
+          message: Text("Thank you for your support!"),
           dismissButton: .default(Text("OK")))
       }
       .alert(isPresented: $showingFailureAlert) {
