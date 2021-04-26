@@ -9,9 +9,17 @@ import SwiftUI
 import StoreKit
 
 struct TipJarView: View {
+
+  struct AlertItem: Identifiable {
+    var id = UUID()
+    var title: Text
+    var message: Text?
+    var dismissButton: Alert.Button?
+  }
+
+
   @State var products: [SKProduct] = []
-  @State private var showingSuccessAlert = false
-  @State private var showingFailureAlert = false
+  @State private var alertItem: AlertItem?
   let publisher = NotificationCenter.default.publisher(for: .IAPHelperPurchaseNotification)
 
   var body: some View {
@@ -41,23 +49,23 @@ struct TipJarView: View {
       .onReceive(publisher) { output in
         if let success = output.object as? Bool {
           if success {
-            showingSuccessAlert = true
+            alertItem = AlertItem(
+              title: Text("Tip Received"),
+              message: Text("Thank you for your support!"),
+              dismissButton: .default(Text("OK")))
           } else {
-            showingFailureAlert = true
+            alertItem = AlertItem(
+              title: Text("Purchase Failed"),
+              message: Text("Please try tipping again."),
+              dismissButton: .default(Text("OK")))
           }
         }
       }
-      .alert(isPresented: $showingSuccessAlert) {
+      .alert(item: $alertItem) { alertItem in
         Alert(
-          title: Text("Tip Received"),
-          message: Text("Thank you for your support!"),
-          dismissButton: .default(Text("OK")))
-      }
-      .alert(isPresented: $showingFailureAlert) {
-        Alert(
-          title: Text("Purchase Failed"),
-          message: Text("Please try tipping again."),
-          dismissButton: .default(Text("OK")))
+          title: alertItem.title,
+          message: alertItem.message,
+          dismissButton: alertItem.dismissButton)
       }
     }
   }
