@@ -17,7 +17,6 @@ struct TipJarView: View {
     var dismissButton: Alert.Button?
   }
 
-
   @State var products: [SKProduct] = []
   @State private var alertItem: AlertItem?
   let publisher = NotificationCenter.default.publisher(for: .IAPHelperPurchaseNotification)
