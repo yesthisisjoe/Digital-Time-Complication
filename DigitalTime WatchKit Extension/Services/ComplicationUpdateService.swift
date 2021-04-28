@@ -13,52 +13,48 @@ class ComplicationUpdateService: ObservableObject {
   static let shared = ComplicationUpdateService()
   private init() {}
 
-  private let initialUpdateTimeEstimate: TimeInterval = 10.0
-  private let updateTimeEstimateTimeout: TimeInterval = 15.0
-  private let updateTimeEstimateMultiplier: Double = 1.2
+  let complicationServer = CLKComplicationServer.sharedInstance()
+  let complicationTimelineLength: TimeInterval = 15 * 60
+  let timeUntilBackgroundTask: TimeInterval = 15 * 60
 
-  private var lastUpdateStart: Date?
-  private var lastUpdateLength: TimeInterval?
-  private var hideUpdateViewWorkItem: DispatchWorkItem?
-  private var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
+  var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
 
-  func reloadComplications(_ backgroundTask: WKApplicationRefreshBackgroundTask? = nil) {
+  func reloadComplications() {
+    appLogger.notice("🟢 Reloading complications")
+    self.currentBackgroundTask = nil
+    complicationServer.activeComplications?.forEach { complication in
+      complicationServer.reloadTimeline(for: complication)
+    }
+  }
+
+  func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
+    appLogger.notice("🔵 Extending complications")
     self.currentBackgroundTask = backgroundTask
-    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
-      CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+    complicationServer.activeComplications?.forEach { complication in
+      complicationServer.extendTimeline(for: complication)
     }
   }
 
-  func complicationUpdateStarted() {
-    var estimatedTimeUntilUpdateFinish: TimeInterval
-    if let lastUpdateStart = lastUpdateStart {
-      let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
-      if timeSinceLastUpdate < updateTimeEstimateTimeout {
-        NSLog("Found previous update \(timeSinceLastUpdate) ago")
-        lastUpdateLength = timeSinceLastUpdate
-        estimatedTimeUntilUpdateFinish = timeSinceLastUpdate * updateTimeEstimateMultiplier
+  func startedOrResumedLoadingComplications() {
+    scheduleBackgroundTaskForNextComplicationUpdate()
+  }
+
+  func finishedLoadingComplications() {
+    appLogger.notice("🔴 Finished loading complications")
+    self.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
+    self.currentBackgroundTask = nil
+  }
+
+  func scheduleBackgroundTaskForNextComplicationUpdate() {
+    let preferredDate = Date(timeIntervalSinceNow: timeUntilBackgroundTask)
+    WKExtension.shared().scheduleBackgroundRefresh(
+      withPreferredDate: preferredDate,
+      userInfo: nil) { error in
+      if let error = error {
+        NSLog("Couldn't schedule background refresh. Error: \(error)")
       } else {
-        NSLog("Previous update length too long: \(timeSinceLastUpdate)")
-        estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
+        NSLog("Successfully scheduled background refresh for \(preferredDate)")
       }
-    } else {
-      NSLog("No previous update found")
-      estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
     }
-    NSLog("Estimated time until update finish: \(estimatedTimeUntilUpdateFinish)")
-    lastUpdateStart = Date()
-    scheduleUpdateViewDismissal(after: estimatedTimeUntilUpdateFinish)
-  }
-
-  func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
-    hideUpdateViewWorkItem?.cancel()
-    hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
-      appLogger.notice("🔴 Complication refreshed")
-      self?.lastUpdateStart = nil
-      self?.lastUpdateLength = nil
-      self?.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
-      self?.currentBackgroundTask = nil
-    }
-    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
 }

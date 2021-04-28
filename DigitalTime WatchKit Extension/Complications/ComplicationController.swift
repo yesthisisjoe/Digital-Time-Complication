@@ -12,9 +12,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
   let complicationUpdateService = ComplicationUpdateService.shared
 
-  let complicationTimelineLength: TimeInterval = 15 * 60
-  let timeUntilBackgroundTask: TimeInterval = 15 * 60
-
   // MARK: - Complication Configuration
 
   func getComplicationDescriptors(handler: @escaping ([CLKComplicationDescriptor]) -> Void) {
@@ -78,7 +75,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   // MARK: - Timeline Configuration
 
   func getTimelineEndDate(for complication: CLKComplication, withHandler handler: @escaping (Date?) -> Void) {
-    handler(Date(timeIntervalSinceNow: complicationTimelineLength))
+    handler(Date(timeIntervalSinceNow: complicationUpdateService.complicationTimelineLength))
   }
 
   func getPrivacyBehavior(
@@ -107,35 +104,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     handler(timelineEntry)
   }
 
-  func scheduleBackgroundTaskForNextComplicationUpdate() {
-    let preferredDate = Date(timeIntervalSinceNow: timeUntilBackgroundTask)
-    WKExtension.shared().scheduleBackgroundRefresh(
-      withPreferredDate: preferredDate,
-      userInfo: nil) { error in
-      if let error = error {
-        NSLog("Couldn't schedule background refresh. Error: \(error)")
-      } else {
-        NSLog("Successfully scheduled background refresh for \(preferredDate)")
-      }
-    }
-  }
-
   func getTimelineEntries(
     for complication: CLKComplication,
     after date: Date, limit: Int,
     withHandler handler: @escaping ([CLKComplicationTimelineEntry]?) -> Void) {
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
-    NSLog("Getting \(limit) entries for complication family: \(family) identifier: \(identifier) after: \(date)")
-    complicationUpdateService.complicationUpdateStarted()
+    NSLog("Requesting up to \(limit) entries for complication \(family)/\(identifier) after \(date)")
 
-    let maximumEntryDate = Date(timeIntervalSinceNow: complicationTimelineLength)
+    let maximumEntryDate = Date(timeIntervalSinceNow: complicationUpdateService.complicationTimelineLength)
     if date.addingTimeInterval(60) > maximumEntryDate {
       handler(nil)
-      NSLog("Returning 0 entries because next entry will be past the maximum entry date.")
+      complicationUpdateService.finishedLoadingComplications()
       return
     }
-    scheduleBackgroundTaskForNextComplicationUpdate()
+    complicationUpdateService.startedOrResumedLoadingComplications()
 
     var timelineEntries: [CLKComplicationTimelineEntry] = []
     var nextMinute: Date

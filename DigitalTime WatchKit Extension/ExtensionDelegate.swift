@@ -13,7 +13,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
       switch task {
       case let backgroundTask as WKApplicationRefreshBackgroundTask:
         appLogger.notice("🔵 Refreshing complication from background task")
-        ComplicationUpdateService.shared.reloadComplications(backgroundTask)
+        ComplicationUpdateService.shared.extendComplications(backgroundTask: backgroundTask)
       default:
         task.setTaskCompletedWithSnapshot(false)
       }
