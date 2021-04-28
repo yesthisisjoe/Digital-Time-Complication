@@ -17,6 +17,7 @@ class ComplicationUpdateService: ObservableObject {
   private let updateTimeEstimateTimeout: TimeInterval = 15.0
   private let updateTimeEstimateMultiplier: Double = 1.2
 
+  private var isSlowUpdate = false
   private var lastUpdateStart: Date?
   private var lastUpdateLength: TimeInterval?
   private var hideUpdateViewWorkItem: DispatchWorkItem?
