@@ -17,45 +17,19 @@ class ComplicationUpdateService: ObservableObject {
   private let updateTimeEstimateTimeout: TimeInterval = 15.0
   private let updateTimeEstimateMultiplier: Double = 1.2
 
-  private var isSlowUpdate = false
   private var lastUpdateStart: Date?
   private var lastUpdateLength: TimeInterval?
   private var hideUpdateViewWorkItem: DispatchWorkItem?
   private var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
-
-  @Published var showUpdateView: Bool = false
 
   func reloadComplications(_ backgroundTask: WKApplicationRefreshBackgroundTask? = nil) {
     self.currentBackgroundTask = backgroundTask
     CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
       CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
     }
-    NSLog("Number of slow complications: \(numberOfSlowComplications())")
-  }
-
-  func numberOfSlowComplications() -> Int {
-    var numberOfSlowComplications = 0
-    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
-      switch (complication.family, complication.identifier) {
-      case (.graphicBezel, ComplicationIdentifier.dateAndTime),
-           (.graphicBezel, ComplicationIdentifier.time),
-           (.graphicBezel, ComplicationIdentifier.timeAndDate),
-           (.graphicCircular, ComplicationIdentifier.time),
-           (.graphicCorner, ComplicationIdentifier.time):
-        numberOfSlowComplications += 1
-      default:
-        break
-      }
-    }
-    return numberOfSlowComplications
   }
 
   func complicationUpdateStarted() {
-    isSlowUpdate = numberOfSlowComplications() > 0
-    if isSlowUpdate {
-      showUpdateView = true
-    }
-
     var estimatedTimeUntilUpdateFinish: TimeInterval
     if let lastUpdateStart = lastUpdateStart {
       let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
@@ -82,12 +56,8 @@ class ComplicationUpdateService: ObservableObject {
       appLogger.notice("🔴 Complication refreshed")
       self?.lastUpdateStart = nil
       self?.lastUpdateLength = nil
-      if self?.isSlowUpdate == true {
-        self?.showUpdateView = false
-      }
       self?.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
       self?.currentBackgroundTask = nil
-      WKInterfaceDevice.current().play(.click)
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
