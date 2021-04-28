@@ -12,8 +12,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
   let preferenceService = PreferenceService.shared
   let complicationUpdateService = ComplicationUpdateService.shared
 
-  let complicationTimelineLength: TimeInterval = 100 * 60
-  let timeUntilBackgroundTask: TimeInterval = 60 * 60
+  let complicationTimelineLength: TimeInterval = 15 * 60
+  let timeUntilBackgroundTask: TimeInterval = 15 * 60
 
   // MARK: - Complication Configuration
 
