@@ -77,6 +77,5 @@ class PreferenceService {
       userDefaults.setValue(newLongDateFormat.rawValue, forKey: preferenceType.rawValue)
       longDateFormat = newLongDateFormat
     }
-    complicationUpdateService.reloadComplications()
   }
 }
