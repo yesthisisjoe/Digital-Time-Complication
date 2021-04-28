@@ -50,9 +50,11 @@ class ComplicationUpdateService: ObservableObject {
   }
 
   func complicationUpdateStarted() {
-    if numberOfSlowComplications() < 1 { return }
+    isSlowUpdate = numberOfSlowComplications() > 0
+    if isSlowUpdate {
+      showUpdateView = true
+    }
 
-    showUpdateView = true
     var estimatedTimeUntilUpdateFinish: TimeInterval
     if let lastUpdateStart = lastUpdateStart {
       let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
@@ -76,10 +78,12 @@ class ComplicationUpdateService: ObservableObject {
   func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
     hideUpdateViewWorkItem?.cancel()
     hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
-      NSLog("Hiding update view")
+      appLogger.notice("🔴 Complication refreshed")
       self?.lastUpdateStart = nil
       self?.lastUpdateLength = nil
-      self?.showUpdateView = false
+      if self?.isSlowUpdate == true {
+        self?.showUpdateView = false
+      }
       self?.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
       self?.currentBackgroundTask = nil
       WKInterfaceDevice.current().play(.click)

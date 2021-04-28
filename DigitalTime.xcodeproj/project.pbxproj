@@ -18,6 +18,7 @@
 		CB1E3A1E25F15AAA00FDDEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A1D25F15AAA00FDDEB7 /* Assets.xcassets */; };
 		CB1E3A7E25F1C31300FDDEB7 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */; };
 		CB24C930260858CE0009FE97 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB24C92F260858CD0009FE97 /* TipJarView.swift */; };
+		CB30294F26387AAD00A964FB /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB30294E26387AAD00A964FB /* AppLogger.swift */; };
 		CB54ECD625F2C3C0007F65C3 /* ComplicationViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */; };
 		CB54ECEE25F48E33007F65C3 /* DateAndTimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */; };
 		CB54ECFC25F5D7D1007F65C3 /* PreferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */; };
@@ -100,6 +101,7 @@
 		CB1E3A1F25F15AAA00FDDEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1E3A7D25F1C31300FDDEB7 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		CB24C92F260858CD0009FE97 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		CB30294E26387AAD00A964FB /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
 		CB54ECD525F2C3C0007F65C3 /* ComplicationViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationViews.swift; sourceTree = "<group>"; };
 		CB54ECED25F48E33007F65C3 /* DateAndTimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndTimeFormat.swift; sourceTree = "<group>"; };
 		CB54ECFB25F5D7D1007F65C3 /* PreferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceList.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				CB6F6947260825DF0093663C /* DigitalTimeProducts.swift */,
 				CB6F69542608268D0093663C /* IAPHelper.swift */,
 				CBE7EF16262FD0D700BC55FA /* ExtensionDelegate.swift */,
+				CB30294E26387AAD00A964FB /* AppLogger.swift */,
 				CB77E3052605934400D56C55 /* Services */,
 				CB79A66D25F94B9E0033C6BB /* Complications */,
 				CB54ED6925F5ED29007F65C3 /* Date & Time Format */,
@@ -488,6 +491,7 @@
 				CB54ED0F25F5DD4C007F65C3 /* DateAndTimeFormatter.swift in Sources */,
 				CB54ECFC25F5D7D1007F65C3 /* PreferenceList.swift in Sources */,
 				CB24C930260858CE0009FE97 /* TipJarView.swift in Sources */,
+				CB30294F26387AAD00A964FB /* AppLogger.swift in Sources */,
 				CB54ED0A25F5D898007F65C3 /* PreferenceRow.swift in Sources */,
 				CB54ECD625F2C3C0007F65C3 /* ComplicationViews.swift in Sources */,
 				CB1E3A1C25F15AAA00FDDEB7 /* ComplicationController.swift in Sources */,
