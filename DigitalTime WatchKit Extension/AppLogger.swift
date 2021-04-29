@@ -15,7 +15,11 @@ struct AppLogger: TextOutputStream {
 
   mutating func logAndWrite(_ string: String) {
     logger.notice("\(string)")
-    write(string)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd HH:mm:ss SSS"
+    let dateString = dateFormatter.string(from: Date())
+    let stringToLog = "\(dateString): \(string)\n\n"
+    write(stringToLog)
   }
 
   mutating func write(_ string: String) {
@@ -35,6 +39,17 @@ struct AppLogger: TextOutputStream {
       } catch {
         print(error.localizedDescription)
       }
+    }
+  }
+
+  func contentsOfLogFile() -> String? {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
+    let documentDirectoryPath = paths.first!
+    let log = documentDirectoryPath.appendingPathComponent("log.txt")
+    do {
+      return try String(contentsOf: log)
+    } catch {
+      return nil
     }
   }
 }

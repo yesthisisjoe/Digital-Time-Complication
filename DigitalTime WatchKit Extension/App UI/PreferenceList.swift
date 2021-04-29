@@ -29,6 +29,9 @@ struct PreferenceList: View {
         NavigationLink(destination: TipJarView()) {
           Text("Tip Jar")
         }
+        NavigationLink(destination: LogView()) {
+          Text("Log file")
+        }
       }
     }
     .navigationTitle("Digital Time")
