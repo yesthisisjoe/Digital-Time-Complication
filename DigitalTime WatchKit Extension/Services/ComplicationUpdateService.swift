@@ -17,11 +17,8 @@ class ComplicationUpdateService: ObservableObject {
   let complicationTimelineLength: TimeInterval = 15 * 60
   let timeUntilBackgroundTask: TimeInterval = 15 * 60
 
-  var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
-
   func reloadComplications() {
     appLogger.notice("🟢 Reloading complications")
-    self.currentBackgroundTask = nil
     complicationServer.activeComplications?.forEach { complication in
       complicationServer.reloadTimeline(for: complication)
     }
@@ -29,20 +26,10 @@ class ComplicationUpdateService: ObservableObject {
 
   func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
     appLogger.notice("🔵 Extending complications")
-    self.currentBackgroundTask = backgroundTask
     complicationServer.activeComplications?.forEach { complication in
       complicationServer.extendTimeline(for: complication)
     }
-  }
-
-  func startedOrResumedLoadingComplications() {
-    scheduleBackgroundTaskForNextComplicationUpdate()
-  }
-
-  func finishedLoadingComplications() {
-    appLogger.notice("🔴 Finished loading complications")
-    self.currentBackgroundTask?.setTaskCompletedWithSnapshot(false)
-    self.currentBackgroundTask = nil
+    backgroundTask.setTaskCompletedWithSnapshot(false)
   }
 
   func scheduleBackgroundTaskForNextComplicationUpdate() {
