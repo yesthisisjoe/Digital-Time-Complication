@@ -117,7 +117,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
 
     let family = String(describing: complication.family.rawValue)
     let identifier = String(describing: complication.identifier)
-    NSLog("Requesting up to \(limit) entries for complication \(family)/\(identifier) after \(date)")
+    appLogger.logAndWrite("Requesting up to \(limit) entries for complication \(family)/\(identifier) after \(date)")
     complicationUpdateService.scheduleBackgroundTaskForNextComplicationUpdate()
 
     var timelineEntries: [CLKComplicationTimelineEntry] = []
@@ -138,7 +138,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
       nextMinute = Date(timeIntervalSinceReferenceDate: nextMinute.timeIntervalSinceReferenceDate + 60.0)
     }
 
-    NSLog("Returning \(timelineEntries.count) timeline entries")
+    appLogger.logAndWrite("Returning \(timelineEntries.count) timeline entries")
     handler(timelineEntries)
   }
 

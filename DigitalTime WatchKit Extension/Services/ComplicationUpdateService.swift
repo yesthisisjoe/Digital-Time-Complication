@@ -18,14 +18,14 @@ class ComplicationUpdateService: ObservableObject {
   let timeUntilBackgroundTask: TimeInterval = 15 * 60
 
   func reloadComplications() {
-    appLogger.notice("🟢 Reloading complications")
+    appLogger.logAndWrite("🟢 Reloading complications")
     complicationServer.activeComplications?.forEach { complication in
       complicationServer.reloadTimeline(for: complication)
     }
   }
 
   func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
-    appLogger.notice("🔵 Extending complications")
+    appLogger.logAndWrite("🔵 Extending complications")
     complicationServer.activeComplications?.forEach { complication in
       complicationServer.extendTimeline(for: complication)
     }
@@ -38,9 +38,9 @@ class ComplicationUpdateService: ObservableObject {
       withPreferredDate: preferredDate,
       userInfo: nil) { error in
       if let error = error {
-        NSLog("Couldn't schedule background refresh. Error: \(error)")
+        appLogger.logAndWrite("Couldn't schedule background refresh. Error: \(error)")
       } else {
-        NSLog("Successfully scheduled background refresh for \(preferredDate)")
+        appLogger.logAndWrite("Successfully scheduled background refresh for \(preferredDate)")
       }
     }
   }

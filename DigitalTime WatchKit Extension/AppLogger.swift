@@ -2,12 +2,41 @@
 //  AppLogger.swift
 //  DigitalTime WatchKit Extension
 //
-//  Created by Joe Peplowski on 2021-04-27.
+//  Created by Joe Peplowski on 2021-04-28.
 //
 
 import Foundation
 import os
 
-let appLogger = Logger(
-  subsystem: Bundle.main.bundleIdentifier!,
-  category: "Digital Time")
+struct AppLogger: TextOutputStream {
+  let logger = Logger(
+    subsystem: Bundle.main.bundleIdentifier!,
+    category: "Digital Time")
+
+  mutating func logAndWrite(_ string: String) {
+    logger.notice("\(string)")
+    write(string)
+  }
+
+  mutating func write(_ string: String) {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .allDomainsMask)
+    let documentDirectoryPath = paths.first!
+    let log = documentDirectoryPath.appendingPathComponent("log.txt")
+
+    do {
+      let handle = try FileHandle(forWritingTo: log)
+      handle.seekToEndOfFile()
+      handle.write(string.data(using: .utf8)!)
+      handle.closeFile()
+    } catch {
+      print(error.localizedDescription)
+      do {
+        try string.data(using: .utf8)?.write(to: log)
+      } catch {
+        print(error.localizedDescription)
+      }
+    }
+  }
+}
+
+var appLogger = AppLogger()
