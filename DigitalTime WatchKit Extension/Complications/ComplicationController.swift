@@ -130,16 +130,29 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     nextMinute = Date(
       timeIntervalSinceReferenceDate: (barelyAfterDate.timeIntervalSinceReferenceDate / 60.0).rounded(.up) * 60.0)
 
+    var firstEntryDate: Date?
+    var lastEntryDate: Date?
+
     while limit > timelineEntries.count && nextMinute < maximumEntryDate {
       guard let timelineEntry = createTimelineEntry(for: complication, onDate: nextMinute) else {
         handler(nil)
         return
       }
+      if firstEntryDate == nil {
+        firstEntryDate = nextMinute
+      }
+      lastEntryDate = nextMinute
+
       timelineEntries.append(timelineEntry)
       nextMinute = Date(timeIntervalSinceReferenceDate: nextMinute.timeIntervalSinceReferenceDate + 60.0)
     }
 
-    appLogger.logAndWrite("⚪️ Returning \(timelineEntries.count) timeline entries")
+    appLogger.logAndWrite("⚪️ Returning \(timelineEntries.count) entries")
+    if let firstEntryDate = firstEntryDate, let lastEntryDate = lastEntryDate {
+      let firstEntryLoggerString = appLogger.loggerString(forDate: firstEntryDate)
+      let lastEntryLoggerString = appLogger.loggerString(forDate: lastEntryDate)
+      appLogger.logAndWrite("⚪️ \(firstEntryLoggerString) - \(lastEntryLoggerString)")
+    }
     handler(timelineEntries)
   }
 
