@@ -13,12 +13,16 @@ struct AppLogger: TextOutputStream {
     subsystem: Bundle.main.bundleIdentifier!,
     category: "Digital Time")
 
+  func loggerString(forDate date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "h:mm:ss SSS"
+    return dateFormatter.string(from: date)
+  }
+
   mutating func logAndWrite(_ string: String) {
     logger.notice("\(string)")
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd HH:mm:ss SSS"
-    let dateString = dateFormatter.string(from: Date())
-    let stringToLog = "\(dateString): \(string)\n\n"
+    let dateString = loggerString(forDate: Date())
+    let stringToLog = "\(dateString)\n \(string)\n\n"
     write(stringToLog)
   }
 
