@@ -14,7 +14,7 @@ class ComplicationUpdateService: ObservableObject {
   private init() {}
 
   let complicationServer = CLKComplicationServer.sharedInstance()
-  let complicationTimelineLength: TimeInterval = 15 * 60
+  let complicationTimelineLength: TimeInterval = 30 * 60
   let timeUntilBackgroundTask: TimeInterval = 15 * 60
 
   func reloadComplications() {
