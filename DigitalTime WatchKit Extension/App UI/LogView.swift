@@ -8,11 +8,19 @@
 import SwiftUI
 
 struct LogView: View {
+  @Namespace var textID
+
   var body: some View {
-    ScrollView {
-      Text(appLogger.contentsOfLogFile() ?? "Empty or error loading log file")
-        .fixedSize(horizontal: false, vertical: true)
-        .font(.system(size: 10))
+    ScrollViewReader { proxy in
+      ScrollView {
+        Text(appLogger.contentsOfLogFile() ?? "Empty or error loading log file")
+          .fixedSize(horizontal: false, vertical: true)
+          .font(.system(size: 10))
+          .id(textID)
+          .onAppear {
+            proxy.scrollTo(textID, anchor: .bottom)
+          }
+      }
     }
   }
 }
