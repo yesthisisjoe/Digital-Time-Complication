@@ -11,11 +11,38 @@ import WatchKit
 
 class ComplicationUpdateService: ObservableObject {
   static let shared = ComplicationUpdateService()
-  private init() {}
-
   let complicationServer = CLKComplicationServer.sharedInstance()
-  let complicationTimelineLength: TimeInterval = 30 * 60
+  let notificationCenter = NotificationCenter.default
+
   let timeUntilBackgroundTask: TimeInterval = 15 * 60
+  let foregroundComplicationTimelineLength: TimeInterval = 30 * 60
+  let backgroundComplicationTimelineLength: TimeInterval = 1000 * 60
+
+  var complicationTimelineLength: TimeInterval
+
+  private init() {
+    complicationTimelineLength = foregroundComplicationTimelineLength
+    notificationCenter.addObserver(
+      self,
+      selector: #selector(useForegroundComplicationTimelineLength),
+      name: WKExtension.applicationDidBecomeActiveNotification,
+      object: nil)
+    notificationCenter.addObserver(
+      self,
+      selector: #selector(useBackgroundComplicationTimelineLength),
+      name: WKExtension.applicationDidEnterBackgroundNotification,
+      object: nil)
+  }
+
+  @objc func useForegroundComplicationTimelineLength() {
+    appLogger.logAndWrite("Using foreground timeline length")
+    complicationTimelineLength = foregroundComplicationTimelineLength
+  }
+
+  @objc func useBackgroundComplicationTimelineLength() {
+    appLogger.logAndWrite("Using background timeline length")
+    complicationTimelineLength = backgroundComplicationTimelineLength
+  }
 
   func reloadComplications() {
     complicationServer.activeComplications?.forEach { complication in
@@ -25,6 +52,7 @@ class ComplicationUpdateService: ObservableObject {
   }
 
   func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
+    scheduleBackgroundTaskForNextComplicationUpdate()
     complicationServer.activeComplications?.forEach { complication in
       appLogger.logAndWrite("🔵 Extending timeline")
       complicationServer.extendTimeline(for: complication)
