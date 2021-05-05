@@ -15,7 +15,7 @@ class ComplicationUpdateService: ObservableObject {
   let notificationCenter = NotificationCenter.default
 
   private let timeUntilBackgroundTask: TimeInterval = 15 * 60
-  private let foregroundComplicationTimelineLength: TimeInterval = 30 * 60
+  private let foregroundComplicationTimelineLength: TimeInterval = 1000 * 60
   private let backgroundComplicationTimelineLength: TimeInterval = 1000 * 60
   var complicationTimelineLength: TimeInterval
 
