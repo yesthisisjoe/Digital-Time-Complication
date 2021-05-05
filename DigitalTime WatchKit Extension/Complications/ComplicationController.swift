@@ -119,6 +119,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     let identifier = String(describing: complication.identifier)
     let loggerDate = appLogger.loggerString(forDate: date)
     appLogger.logAndWrite("🟡 Getting \(family)/\(identifier) entries after \(loggerDate)")
+    complicationUpdateService.complicationUpdateStarted()
     complicationUpdateService.scheduleBackgroundTaskForNextComplicationUpdate()
 
     var timelineEntries: [CLKComplicationTimelineEntry] = []

@@ -127,6 +127,7 @@ class ComplicationUpdateService: ObservableObject {
       }
     }
   }
+
   func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
     hideUpdateViewWorkItem?.cancel()
     hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
@@ -138,5 +139,6 @@ class ComplicationUpdateService: ObservableObject {
       }
       WKInterfaceDevice.current().play(.click)
     }
+    DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
   }
 }
