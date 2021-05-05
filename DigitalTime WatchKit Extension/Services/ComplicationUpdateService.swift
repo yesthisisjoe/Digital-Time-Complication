@@ -14,11 +14,21 @@ class ComplicationUpdateService: ObservableObject {
   let complicationServer = CLKComplicationServer.sharedInstance()
   let notificationCenter = NotificationCenter.default
 
-  let timeUntilBackgroundTask: TimeInterval = 15 * 60
-  let foregroundComplicationTimelineLength: TimeInterval = 30 * 60
-  let backgroundComplicationTimelineLength: TimeInterval = 1000 * 60
-
+  private let timeUntilBackgroundTask: TimeInterval = 15 * 60
+  private let foregroundComplicationTimelineLength: TimeInterval = 30 * 60
+  private let backgroundComplicationTimelineLength: TimeInterval = 1000 * 60
   var complicationTimelineLength: TimeInterval
+
+  private let initialUpdateTimeEstimate: TimeInterval = 10.0
+  private let updateTimeEstimateTimeout: TimeInterval = 15.0
+  private let updateTimeEstimateMultiplier: Double = 1.2
+
+  private var isSlowUpdate = false
+  private var lastUpdateStart: Date?
+  private var lastUpdateLength: TimeInterval?
+  private var hideUpdateViewWorkItem: DispatchWorkItem?
+  private var currentBackgroundTask: WKApplicationRefreshBackgroundTask?
+  @Published var showUpdateView: Bool = false
 
   private init() {
     complicationTimelineLength = foregroundComplicationTimelineLength
@@ -49,6 +59,24 @@ class ComplicationUpdateService: ObservableObject {
       appLogger.logAndWrite("🟢 Reloading timeline")
       complicationServer.reloadTimeline(for: complication)
     }
+    NSLog("Number of slow complications: \(numberOfSlowComplications())")
+  }
+
+  func numberOfSlowComplications() -> Int {
+    var numberOfSlowComplications = 0
+    CLKComplicationServer.sharedInstance().activeComplications?.forEach { complication in
+      switch (complication.family, complication.identifier) {
+      case (.graphicBezel, ComplicationIdentifier.dateAndTime),
+           (.graphicBezel, ComplicationIdentifier.time),
+           (.graphicBezel, ComplicationIdentifier.timeAndDate),
+           (.graphicCircular, ComplicationIdentifier.time),
+           (.graphicCorner, ComplicationIdentifier.time):
+        numberOfSlowComplications += 1
+      default:
+        break
+      }
+    }
+    return numberOfSlowComplications
   }
 
   func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
@@ -58,6 +86,32 @@ class ComplicationUpdateService: ObservableObject {
       complicationServer.extendTimeline(for: complication)
     }
     backgroundTask.setTaskCompletedWithSnapshot(false)
+  }
+
+  func complicationUpdateStarted() {
+    isSlowUpdate = numberOfSlowComplications() > 0
+    if isSlowUpdate {
+      showUpdateView = true
+    }
+
+    var estimatedTimeUntilUpdateFinish: TimeInterval
+    if let lastUpdateStart = lastUpdateStart {
+      let timeSinceLastUpdate = Date().timeIntervalSince(lastUpdateStart)
+      if timeSinceLastUpdate < updateTimeEstimateTimeout {
+        NSLog("Found previous update \(timeSinceLastUpdate) ago")
+        lastUpdateLength = timeSinceLastUpdate
+        estimatedTimeUntilUpdateFinish = timeSinceLastUpdate * updateTimeEstimateMultiplier
+      } else {
+        NSLog("Previous update length too long: \(timeSinceLastUpdate)")
+        estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
+      }
+    } else {
+      NSLog("No previous update found")
+      estimatedTimeUntilUpdateFinish = max(lastUpdateLength ?? 0, initialUpdateTimeEstimate)
+    }
+    NSLog("Estimated time until update finish: \(estimatedTimeUntilUpdateFinish)")
+    lastUpdateStart = Date()
+    scheduleUpdateViewDismissal(after: estimatedTimeUntilUpdateFinish)
   }
 
   func scheduleBackgroundTaskForNextComplicationUpdate() {
@@ -71,6 +125,18 @@ class ComplicationUpdateService: ObservableObject {
         let loggerDate = appLogger.loggerString(forDate: preferredDate)
         appLogger.logAndWrite("🟣 BG task set for \(loggerDate)")
       }
+    }
+  }
+  func scheduleUpdateViewDismissal(after timeInterval: TimeInterval) {
+    hideUpdateViewWorkItem?.cancel()
+    hideUpdateViewWorkItem = DispatchWorkItem { [weak self] in
+      appLogger.logAndWrite("🔴 Complication refreshed")
+      self?.lastUpdateStart = nil
+      self?.lastUpdateLength = nil
+      if self?.isSlowUpdate == true {
+        self?.showUpdateView = false
+      }
+      WKInterfaceDevice.current().play(.click)
     }
   }
 }

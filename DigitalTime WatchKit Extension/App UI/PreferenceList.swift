@@ -35,6 +35,10 @@ struct PreferenceList: View {
       }
     }
     .navigationTitle("Digital Time")
+    .sheet(isPresented: $complicationUpdateService.showUpdateView) {
+      ComplicationUpdateView()
+        .navigationBarHidden(true)
+    }
   }
 }
 
