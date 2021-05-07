@@ -15,9 +15,10 @@ class ComplicationUpdateService: ObservableObject {
   let notificationCenter = NotificationCenter.default
 
   private let timeUntilBackgroundTask: TimeInterval = 15 * 60
-  private let foregroundComplicationTimelineLength: TimeInterval = 1000 * 60
-  private let backgroundComplicationTimelineLength: TimeInterval = 1000 * 60
+  private let foregroundComplicationTimelineLength: TimeInterval = 100 * 60
+  private let backgroundComplicationTimelineLength: TimeInterval = 100 * 60
   var complicationTimelineLength: TimeInterval
+  var backgroundTask: WKApplicationRefreshBackgroundTask?
 
   private let initialUpdateTimeEstimate: TimeInterval = 10.0
   private let updateTimeEstimateTimeout: TimeInterval = 15.0
@@ -80,12 +81,12 @@ class ComplicationUpdateService: ObservableObject {
   }
 
   func extendComplications(backgroundTask: WKApplicationRefreshBackgroundTask) {
+    self.backgroundTask = backgroundTask
     scheduleBackgroundTaskForNextComplicationUpdate()
     complicationServer.activeComplications?.forEach { complication in
       appLogger.logAndWrite("🔵 Extending timeline")
       complicationServer.extendTimeline(for: complication)
     }
-    backgroundTask.setTaskCompletedWithSnapshot(false)
   }
 
   func complicationUpdateStarted() {
@@ -137,6 +138,9 @@ class ComplicationUpdateService: ObservableObject {
       if self?.isSlowUpdate == true {
         self?.showUpdateView = false
       }
+      self?.backgroundTask?.setTaskCompletedWithSnapshot(false)
+      self?.backgroundTask = nil
+
       WKInterfaceDevice.current().play(.click)
     }
     DispatchQueue.main.asyncAfter(deadline: .now() + timeInterval, execute: hideUpdateViewWorkItem!)
